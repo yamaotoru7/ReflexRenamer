@@ -115,4 +115,5 @@
 - [x] T906 ドッキング機能の廃止：ペインの並べ替え・浮かせる機能を削除（FloatingPaneWindow を削除、DockPane は右端のドラッグで幅を変えるだけ、ペインは重ねずに並べる）。BarState は幅と表示だけ使う。シナリオ explore-dock*・debug-dock-save・debug-float-* を削除（2026-10-24）
 - [x] T907 compare の合否をテキストの記録だけにする（Compare.Run の「合否」行）。AGENTS.md と tasks.md の完了条件を更新（2026-10-24）
 - [ ] T908 残り：高 DPI（125%・150%）での確認、スピンボタンのダークモード、ページ見出しの 32px アイコン（テンプレートの SS_ICON）の扱い、lang-* シナリオで 9 言語の画面を撮り直す（2026-10-24：ライトモードの画面は color-light で確認済み）
+- [x] T910 アプリのアイコンを新調（`Assets/Icons/app.ico`。A→B を Fluent 風に、16〜256px。`tools/make-app-icon.ps1` で再生成できる。exe・タイトルバー・インストーラー・オプションとバージョン情報の見出しで使う。ページ見出しと定型メニューの絵は原本のまま）（2026-10-24：snap clone でタイトルバー、ExtractAssociatedIcon で exe のアイコンを確認）
 - [x] T909 配色の設定（A21）：表示 > 配色（システムに従う／ライト／ダーク）。ini の ColorMode に保存し、起動時に `SetColorMode` へ渡す。言語ファイルにない文言は `AppResources.ExtraStrings`（JA）で訳す（2026-10-24：run color-light で、Light 指定の起動画面、メニュー、案内メッセージ、ini への保存を確認）

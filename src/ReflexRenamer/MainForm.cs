@@ -54,7 +54,7 @@ public sealed class MainForm : Form
         AutoScaleDimensions = new SizeF(96, 96);
         ClientSize = new Size(1084, 721);
         StartPosition = FormStartPosition.WindowsDefaultLocation;
-        Icon = Assets.Icon(64) ?? Icon; // オリジナル版のメインフレームの ID（IDR_MAINFRAME）は 64
+        Icon = Assets.AppIcon() ?? Icon;
         KeyPreview = true;
 
         // メニュー

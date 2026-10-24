@@ -10,6 +10,19 @@ public static class Assets
 {
     private static readonly Dictionary<int, Icon?> Icons = [];
 
+    private static Icon? _appIcon;
+
+    /// <summary>Reflex Renamer のアプリアイコン（Assets/Icons/app.ico。16〜256px）。オリジナル版の 64 ではない。</summary>
+    public static Icon? AppIcon(int size = 0)
+    {
+        if (_appIcon is null)
+        {
+            using var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Icons/app.ico");
+            _appIcon = stream is null ? null : new Icon(stream);
+        }
+        return _appIcon is null || size == 0 ? _appIcon : new Icon(_appIcon, size, size);
+    }
+
     public static Icon? Icon(int id, int size = 0)
     {
         if (!Icons.TryGetValue(id, out var icon))

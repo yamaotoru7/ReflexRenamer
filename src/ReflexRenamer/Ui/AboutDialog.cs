@@ -21,7 +21,7 @@ public sealed class AboutDialog : Form
         map.Get<Label>(1043).Text = res.T("http://hp.vector.co.jp/authors/VA014830/english/FlexRena/");
         if (map.TryGet(-1, out var icon) && icon is PictureBox box)
         {
-            box.Image = Assets.Icon(128, 32)?.ToBitmap();
+            box.Image = Assets.AppIcon(32)?.ToBitmap();
         }
         var ok = map.Get<Button>(1);
         ok.DialogResult = DialogResult.OK;

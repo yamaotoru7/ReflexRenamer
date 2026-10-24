@@ -13,8 +13,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>ReflexRenamer</AssemblyName>
     <AssemblyTitle>Reflex Renamer</AssemblyTitle>
-    <!-- exe のアイコンはオリジナル版のメインのアイコン（ID 64） -->
-    <ApplicationIcon>Assets\Icons\64.ico</ApplicationIcon>
+    <!-- exe のアイコン（Reflex Renamer 用に描いた A→B。原本の 64.ico ではない） -->
+    <ApplicationIcon>Assets\Icons\app.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <Product>Reflex Renamer</Product>
     <Copyright>Based on Flexible Renamer 8.4 by Naru</Copyright>

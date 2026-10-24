@@ -91,7 +91,7 @@ public sealed class OptionsDialog : Form
         AcceptButton = ok;
         CancelButton = cancel;
 
-        if (_general.TryGet(IdGeneralIcon, out var gi) && gi is PictureBox gBox) gBox.Image = Assets.Icon(64, 16)?.ToBitmap();
+        if (_general.TryGet(IdGeneralIcon, out var gi) && gi is PictureBox gBox) gBox.Image = Assets.AppIcon(16)?.ToBitmap();
         if (_rename.TryGet(IdRenameIcon, out var ri) && ri is PictureBox rBox) rBox.Image = Assets.Icon(Ui.Commands.PageRename, 16)?.ToBitmap();
 
         // 全般：フォルダのコンテキストメニュー、「送る」メニュー（ページごとに3つ）
@@ -132,7 +132,7 @@ public sealed class OptionsDialog : Form
         UpdateEnabled();
 
         _descriptions = [res.T("Modify the general option"), res.T("Modify the rename option")];
-        _icons = [Assets.Icon(64, 32)?.ToBitmap(), Assets.Icon(Ui.Commands.PageRename, 32)?.ToBitmap()];
+        _icons = [Assets.AppIcon(32)?.ToBitmap(), Assets.Icon(Ui.Commands.PageRename, 32)?.ToBitmap()];
         _tree.AfterSelect += (_, _) => ShowPage(_tree.SelectedNode?.Index ?? 0);
         _tree.SelectedNode = _tree.Nodes[0];
         ShowPage(0);

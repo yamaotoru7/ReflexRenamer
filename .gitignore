@@ -486,3 +486,6 @@ $RECYCLE.BIN/
 
 # 原本の配布物はローカルに別途配置する（docs/reference-setup.md）
 /FlexRenamer/
+
+# tools/make-app-icon.ps1 の確認用 PNG
+tools/app-*.png
