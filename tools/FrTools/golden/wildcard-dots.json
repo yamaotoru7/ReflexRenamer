@@ -1,0 +1,28 @@
+// ワイルドカードの最長／最短一致の規則（ドットとハイフンの扱い）
+{
+  "fixture": "dots",
+  "setup": [
+    { "do": "toggle", "target": "id:1025", "on": true }
+  ],
+  "cases": [
+    { "name": "star-dot-star", "method": "wildcard", "search": "*.*", "replace": "\\1|\\2" },
+    { "name": "star-dot-star-dot-star", "method": "wildcard", "search": "*.*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "star-dash-star", "method": "wildcard", "search": "*-*", "replace": "\\1|\\2" },
+    { "name": "star-dash-star-dot-star", "method": "wildcard", "search": "*-*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "star-dot-star-dash-star", "method": "wildcard", "search": "*.*-*", "replace": "\\1|\\2|\\3" },
+    { "name": "star-dot-q-star", "method": "wildcard", "search": "*.?*", "replace": "\\1|\\2|\\3" },
+    { "name": "q-star-dot-star", "method": "wildcard", "search": "?*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "a-star-dot-star", "method": "wildcard", "search": "a*.*", "replace": "\\1|\\2" },
+    { "name": "star-star-dot-star", "method": "wildcard", "search": "**.*", "replace": "\\1|\\2|\\3" },
+    { "name": "star-dot-z", "method": "wildcard", "search": "*.z", "replace": "\\1" },
+    { "name": "star-dot-y-star", "method": "wildcard", "search": "*.y*", "replace": "\\1|\\2" },
+    { "name": "star-q-dot-star", "method": "wildcard", "search": "*?.*", "replace": "\\1|\\2|\\3" },
+    { "name": "star-b-star", "method": "wildcard", "search": "*b*", "replace": "\\1|\\2" },
+    { "name": "star-a-star", "method": "wildcard", "search": "*a*", "replace": "\\1|\\2" },
+    { "name": "star-dot-star-dot-q", "method": "wildcard", "search": "*.*.??", "replace": "\\1|\\2|\\3" },
+    { "name": "dot-star", "method": "wildcard", "search": ".*", "replace": "\\1" },
+    { "name": "star-dot", "method": "wildcard", "search": "*.", "replace": "\\1" },
+    { "name": "star-star", "method": "wildcard", "search": "**", "replace": "\\1|\\2" },
+    { "name": "star-q", "method": "wildcard", "search": "*?*", "replace": "\\1|\\2|\\3" }
+  ]
+}

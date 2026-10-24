@@ -1,0 +1,26 @@
+// 送り先フォルダ（B10、T307）：移動を選んだときの実行ボタン、送り先の選択ダイアログ、最近送ったフォルダ（MENU 170）
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1037" },
+    { "do": "setText", "target": "id:1057", "text": "*.txt" },
+    { "do": "setText", "target": "id:1010", "text": "*" },
+    { "do": "setText", "target": "id:1019", "text": "\\0" },
+    { "do": "select", "target": "id:1146,type:ComboBox", "item": "別フォルダにコピー&リネーム" },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "target": "id:127", "name": "page-copy" },
+    { "do": "tree", "target": "id:127", "name": "page-copy" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "capture", "name": "after-click" },
+    { "do": "tree", "target": "window:Flexible Renamer", "name": "after-click" },
+    { "do": "key", "keys": ["ENTER"] },
+    { "do": "wait", "ms": 2000 },
+    { "do": "capture", "name": "confirm" },
+    { "do": "tree", "target": "window:Flexible Renamer", "name": "confirm" },
+    { "do": "key", "keys": ["ESCAPE"] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "capture", "name": "after-cancel" }
+  ]
+}

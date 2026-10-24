@@ -1,0 +1,10 @@
+// T203：幅を変えて終了したとき BarState が保存されるか（移植版だけ。終了後に ini を見る）
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "wait", "ms": 800 },
+    { "do": "drag", "target": "id:126", "at": [172, 300], "by": [90, 0] },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "name": "dragged" }
+  ]
+}

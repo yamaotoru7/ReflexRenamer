@@ -1,0 +1,23 @@
+// スクリプト機能（G01、E09、B05）：メニュー、置換サポート、評価結果、有効／無効時の説明文。外部エディタは手動確認。
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1038" },
+    { "do": "toggle", "target": "id:1026", "on": true },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "id:127", "name": "script-on" },
+    { "do": "popupItems", "target": "id:1047", "name": "script-menu" },
+    { "do": "popupItems", "target": "id:1046", "name": "replace-support-script" },
+    { "do": "setText", "target": "id:1010", "text": "(.*)\\.(.*)" },
+    { "do": "setText", "target": "id:1019", "text": "UCase(\"\\1\") & \".\\2\"" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "script-preview" },
+    // 編集は外部エディタを起動するため、メインウィンドウを操作するこのシナリオとは別に手動確認する。
+    { "do": "capture", "name": "script-preview" },
+    { "do": "toggle", "target": "id:1026", "on": false },
+    { "do": "tree", "target": "id:127", "name": "script-off" },
+    { "do": "toggle", "target": "id:1026", "on": true },
+    { "do": "tree", "target": "id:127", "name": "script-restored" }
+  ]
+}

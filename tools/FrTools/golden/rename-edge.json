@@ -1,0 +1,55 @@
+// ワイルドカードの一致規則、エスケープ、空マッチ、文字変換の端のケース
+{
+  "fixture": "basic",
+  "setup": [
+    { "do": "toggle", "target": "id:1025", "on": true }
+  ],
+  "cases": [
+    { "name": "wc-3dots", "method": "wildcard", "search": "*.*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "wc-o", "method": "wildcard", "search": "*o*", "replace": "\\1|\\2" },
+    { "name": "wc-o-ext", "method": "wildcard", "search": "*o*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "wc-zero", "method": "wildcard", "search": "*0*", "replace": "\\1|\\2" },
+    { "name": "wc-star-q", "method": "wildcard", "search": "*?", "replace": "\\1|\\2" },
+    { "name": "wc-q-star", "method": "wildcard", "search": "?*", "replace": "\\1|\\2" },
+    { "name": "wc-qq-ext", "method": "wildcard", "search": "??*.???", "replace": "\\1|\\2|\\3" },
+    { "name": "wc-trailing-dot", "method": "wildcard", "search": "*.", "replace": "\\1" },
+    { "name": "wc-dot-t", "method": "wildcard", "search": "*.t*", "replace": "\\1|\\2" },
+    { "name": "wc-bracket", "method": "wildcard", "search": "*[*", "replace": "\\1|\\2" },
+    { "name": "wc-upper-ext", "method": "wildcard", "search": "*.TXT", "replace": "\\1" },
+    { "name": "wc-dqc", "method": "wildcard", "search": "D?C*", "replace": "\\1|\\2" },
+    { "name": "wc-space", "method": "wildcard", "search": "* *", "replace": "\\1|\\2" },
+    { "name": "wc-dash-ext", "method": "wildcard", "search": "*-*.*", "replace": "\\1|\\2|\\3" },
+    { "name": "wc-empty", "method": "wildcard", "search": "", "replace": "x\\0" },
+    { "name": "rp-backslash", "method": "wildcard", "search": "*", "replace": "a\\\\b" },
+    { "name": "rp-escaped-q", "method": "wildcard", "search": "*", "replace": "\\?\\*x" },
+    { "name": "rp-unknown", "method": "wildcard", "search": "*", "replace": "\\z\\q\\n\\r\\g" },
+    { "name": "rp-percent", "method": "wildcard", "search": "*", "replace": "a%Yb%%c" },
+    { "name": "rp-star-random", "method": "wildcard", "search": "*", "replace": "**" },
+    { "name": "rp-mixed-q", "method": "wildcard", "search": "*", "replace": "??-?" },
+    { "name": "rp-group-big", "method": "wildcard", "search": "*.*", "replace": "\\9|\\12" },
+    { "name": "rp-replace-empty", "method": "wildcard", "search": "*", "replace": "" },
+    { "name": "rp-Q", "method": "wildcard", "search": "*", "replace": "\\Q??\\E??" },
+
+    { "name": "re-groups", "method": "regex", "search": "(D)(S)", "replace": "\\3|\\2|\\1" },
+    { "name": "re-start", "method": "regex", "search": "^", "replace": "pre_" },
+    { "name": "re-end", "method": "regex", "search": "$", "replace": "_suf" },
+    { "name": "re-empty-star", "method": "regex", "search": "x*", "replace": "-" },
+    { "name": "re-dot-double", "method": "regex", "search": "S", "replace": "\\0\\0" },
+    { "name": "re-invalid", "method": "regex", "search": "(", "replace": "x" },
+    { "name": "re-wordend", "method": "regex", "search": "\\w\\>", "replace": "!" },
+    { "name": "re-Z", "method": "regex", "search": "t\\Z", "replace": "T" },
+    { "name": "re-A", "method": "regex", "search": "\\As", "replace": "S" },
+    { "name": "re-hex", "method": "regex", "search": "\\x2e", "replace": "_" },
+    { "name": "re-fullmatch-numbered", "method": "regex", "search": ".+", "replace": "?" },
+    { "name": "re-tags-in-regex", "method": "regex", "search": "\\.", "replace": "_\\t_" },
+
+    { "name": "tr-short-dest", "method": "translation", "search": "abc", "replace": "xy" },
+    { "name": "tr-empty-dest", "method": "translation", "search": "a-c", "replace": "" },
+    { "name": "tr-single-dest", "method": "translation", "search": "a-z", "replace": "*" },
+    { "name": "tr-dot", "method": "translation", "search": ".", "replace": "_" },
+    { "name": "tr-hira-kata", "method": "translation", "search": "ぁ-ん", "replace": "ァ-ン" },
+    { "name": "tr-halfkana", "method": "translation", "search": "ｱ-ﾝ", "replace": "ア-ン" },
+    { "name": "tr-ext-upper", "method": "translation", "search": "t", "replace": "Ｔ" },
+    { "name": "tr-ext-mixed", "method": "translation", "search": "tx", "replace": "Tｘ" }
+  ]
+}

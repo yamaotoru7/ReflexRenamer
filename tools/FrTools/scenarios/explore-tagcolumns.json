@@ -1,0 +1,29 @@
+// 一覧の見出しの右クリックメニュー：リネームページとタグ・リネームページ（タグ列の表示 C12）
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextItems", "name": "header-rename" },
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextItems", "name": "header-tag" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 29] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextItems", "name": "header-tag-picture" },
+    { "do": "click", "target": "id:1169,type:CheckBox" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 29] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextItems", "name": "header-property" },
+    { "do": "tree", "target": "id:1000,type:List", "name": "list" }
+  ]
+}

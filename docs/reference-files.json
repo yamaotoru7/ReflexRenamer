@@ -1,0 +1,117 @@
+{
+  "product": "Flexible Renamer",
+  "version": "8.4",
+  "stringsVersion": "8.0.0",
+  "files": [
+    {
+      "path": "FlexRenamer/Flexible Renamer.#.xls",
+      "size": 379904,
+      "sha256": "a261d8ab0d565ebf0ebfbf31f55d4de666acfd366c4f3d770725bdd57027708c"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.DE.Strings.ini",
+      "size": 66690,
+      "sha256": "a35d8b14ef54684a8e338b740d55605ad10e3b1d0347c142807dfe6f4eb31cf6"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.EN.Strings.ini",
+      "size": 62462,
+      "sha256": "e50c827b0c02630878ee9dec13f4575a0d8466129c6467c45cda795b0f3d25bc"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.EN.chm",
+      "size": 31698,
+      "sha256": "afca0db68f28e84b5a2ae7cf5f42c791fb9bb2352577d355b5bf62de906aefe1"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.ES.Strings.ini",
+      "size": 67476,
+      "sha256": "9a0566a0137fac4a6f75a6016c4687d7ec8f046bd350bccc49cccf2377ba1cfc"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.FR.Strings.ini",
+      "size": 65916,
+      "sha256": "d881df968dcba0c6ac7870c75c76a9ee6f655b86bc4bd288876549c24da67f4a"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.IT.Strings.ini",
+      "size": 63856,
+      "sha256": "14eac6cd1afc5a932ae5ceb83558b10fb30e5da959422ca7af032444bf5d62e1"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.JA.Strings.ini",
+      "size": 52332,
+      "sha256": "c02496d8f94219319c0b67e96b5e182505e1b78529c8cf93593dd7c26c354c8d"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.JA.chm",
+      "size": 36162,
+      "sha256": "572ce30bde3b43de21a4ec67402f5af466562a3ba28073cf9e5bd6fcc33d3e71"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.PT-BR.Strings.ini",
+      "size": 66258,
+      "sha256": "c7edeb2f62f633d55311f3fc75a7af8f95c94ddd626a7510480fde1ec0cec153"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.ZH-CN.Strings.ini",
+      "size": 48224,
+      "sha256": "bd60f071c0c4297e0cf5de4b420f39e56e109d785fd75dc11bcab2898e2c8292"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.ZH-TW.Strings.ini",
+      "size": 48270,
+      "sha256": "082ff890fb3778859c19e3ee61ba956fd7f55cd8e5ffac35d97aae285c3bf847"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.exe",
+      "size": 3136000,
+      "sha256": "f874c8c6321e86362a1c1368cb55088f71bd395c55b09db3e2445cadbcf6698d"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.exe.manifest",
+      "size": 681,
+      "sha256": "257793d4ccbad654c2f3bb1cd2f01a8adebe658ceb245739d9326b0a7711fae6"
+    },
+    {
+      "path": "FlexRenamer/Flexible Renamer.ini",
+      "size": 9802,
+      "sha256": "820790893a21596f876480f40754c988887cfbae3051facaf14aa1ae10931161"
+    },
+    {
+      "path": "FlexRenamer/Preset.ini",
+      "size": 11882,
+      "sha256": "0d6aef30924e30309445468d901cdb3466cea29ed837ae293261707a7b8d7808"
+    },
+    {
+      "path": "FlexRenamer/Script.Preset.js",
+      "size": 2,
+      "sha256": "b3d510ef04275ca8e698e5b3cbb0ece3949ef9252f0cdc839e9ee347409a2209"
+    },
+    {
+      "path": "FlexRenamer/Script.Preset.vbs",
+      "size": 26772,
+      "sha256": "b8c9c65ccdb8a112dc23cbd52657a95156ee7bb80832a48084fd066712c7753f"
+    },
+    {
+      "path": "FlexRenamer/StrFunc/StrFunc.cmd",
+      "size": 20,
+      "sha256": "6dfff3fcf64c10da807b8327ebb9d9131775e17c885060f758e84682d1216341"
+    },
+    {
+      "path": "FlexRenamer/StrFunc/StrFunc.dll",
+      "size": 229376,
+      "sha256": "dcd72c81b5b3da70be63be02e1a607539cb61e88055c7cc2cb90ba9a2153cfa8"
+    },
+    {
+      "path": "FlexRenamer/StrFunc/StrFunc.vbs",
+      "size": 1497,
+      "sha256": "04a9ef7d63add742febcca612a64360e811aa40aae3ee3b79e981b5f8f550544"
+    },
+    {
+      "path": "FlexRenamer/TagDef.ini",
+      "size": 6802,
+      "sha256": "92ea907b41fcc1cf00164d1a11aeeae313bccddcbb0c30b247037efa38e317a4"
+    }
+  ]
+}

@@ -1,0 +1,2714 @@
+{
+  "source": "tools/FrTools/golden/rename-basic.json から `FrTools golden rename-basic` で生成。手で編集しない。",
+  "fixture": [
+    {
+      "path": "DSC0001.JPG",
+      "time": "2003-01-15 10:20:30",
+      "size": 1024
+    },
+    {
+      "path": "DSC0002.jpg",
+      "time": "2003-01-15 14:05:06",
+      "size": 2048
+    },
+    {
+      "path": "DSC0003.jpeg",
+      "time": "2003-01-16 09:00:00",
+      "size": 3000
+    },
+    {
+      "path": "photo (1).jpg",
+      "time": "2003-01-17 23:59:59",
+      "size": 100
+    },
+    {
+      "path": "photo [2].jpg",
+      "time": "2003-01-17 00:00:01",
+      "size": 100
+    },
+    {
+      "path": "Copy of report.txt",
+      "time": "2010-05-01 12:00:00",
+      "size": 10
+    },
+    {
+      "path": "report - Copy (2).txt",
+      "time": "2010-05-02 12:00:00",
+      "size": 10
+    },
+    {
+      "path": "hello world.TXT",
+      "time": "2011-03-06 08:30:00",
+      "size": 5
+    },
+    {
+      "path": "a-b.c-d.txt",
+      "time": "2011-03-06 08:30:00",
+      "size": 5
+    },
+    {
+      "path": "README",
+      "time": "2009-12-31 23:59:59",
+      "size": 1
+    },
+    {
+      "path": "テスト ファイル.txt",
+      "time": "2008-03-09 01:02:03",
+      "size": 7
+    },
+    {
+      "path": "ﾃｽﾄｶﾅ.txt",
+      "time": "2008-03-09 01:02:04",
+      "size": 7
+    },
+    {
+      "path": "ＡＢＣ１２３.txt",
+      "time": "2008-03-09 01:02:05",
+      "size": 7
+    },
+    {
+      "path": "song10.mp3",
+      "time": "2007-06-03 06:09:02",
+      "size": 0
+    },
+    {
+      "path": "song2.mp3",
+      "time": "2007-06-03 06:09:03",
+      "size": 0
+    },
+    {
+      "path": "sub1/",
+      "time": "2005-05-05 05:05:05",
+      "size": 0
+    },
+    {
+      "path": "sub1/inner.txt",
+      "time": "2005-05-05 05:05:06",
+      "size": 3
+    },
+    {
+      "path": "サブフォルダ/",
+      "time": "2006-06-06 06:06:06",
+      "size": 0
+    }
+  ],
+  "cases": [
+    {
+      "name": "wc-dot",
+      "method": "wildcard",
+      "search": "*.*",
+      "replace": "\\1_x.\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b_x.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report_x.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001_x.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002_x.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003_x.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world_x.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1)_x.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2]_x.jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2)_x.txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10_x.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2_x.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル_x.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３_x.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ_x.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-star",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\1]",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "[a-b.c-d.txt]"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "[Copy of report.txt]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "[DSC0001.JPG]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "[DSC0002.jpg]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "[DSC0003.jpeg]"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "[hello world.TXT]"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "[photo (1).jpg]"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "[photo [2].jpg]"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "[README]"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "[report - Copy (2).txt]"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "[song10.mp3]"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "[song2.mp3]"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "[テスト ファイル.txt]"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "[ＡＢＣ１２３.txt]"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "[ﾃｽﾄｶﾅ.txt]"
+        }
+      ]
+    },
+    {
+      "name": "wc-prefix",
+      "method": "wildcard",
+      "search": "DSC*",
+      "replace": "IMG\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "IMG0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "IMG0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "IMG0003.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "wc-contains",
+      "method": "wildcard",
+      "search": "*DSC*",
+      "replace": "\\1IMG\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "IMG0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "IMG0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "IMG0003.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "wc-ext-case",
+      "method": "wildcard",
+      "search": "*.jpg",
+      "replace": "\\1.jpeg",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpeg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpeg"
+        }
+      ]
+    },
+    {
+      "name": "wc-question",
+      "method": "wildcard",
+      "search": "s???*",
+      "replace": "<\\1|\\2|\\3|\\4>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "<ong|10.mp3|3|4>"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "<ong|2.mp3|3|4>"
+        }
+      ]
+    },
+    {
+      "name": "wc-swap",
+      "method": "wildcard",
+      "search": "*-*",
+      "replace": "\\2-\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "b.c-d.txt-a"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": " Copy (2).txt-report "
+        }
+      ]
+    },
+    {
+      "name": "wc-number",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "???_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "000_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "001_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "002_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "003_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "004_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "005_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "006_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "007_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "008_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "009_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "010_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "011_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "012_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "013_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "014_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-number1",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "?_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "0_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "1_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "2_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "3_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "4_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "5_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "6_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "7_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "8_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "9_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "10_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "11_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "12_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "13_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "14_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-file-tags",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\0|\\t|\\e|\\f|\\F",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt|a-b.c-d|.txt|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt|Copy of report|.txt|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG|DSC0001|.JPG|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg|DSC0002|.jpg|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg|DSC0003|.jpeg|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT|hello world|.TXT|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg|photo (1)|.jpg|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg|photo [2]|.jpg|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README|README||basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt|report - Copy (2)|.txt|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3|song10|.mp3|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3|song2|.mp3|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt|テスト ファイル|.txt|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt|ＡＢＣ１２３|.txt|basic|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt|ﾃｽﾄｶﾅ|.txt|basic|fixtures"
+        }
+      ]
+    },
+    {
+      "name": "wc-size",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\;|\\:",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "5|5"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "10|10"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "1,024|1024"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "2,048|2048"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "3,000|3000"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "5|5"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "100|100"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "100|100"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "1|1"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "10|10"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "0|0"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "0|0"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "7|7"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "7|7"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "7|7"
+        }
+      ]
+    },
+    {
+      "name": "wc-date",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\Y\\m\\d_\\H\\M\\S",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "20110306_083000"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "20100501_120000"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "20030115_102030"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "20030115_140506"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "20030116_090000"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "20110306_083000"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "20030117_235959"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "20030117_000001"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "20091231_235959"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "20100502_120000"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "20070603_060902"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "20070603_060903"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "20080309_010203"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "20080309_010205"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "20080309_010204"
+        }
+      ]
+    },
+    {
+      "name": "wc-date2",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\y-\\p\\I-\\a-\\A-\\b-\\B",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "11-午前08-日-日曜日-3-3月"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "10-午後12-土-土曜日-5-5月"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "03-午前10-水-水曜日-1-1月"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "03-午後02-水-水曜日-1-1月"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "03-午前09-木-木曜日-1-1月"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "11-午前08-日-日曜日-3-3月"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "03-午後11-金-金曜日-1-1月"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "03-午前12-金-金曜日-1-1月"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "09-午後11-木-木曜日-12-12月"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "10-午後12-日-日曜日-5-5月"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "07-午前06-日-日曜日-6-6月"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "07-午前06-日-日曜日-6-6月"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "08-午前01-日-日曜日-3-3月"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "08-午前01-日-日曜日-3-3月"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "08-午前01-日-日曜日-3-3月"
+        }
+      ]
+    },
+    {
+      "name": "wc-date-nozero",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\#m-\\#d-\\#H",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "3-6-8"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "5-1-12"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "1-15-10"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "1-15-14"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "1-16-9"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "3-6-8"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "1-17-23"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "1-17-0"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "12-31-23"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "5-2-12"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "6-3-6"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "6-3-6"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "3-9-1"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "3-9-1"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "3-9-1"
+        }
+      ]
+    },
+    {
+      "name": "wc-date-strftime",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\j|\\w|\\U|\\x",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "065|0||2011/03/06 (日)"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "121|6||2010/05/01 (土)"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "015|3||2003/01/15 (水)"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "015|3||2003/01/15 (水)"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "016|4||2003/01/16 (木)"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "065|0||2011/03/06 (日)"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "017|5||2003/01/17 (金)"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "017|5||2003/01/17 (金)"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "365|4||2009/12/31 (木)"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "122|0||2010/05/02 (日)"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "154|0||2007/06/03 (日)"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "154|0||2007/06/03 (日)"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "069|0||2008/03/09 (日)"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "069|0||2008/03/09 (日)"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "069|0||2008/03/09 (日)"
+        }
+      ]
+    },
+    {
+      "name": "wc-case",
+      "method": "wildcard",
+      "search": "*.*",
+      "replace": "\\U\\1\\E.\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "COPY OF REPORT.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "HELLO WORLD.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "PHOTO (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "PHOTO [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "REPORT - COPY (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "SONG10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "SONG2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-case2",
+      "method": "wildcard",
+      "search": "*.*",
+      "replace": "\\u\\1.\\L\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "Hello world.txt"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "Photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "Photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "Report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "Song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "Song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-case3",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\l\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "dSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "dSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "dSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "rEADME"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ａＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "wc-path",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "../\\Y/\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "../2011/a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "../2010/Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "../2003/DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "../2003/DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "../2003/DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "../2011/hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "../2003/photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "../2003/photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "../2009/README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "../2010/report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "../2007/song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "../2007/song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "../2008/テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "../2008/ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "../2008/ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-swap",
+      "method": "regex",
+      "search": "(.*)\\.(.*)",
+      "replace": "\\2.\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "txt.a-b.c-d"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "txt.Copy of report"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "JPG.DSC0001"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "jpg.DSC0002"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "jpeg.DSC0003"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "TXT.hello world"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "jpg.photo (1)"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "jpg.photo [2]"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "txt.report - Copy (2)"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "mp3.song10"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "mp3.song2"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "txt.テスト ファイル"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "txt.ＡＢＣ１２３"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "txt.ﾃｽﾄｶﾅ"
+        }
+      ]
+    },
+    {
+      "name": "re-partial",
+      "method": "regex",
+      "search": "DSC",
+      "replace": "IMG",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "IMG0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "IMG0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "IMG0003.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "re-global",
+      "method": "regex",
+      "search": "o",
+      "replace": "0",
+      "results": [
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "C0py 0f rep0rt.txt"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hell0 w0rld.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "ph0t0 (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "ph0t0 [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "rep0rt - C0py (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "s0ng10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "s0ng2.mp3"
+        }
+      ]
+    },
+    {
+      "name": "re-anchor",
+      "method": "regex",
+      "search": "^(.)",
+      "replace": "\\u\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "Hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "Photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "Photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "Report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "Song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "Song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-digits",
+      "method": "regex",
+      "search": "\\d+",
+      "replace": "<\\0>",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC<0001>.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC<0002>.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC<0003>.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (<1>).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [<2>].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (<2>).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song<10>.mp<3>"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song<2>.mp<3>"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ<１２３>.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-ext-lower",
+      "method": "regex",
+      "search": "(\\.[^.]*)$",
+      "replace": "\\L\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.txt"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-wordstart",
+      "method": "regex",
+      "search": "\\<\\w",
+      "replace": "X",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "X-X.X-X.Xxt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Xopy Xf Xeport.Xxt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "XSC0001.XPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "XSC0002.Xpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "XSC0003.Xpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "Xello Xorld.XXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "Xhoto (X).Xpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "Xhoto [X].Xpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "XEADME"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "Xeport - Xopy (X).Xxt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "Xong10.Xp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "Xong2.Xp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "Xスト Xァイル.Xxt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "XＢＣ１２３.Xxt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "Xｽﾄｶﾅ.Xxt"
+        }
+      ]
+    },
+    {
+      "name": "re-lookbehind",
+      "method": "regex",
+      "search": "(?<=o)\\w",
+      "replace": "_",
+      "results": [
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Co_y o_ repo_t.txt"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello wo_ld.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "pho_o (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "pho_o [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "repo_t - Co_y (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "so_g10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "so_g2.mp3"
+        }
+      ]
+    },
+    {
+      "name": "re-number",
+      "method": "regex",
+      "search": "(.*?)(\\.[^.]*)?$",
+      "replace": "\\1_??\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d_00.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report_01.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001_02.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002_03.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003_04.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world_05.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1)_06.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2]_07.jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README_08"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2)_09.txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10_10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2_11.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル_12.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３_13.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ_14.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-upper",
+      "method": "regex",
+      "search": "[a-z]+",
+      "replace": "\\U\\0\\E",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.C-D.TXT"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "COPY OF REPORT.TXT"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.JPEG"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "HELLO WORLD.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "PHOTO (1).JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "PHOTO [2].JPG"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "REPORT - COPY (2).TXT"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "SONG10.MP3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "SONG2.MP3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.TXT"
+        }
+      ]
+    },
+    {
+      "name": "re-case",
+      "method": "regex",
+      "search": "dsc",
+      "replace": "img",
+      "results": [
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "img0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "img0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "img0003.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "re-capitalize",
+      "method": "regex",
+      "search": "((?:[^ \\-+~=#$%&_,.(){}\\[\\]=!]|\\.)+)",
+      "replace": "\\L\\u\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.c-D.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy Of Report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "Dsc0001.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "Dsc0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "Dsc0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "Hello World.txt"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "Photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "Photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "Readme"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "Report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "Song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "Song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "Ａｂｃ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "re-bracket",
+      "method": "regex",
+      "search": "\\s*[(（【\\[].*?[\\]】）)]\\s*",
+      "replace": "",
+      "results": [
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo.jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy.txt"
+        }
+      ]
+    },
+    {
+      "name": "tr-upper",
+      "method": "translation",
+      "search": "a-z",
+      "replace": "A-Z",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.C-D.TXT"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "COPY OF REPORT.TXT"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.JPEG"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "HELLO WORLD.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "PHOTO (1).JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "PHOTO [2].JPG"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "REPORT - COPY (2).TXT"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "SONG10.MP3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "SONG2.MP3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.TXT"
+        }
+      ]
+    },
+    {
+      "name": "tr-swapcase",
+      "method": "translation",
+      "search": "a-zA-Z",
+      "replace": "A-Za-z",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.C-D.TXT"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "cOPY OF REPORT.TXT"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "dsc0001.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "dsc0002.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "dsc0003.JPEG"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "HELLO WORLD.txt"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "PHOTO (1).JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "PHOTO [2].JPG"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "readme"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "REPORT - cOPY (2).TXT"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "SONG10.MP3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "SONG2.MP3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.TXT"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.TXT"
+        }
+      ]
+    },
+    {
+      "name": "tr-full",
+      "method": "translation",
+      "search": "0-9a-zA-Z",
+      "replace": "０-９ａ-ｚＡ-Ｚ",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "ａ-ｂ.ｃ-ｄ.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Ｃｏｐｙ ｏｆ ｒｅｐｏｒｔ.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "ＤＳＣ０００１.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "ＤＳＣ０００２.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "ＤＳＣ０００３.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "ｈｅｌｌｏ ｗｏｒｌｄ.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "ｐｈｏｔｏ (１).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "ｐｈｏｔｏ [２].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "ＲＥＡＤＭＥ"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "ｒｅｐｏｒｔ - Ｃｏｐｙ (２).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "ｓｏｎｇ１０.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "ｓｏｎｇ２.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "tr-half",
+      "method": "translation",
+      "search": "０-９ａ-ｚＡ-Ｚ",
+      "replace": "0-9a-zA-Z",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ABC123.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "tr-kana",
+      "method": "translation",
+      "search": "ァ-ン",
+      "replace": "ぁ-ん",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "てすと ふぁいる.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "tr-kanji",
+      "method": "translation",
+      "search": "0-9",
+      "replace": "〇一二三四五六七八九",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC〇〇〇一.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC〇〇〇二.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC〇〇〇三.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (一).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [二].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (二).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song一〇.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song二.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "tr-roman",
+      "method": "translation",
+      "search": "0-9",
+      "replace": "０Ⅰ-Ⅹ",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC０００Ⅰ.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC０００Ⅱ.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC０００Ⅲ.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (Ⅰ).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [Ⅱ].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (Ⅱ).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "songⅠ０.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "songⅡ.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    }
+  ]
+}

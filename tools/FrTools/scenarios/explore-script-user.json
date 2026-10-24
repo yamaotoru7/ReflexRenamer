@@ -1,0 +1,23 @@
+{
+  "fixture": "basic",
+  "scripts": {
+    "Script.vbs": "Function UserName(value)\r\nUserName = UCase(value) & \"_user\"\r\nEnd Function\r\n",
+    "Script.js": "function UserName(value) { return value.toUpperCase() + '_user'; }\r\n"
+  },
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1038" },
+    { "do": "toggle", "target": "id:1026", "on": true },
+    { "do": "setText", "target": "id:1010", "text": "(.*)\\.(.*)" },
+    { "do": "popupItems", "target": "id:1047", "name": "vb-user-functions" },
+    { "do": "popup", "target": "id:1047", "path": ["UserName"] },
+    { "do": "tree", "target": "id:1019", "name": "insert-user" },
+    { "do": "setText", "target": "id:1019", "text": "UserName(\"\\1\") & \".\\2\"" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "vb-user-preview" },
+    { "do": "popup", "target": "id:1047", "native": true, "path": ["スクリプト言語(S)", "JScript"] },
+    { "do": "popupItems", "target": "id:1047", "name": "js-user-functions" },
+    { "do": "setText", "target": "id:1019", "text": "UserName(\"\\1\") + \".\\2\"" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "js-user-preview" },
+    { "do": "capture", "name": "js-user" }
+  ]
+}

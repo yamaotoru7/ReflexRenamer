@@ -1,0 +1,741 @@
+{
+  "source": "tools/FrTools/golden/typical-script.json から `FrTools golden typical-script` で生成。手で編集しない。",
+  "fixtureName": "typical",
+  "fixture": [
+    {
+      "path": "コピー ～ 報告.txt",
+      "time": "2012-01-01 10:00:00",
+      "created": "2012-01-01 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "コピー (2) ～ 報告.txt",
+      "time": "2012-01-02 10:00:00",
+      "created": "2012-01-02 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "報告 - コピー.txt",
+      "time": "2012-01-03 10:00:00",
+      "created": "2012-01-03 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "報告 - コピー (3).txt",
+      "time": "2012-01-04 10:00:00",
+      "created": "2012-01-04 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "メモ へのショートカット.txt",
+      "time": "2012-01-05 10:00:00",
+      "created": "2012-01-05 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "メモ - ショートカット.txt",
+      "time": "2012-01-06 10:00:00",
+      "created": "2012-01-06 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "photo (1).jpg",
+      "time": "2012-01-07 10:00:00",
+      "created": "2012-01-07 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "photo [2].jpg",
+      "time": "2012-01-08 10:00:00",
+      "created": "2012-01-08 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "写真【3】.jpg",
+      "time": "2012-01-09 10:00:00",
+      "created": "2012-01-09 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "写真（4）.jpg",
+      "time": "2012-01-10 10:00:00",
+      "created": "2012-01-10 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "a(1)b[2].txt",
+      "time": "2012-01-11 10:00:00",
+      "created": "2012-01-11 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "averylongfilename.html",
+      "time": "2012-01-12 10:00:00",
+      "created": "2012-01-12 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "noext_long_name",
+      "time": "2012-01-13 10:00:00",
+      "created": "2012-01-13 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "hello world.TXT",
+      "time": "2012-01-14 10:00:00",
+      "created": "2012-01-14 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "can't stop.mp3",
+      "time": "2012-01-15 10:00:00",
+      "created": "2012-01-15 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "Café Ñoño.txt",
+      "time": "2012-01-16 10:00:00",
+      "created": "2012-01-16 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "ひらがな.txt",
+      "time": "2012-01-17 10:00:00",
+      "created": "2012-01-17 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "カタカナ.txt",
+      "time": "2012-01-18 10:00:00",
+      "created": "2012-01-18 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "ﾊﾝｶｸｶﾅ.txt",
+      "time": "2012-01-19 10:00:00",
+      "created": "2012-01-19 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "track1-disc02.mp3",
+      "time": "2012-01-20 10:00:00",
+      "created": "2012-01-20 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "IMG_0042.JPG",
+      "time": "2012-01-21 10:00:00",
+      "created": "2012-01-21 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "a.b.c.txt",
+      "time": "2012-01-22 10:00:00",
+      "created": "2012-01-22 10:00:00",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "README",
+      "time": "2012-01-23 10:00:00",
+      "created": "2012-01-23 10:00:00",
+      "size": 1,
+      "content": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "s33-to-fullkana",
+      "typical": {
+        "index": 33,
+        "label": "半角ｶﾅ ⇒ 全角カナ"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b.c.txt",
+          "newName": "a.b.c.txt"
+        },
+        {
+          "folder": "",
+          "name": "averylongfilename.html",
+          "newName": "averylongfilename.html"
+        },
+        {
+          "folder": "",
+          "name": "Café Ñoño.txt",
+          "newName": "Café Ñoño.txt"
+        },
+        {
+          "folder": "",
+          "name": "can't stop.mp3",
+          "newName": "can't stop.mp3"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_0042.JPG"
+        },
+        {
+          "folder": "",
+          "name": "noext_long_name",
+          "newName": "noext_long_name"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc02.mp3"
+        },
+        {
+          "folder": "",
+          "name": "ひらがな.txt",
+          "newName": "ひらがな.txt"
+        },
+        {
+          "folder": "",
+          "name": "カタカナ.txt",
+          "newName": "カタカナ.txt"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "コピー (2) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "コピー ～ 報告.txt",
+          "newName": "コピー ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "メモ - ショートカット.txt",
+          "newName": "メモ - ショートカット.txt"
+        },
+        {
+          "folder": "",
+          "name": "メモ へのショートカット.txt",
+          "newName": "メモ へのショートカット.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【3】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（4）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - コピー (3).txt"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー.txt",
+          "newName": "報告 - コピー.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾊﾝｶｸｶﾅ.txt",
+          "newName": "ハンカクカナ.txt"
+        }
+      ]
+    },
+    {
+      "name": "s34-to-halfkana",
+      "typical": {
+        "index": 34,
+        "label": "全角カナ ⇒ 半角ｶﾅ"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b.c.txt",
+          "newName": "a.b.c.txt"
+        },
+        {
+          "folder": "",
+          "name": "averylongfilename.html",
+          "newName": "averylongfilename.html"
+        },
+        {
+          "folder": "",
+          "name": "Café Ñoño.txt",
+          "newName": "Café Ñoño.txt"
+        },
+        {
+          "folder": "",
+          "name": "can't stop.mp3",
+          "newName": "can't stop.mp3"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_0042.JPG"
+        },
+        {
+          "folder": "",
+          "name": "noext_long_name",
+          "newName": "noext_long_name"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc02.mp3"
+        },
+        {
+          "folder": "",
+          "name": "ひらがな.txt",
+          "newName": "ひらがな.txt"
+        },
+        {
+          "folder": "",
+          "name": "カタカナ.txt",
+          "newName": "ｶﾀｶﾅ.txt"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "ｺﾋﾟｰ (2) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "コピー ～ 報告.txt",
+          "newName": "ｺﾋﾟｰ ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "メモ - ショートカット.txt",
+          "newName": "ﾒﾓ - ｼｮｰﾄｶｯﾄ.txt"
+        },
+        {
+          "folder": "",
+          "name": "メモ へのショートカット.txt",
+          "newName": "ﾒﾓ へのｼｮｰﾄｶｯﾄ.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【3】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（4）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - ｺﾋﾟｰ (3).txt"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー.txt",
+          "newName": "報告 - ｺﾋﾟｰ.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾊﾝｶｸｶﾅ.txt",
+          "newName": "ﾊﾝｶｸｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "s38-digit-start-0",
+      "typical": {
+        "index": 38,
+        "label": "先頭からn番目の数値の桁合わせ"
+      },
+      "params": {
+        "position": "0",
+        "digits": "4"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(0001)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_0042.JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (0001).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [0002].jpg"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track0001-disc02.mp3"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "コピー (0002) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【0003】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（0004）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - コピー (0003).txt"
+        }
+      ]
+    },
+    {
+      "name": "s38-digit-start-1",
+      "typical": {
+        "index": 38,
+        "label": "先頭からn番目の数値の桁合わせ"
+      },
+      "params": {
+        "position": "1",
+        "digits": "3"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[002].txt"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc002.mp3"
+        }
+      ]
+    },
+    {
+      "name": "s39-digit-end-0",
+      "typical": {
+        "index": 39,
+        "label": "末尾からn番目の数値の桁合わせ"
+      },
+      "params": {
+        "position": "0",
+        "digits": "3"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[002].txt"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_042.JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (001).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [002].jpg"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc002.mp3"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "コピー (002) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【003】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（004）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - コピー (003).txt"
+        }
+      ]
+    },
+    {
+      "name": "s39-digit-end-1",
+      "typical": {
+        "index": 39,
+        "label": "末尾からn番目の数値の桁合わせ"
+      },
+      "params": {
+        "position": "1",
+        "digits": "1"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc02.mp3"
+        }
+      ]
+    },
+    {
+      "name": "s40-inc-start-0",
+      "typical": {
+        "index": 40,
+        "label": "先頭からn番目の数値を増減"
+      },
+      "params": {
+        "position": "0",
+        "value": "5"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(6)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_0047.JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (6).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [7].jpg"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track6-disc02.mp3"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "コピー (7) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【8】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（9）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - コピー (8).txt"
+        }
+      ]
+    },
+    {
+      "name": "s40-inc-start-1",
+      "typical": {
+        "index": 40,
+        "label": "先頭からn番目の数値を増減"
+      },
+      "params": {
+        "position": "1",
+        "value": "-1"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[1].txt"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc01.mp3"
+        }
+      ]
+    },
+    {
+      "name": "s41-inc-end-0",
+      "typical": {
+        "index": 41,
+        "label": "末尾からn番目の数値を増減"
+      },
+      "params": {
+        "position": "0",
+        "value": "10"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(1)b[12].txt"
+        },
+        {
+          "folder": "",
+          "name": "IMG_0042.JPG",
+          "newName": "IMG_0052.JPG"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (11).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [12].jpg"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track1-disc12.mp3"
+        },
+        {
+          "folder": "",
+          "name": "コピー (2) ～ 報告.txt",
+          "newName": "コピー (12) ～ 報告.txt"
+        },
+        {
+          "folder": "",
+          "name": "写真【3】.jpg",
+          "newName": "写真【13】.jpg"
+        },
+        {
+          "folder": "",
+          "name": "写真（4）.jpg",
+          "newName": "写真（14）.jpg"
+        },
+        {
+          "folder": "",
+          "name": "報告 - コピー (3).txt",
+          "newName": "報告 - コピー (13).txt"
+        }
+      ]
+    },
+    {
+      "name": "s41-inc-end-1",
+      "typical": {
+        "index": 41,
+        "label": "末尾からn番目の数値を増減"
+      },
+      "params": {
+        "position": "1",
+        "value": "-2"
+      },
+      "results": [
+        {
+          "folder": "",
+          "name": "a(1)b[2].txt",
+          "newName": "a(-1)b[2].txt"
+        },
+        {
+          "folder": "",
+          "name": "track1-disc02.mp3",
+          "newName": "track-1-disc02.mp3"
+        }
+      ]
+    }
+  ]
+}

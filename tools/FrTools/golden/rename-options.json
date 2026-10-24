@@ -1,0 +1,67 @@
+// 高度なリネームのオプション。ステップで変えた設定は次のケースにも残るので、使い終わったら戻す
+{
+  "fixture": "tree",
+  "setup": [
+    { "do": "toggle", "target": "id:1025", "on": true }
+  ],
+  "cases": [
+    { "name": "default", "method": "wildcard", "search": "*", "replace": "[\\0]" },
+
+    // 正規表現オプション（正規表現モードでだけボタンが有効）
+    { "name": "re-default-case", "method": "regex", "search": "c", "replace": "#" },
+    { "name": "re-case-sensitive", "options": {"caseSensitive": true}, "method": "regex", "search": "c", "replace": "#",
+      "steps": [ { "do": "click", "target": "id:1038" }, { "do": "popup", "target": "id:1051", "path": ["大文字と小文字を区別する検索"] } ] },
+    { "name": "re-complete-only", "options": {"completeMatchOnly": true}, "method": "regex", "search": "[a-z]\\.txt", "replace": "!",
+      "steps": [ { "do": "popup", "target": "id:1051", "path": ["大文字と小文字を区別する検索"] },
+                 { "do": "popup", "target": "id:1051", "path": ["完全一致のみ表示"] } ] },
+    { "name": "re-complete-only-partial", "options": {"completeMatchOnly": true}, "method": "regex", "search": "txt", "replace": "!" },
+    { "name": "re-options-reset", "method": "regex", "search": "c", "replace": "#",
+      "steps": [ { "do": "popup", "target": "id:1051", "path": ["完全一致のみ表示"] } ] },
+
+    // 連番の開始とステップ
+    { "name": "number-start-step", "options": {"numberStart": 5, "numberStep": 3}, "method": "wildcard", "search": "*", "replace": "???_\\0",
+      "steps": [ { "do": "setText", "target": "id:1065", "text": "5" }, { "do": "setText", "target": "id:1067", "text": "3" } ] },
+    { "name": "number-hex", "options": {"numberStart": 9, "numberType": "hex"}, "method": "wildcard", "search": "*", "replace": "??_\\0",
+      "steps": [ { "do": "setText", "target": "id:1065", "text": "9" }, { "do": "setText", "target": "id:1067", "text": "1" },
+                 { "do": "popup", "target": "id:1054", "path": ["16 進数"] } ] },
+    { "name": "number-alpha", "options": {"numberStart": 24, "numberType": "alpha"}, "method": "wildcard", "search": "*", "replace": "???_\\0",
+      "steps": [ { "do": "setText", "target": "id:1065", "text": "24" },
+                 { "do": "popup", "target": "id:1054", "path": ["アルファベット順"] } ] },
+    { "name": "number-alpha-1digit", "options": {"numberStart": 24, "numberType": "alpha"}, "method": "wildcard", "search": "*", "replace": "?_\\0" },
+    { "name": "number-reset", "method": "wildcard", "search": "*", "replace": "?_\\0",
+      "steps": [ { "do": "setText", "target": "id:1065", "text": "0" },
+                 { "do": "popup", "target": "id:1054", "path": ["10 進数"] } ] },
+
+    // タイムスタンプに作成日時を使う
+    { "name": "timestamp-modified", "method": "wildcard", "search": "*", "replace": "\\Y\\m\\d\\H\\M\\S" },
+    { "name": "timestamp-created", "options": {"useCreationTime": true}, "method": "wildcard", "search": "*", "replace": "\\Y\\m\\d\\H\\M\\S",
+      "steps": [ { "do": "popup", "target": "id:1049", "path": ["タイムスタンプ(T)", "作成日時をタイムスタンプとして使う(C)"] } ] },
+    { "name": "timestamp-back", "method": "wildcard", "search": "*", "replace": "\\Y\\m\\d\\H\\M\\S",
+      "steps": [ { "do": "popup", "target": "id:1049", "path": ["タイムスタンプ(T)", "更新日時をタイムスタンプとして使う(U)"] } ] },
+
+    // フィルタ
+    { "name": "filter-multi", "options": {"filter": "*.jpg;*.TXT"}, "method": "wildcard", "search": "*", "replace": "[\\0]",
+      "steps": [ { "do": "setText", "target": "id:1057", "text": "*.jpg;*.TXT" }, { "do": "wait", "ms": 1000 } ] },
+    { "name": "filter-reset", "method": "wildcard", "search": "*", "replace": "[\\0]",
+      "steps": [ { "do": "setText", "target": "id:1057", "text": "*" }, { "do": "wait", "ms": 1000 } ] },
+
+    // フォルダも対象
+    { "name": "target-folders", "options": {"folders": true}, "method": "wildcard", "search": "*", "replace": "[\\0|\\t|\\e]",
+      "steps": [ { "do": "toggle", "target": "id:1034", "on": true }, { "do": "wait", "ms": 1000 } ] },
+    { "name": "target-folders-only", "options": {"files": false, "folders": true}, "method": "wildcard", "search": "*", "replace": "[\\0]",
+      "steps": [ { "do": "toggle", "target": "id:1033", "on": false }, { "do": "wait", "ms": 1000 } ] },
+
+    // サブフォルダ以下も対象（深さ 0 は無制限か、を確認する）
+    { "name": "recursive-folders-only", "options": {"files": false, "folders": true, "recursive": true}, "method": "wildcard", "search": "*", "replace": "\\f_\\0",
+      "steps": [ { "do": "toggle", "target": "id:1024", "on": true }, { "do": "wait", "ms": 1500 } ] },
+    { "name": "recursive-both", "options": {"folders": true, "recursive": true}, "method": "wildcard", "search": "*", "replace": "??_\\f_\\0",
+      "steps": [ { "do": "toggle", "target": "id:1033", "on": true }, { "do": "wait", "ms": 1500 } ] },
+    { "name": "recursive-files", "options": {"recursive": true}, "method": "wildcard", "search": "*", "replace": "??_\\f_\\0",
+      "steps": [ { "do": "toggle", "target": "id:1034", "on": false }, { "do": "wait", "ms": 1500 } ] },
+    { "name": "recursive-depth1", "options": {"recursive": true, "depth": 1}, "method": "wildcard", "search": "*", "replace": "??_\\0",
+      "steps": [ { "do": "setText", "target": "id:1052", "text": "1" }, { "do": "wait", "ms": 1500 } ] },
+    { "name": "recursive-reset-by-folder", "options": {"recursive": true, "resetByFolder": true}, "method": "wildcard", "search": "*", "replace": "??_\\0",
+      "steps": [ { "do": "setText", "target": "id:1052", "text": "0" }, { "do": "toggle", "target": "id:1173", "on": true }, { "do": "wait", "ms": 1500 } ] },
+    { "name": "recursive-path-tags", "options": {"recursive": true, "resetByFolder": true}, "method": "wildcard", "search": "*", "replace": "\\P|\\F" }
+  ]
+}

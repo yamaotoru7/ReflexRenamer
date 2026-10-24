@@ -1,0 +1,24 @@
+// オプションダイアログ（A25）：画面と、重複時の設定を変えて閉じたときに ini に書かれるキー
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "command", "id": 32984, "only": "original" },
+    { "do": "menu", "path": ["ツール(T)", "オプション(O)..."], "only": "clone" },
+    { "do": "wait", "ms": 1200 },
+    { "do": "tree", "target": "window:オプション", "name": "options" },
+    { "do": "capture", "target": "window:オプション", "name": "options" },
+    { "do": "click", "target": "window:オプション,name:リネーム,type:TreeItem" },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "window:オプション", "name": "options-rename" },
+    { "do": "capture", "target": "window:オプション", "name": "options-rename" },
+    { "do": "click", "target": "window:オプション,id:1064,type:RadioButton" },
+    { "do": "setText", "target": "window:オプション,id:1070,type:Edit", "text": "_?" },
+    { "do": "click", "target": "window:オプション,id:1068,type:RadioButton" },
+    { "do": "setText", "target": "window:オプション,id:1065,type:Edit", "text": "3" },
+    { "do": "tree", "target": "window:オプション", "name": "options-changed" },
+    { "do": "click", "target": "window:オプション,id:1,type:Button" },
+    { "do": "wait", "ms": 800 },
+    { "do": "key", "keys": ["ALT", "F4"] },
+    { "do": "wait", "ms": 2000 }
+  ]
+}

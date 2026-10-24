@@ -1,0 +1,38 @@
+// 定型メニューの項目ごとに、表示されるパラメータ欄と既定の結果を記録する
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "expandAll", "target": "id:1014" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "文字列（日時）+連番" },
+    { "do": "tree", "target": "id:127", "name": "add-num" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "add-num" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "文字列（日時）を先頭からn文字目に追加" },
+    { "do": "tree", "target": "id:127", "name": "insert-pos" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "insert-pos" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "日時" },
+    { "do": "tree", "target": "id:127", "name": "datetime" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "datetime" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "先頭からn文字目よりn文字を削除" },
+    { "do": "tree", "target": "id:127", "name": "remove-n" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "remove-n" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "文字列置換" },
+    { "do": "tree", "target": "id:127", "name": "replace" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "先頭からn番目の数値の桁合わせ" },
+    { "do": "tree", "target": "id:127", "name": "digit" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "digit" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "先頭からn番目の数値を増減" },
+    { "do": "tree", "target": "id:127", "name": "incdec" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "incdec" },
+
+    { "do": "treeSelect", "target": "id:1014", "item": "拡張子を置換" },
+    { "do": "tree", "target": "id:127", "name": "ext-replace" },
+    { "do": "capture", "name": "ext-replace" }
+  ]
+}

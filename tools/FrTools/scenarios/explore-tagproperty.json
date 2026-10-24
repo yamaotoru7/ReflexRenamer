@@ -1,0 +1,34 @@
+// タグ・リネームの「ファイルプロパティ情報を使う」（C03）：画面の変化、タグ一覧、プロパティ定義ダイアログ（174）
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1169,type:CheckBox" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "tree", "target": "id:127", "name": "property" },
+    { "do": "capture", "name": "property" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-property" },
+    { "do": "popupItems", "target": "id:1046", "name": "taglist-property" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 29] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "tree", "target": "id:127", "name": "property-2" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-property-2" },
+    { "do": "popupItems", "target": "id:1046", "name": "taglist-property-2" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 11] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "setText", "target": "id:1019,type:ComboBox", "text": "<13>_<14>_<21>_<26>" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-property-format" },
+    { "do": "click", "target": "id:1030" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "tree", "target": "window:プロパティ", "name": "propdef" },
+    { "do": "capture", "target": "window:プロパティ", "name": "propdef" },
+    { "do": "key", "keys": ["ESCAPE"] },
+    { "do": "wait", "ms": 500 },
+    { "do": "click", "target": "id:1169,type:CheckBox" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "tree", "target": "id:127", "name": "normal" }
+  ]
+}

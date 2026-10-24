@@ -1,0 +1,17 @@
+// 見た目の確認：リネームページ（定型メニューの最初のカテゴリを開いた状態）とアドレス欄
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "wait", "ms": 800 },
+    { "do": "treeSelect", "target": "id:1014", "item": "連番や文字列の追加" },
+    { "do": "key", "keys": ["RIGHT"] },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "name": "main" },
+    { "do": "capture", "target": "id:127", "name": "page" },
+    { "do": "tree", "target": "id:127", "name": "page" },
+    { "do": "treeSelect", "target": "id:1014", "item": "文字列（日時）+連番" },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "target": "id:127", "name": "page-params" },
+    { "do": "tree", "target": "id:127", "name": "page-params" }
+  ]
+}

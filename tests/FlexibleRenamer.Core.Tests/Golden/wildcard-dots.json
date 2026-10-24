@@ -1,0 +1,608 @@
+{
+  "source": "tools/FrTools/golden/wildcard-dots.json から `FrTools golden wildcard-dots` で生成。手で編集しない。",
+  "fixture": [
+    {
+      "path": "x.y.z",
+      "time": "2001-01-01 01:01:01",
+      "size": 1
+    },
+    {
+      "path": "v1.2.3.tar.gz",
+      "time": "2001-01-01 01:01:02",
+      "size": 1
+    },
+    {
+      "path": "a.b-c.d",
+      "time": "2001-01-01 01:01:03",
+      "size": 1
+    },
+    {
+      "path": "a-b-c.txt",
+      "time": "2001-01-01 01:01:04",
+      "size": 1
+    },
+    {
+      "path": "a-b.c-d.txt",
+      "time": "2001-01-01 01:01:05",
+      "size": 1
+    },
+    {
+      "path": "photo.jpg.bak",
+      "time": "2001-01-01 01:01:06",
+      "size": 1
+    },
+    {
+      "path": "noext",
+      "time": "2001-01-01 01:01:07",
+      "size": 1
+    },
+    {
+      "path": ".hidden",
+      "time": "2001-01-01 01:01:08",
+      "size": 1
+    },
+    {
+      "path": "aaa",
+      "time": "2001-01-01 01:01:09",
+      "size": 1
+    }
+  ],
+  "cases": [
+    {
+      "name": "star-dot-star",
+      "method": "wildcard",
+      "search": "*.*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "|hidden"
+        },
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a-b-c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a|b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "photo|jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v1|2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x|y.z"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-star-dot-star",
+      "method": "wildcard",
+      "search": "*.*.*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b|c-d|txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a|b-c|d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "photo|jpg|bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v1|2|3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x|y|z"
+        }
+      ]
+    },
+    {
+      "name": "star-dash-star",
+      "method": "wildcard",
+      "search": "*-*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a|b-c.txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a|b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a.b|c.d"
+        }
+      ]
+    },
+    {
+      "name": "star-dash-star-dot-star",
+      "method": "wildcard",
+      "search": "*-*.*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a|b-c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a|b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a.b|c|d"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-star-dash-star",
+      "method": "wildcard",
+      "search": "*.*-*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b|c|d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a|b|c.d"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-q-star",
+      "method": "wildcard",
+      "search": "*.?*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "|h|idden"
+        },
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a-b-c|t|xt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b|c|-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a|b|-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "photo|j|pg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v1|2|.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x|y|.z"
+        }
+      ]
+    },
+    {
+      "name": "q-star-dot-star",
+      "method": "wildcard",
+      "search": "?*.*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a|-b-c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a|-b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a||b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "p|hoto|jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v|1|2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x||y.z"
+        }
+      ]
+    },
+    {
+      "name": "a-star-dot-star",
+      "method": "wildcard",
+      "search": "a*.*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "-b-c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "-b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|b-c.d"
+        }
+      ]
+    },
+    {
+      "name": "star-star-dot-star",
+      "method": "wildcard",
+      "search": "**.*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "||hidden"
+        },
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "|a-b-c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "|a-b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|a|b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "|photo|jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "|v1|2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "|x|y.z"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-z",
+      "method": "wildcard",
+      "search": "*.z",
+      "replace": "\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x.y"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-y-star",
+      "method": "wildcard",
+      "search": "*.y*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "x|.z"
+        }
+      ]
+    },
+    {
+      "name": "star-q-dot-star",
+      "method": "wildcard",
+      "search": "*?.*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a-b-|c|txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-|b|c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|a|b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "phot|o|jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v|1|2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "|x|y.z"
+        }
+      ]
+    },
+    {
+      "name": "star-b-star",
+      "method": "wildcard",
+      "search": "*b*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "a-|-c.txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-|.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "a.|-c.d"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "photo.jpg.|ak"
+        }
+      ]
+    },
+    {
+      "name": "star-a-star",
+      "method": "wildcard",
+      "search": "*a*",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "|-b-c.txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "|-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|.b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "aaa",
+          "newName": "|aa"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "photo.jpg.b|k"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v1.2.3.t|r.gz"
+        }
+      ]
+    },
+    {
+      "name": "star-dot-star-dot-q",
+      "method": "wildcard",
+      "search": "*.*.??",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "v1|2.3.tar|gz"
+        }
+      ]
+    },
+    {
+      "name": "dot-star",
+      "method": "wildcard",
+      "search": ".*",
+      "replace": "\\1",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "hidden"
+        }
+      ]
+    },
+    {
+      "name": "star-dot",
+      "method": "wildcard",
+      "search": "*.",
+      "replace": "\\1",
+      "results": []
+    },
+    {
+      "name": "star-star",
+      "method": "wildcard",
+      "search": "**",
+      "replace": "\\1|\\2",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "|.hidden"
+        },
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "|a-b-c.txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "|a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|a.b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "aaa",
+          "newName": "|aaa"
+        },
+        {
+          "folder": "",
+          "name": "noext",
+          "newName": "|noext"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "|photo.jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "|v1.2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "|x.y.z"
+        }
+      ]
+    },
+    {
+      "name": "star-q",
+      "method": "wildcard",
+      "search": "*?*",
+      "replace": "\\1|\\2|\\3",
+      "results": [
+        {
+          "folder": "",
+          "name": ".hidden",
+          "newName": "|.|hidden"
+        },
+        {
+          "folder": "",
+          "name": "a-b-c.txt",
+          "newName": "|a|-b-c.txt"
+        },
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "|a|-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "a.b-c.d",
+          "newName": "|a|.b-c.d"
+        },
+        {
+          "folder": "",
+          "name": "aaa",
+          "newName": "|a|aa"
+        },
+        {
+          "folder": "",
+          "name": "noext",
+          "newName": "|n|oext"
+        },
+        {
+          "folder": "",
+          "name": "photo.jpg.bak",
+          "newName": "|p|hoto.jpg.bak"
+        },
+        {
+          "folder": "",
+          "name": "v1.2.3.tar.gz",
+          "newName": "|v|1.2.3.tar.gz"
+        },
+        {
+          "folder": "",
+          "name": "x.y.z",
+          "newName": "|x|.y.z"
+        }
+      ]
+    }
+  ]
+}

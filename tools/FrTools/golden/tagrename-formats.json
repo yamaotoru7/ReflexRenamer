@@ -1,0 +1,17 @@
+// タグ・リネーム：WMA（ASF）・APEv2（ape/mpc）・IPTC（jpg/psd）の合成ファイルの読み取り（T402、T404、フィクスチャ tags2）
+{
+  "fixture": "tags2",
+  "setup": [
+    { "do": "command", "id": 66 },
+    { "do": "wait", "ms": 1000 }
+  ],
+  "cases": [
+    { "name": "f-music-basic", "tag": { "kind": 0 }, "format": "<ID3.Artist> - <ID3.Track>" },
+    { "name": "f-music-all", "tag": { "kind": 0 }, "format": "<ID3.Album>_<ID3.Year>_<ID3.TrackNumber>_<ID3.Genre>_<ID3.Comment>" },
+    { "name": "f-music-v1", "tag": { "kind": 0 }, "format": "<ID3v1.Artist>_<ID3v1.Track>_<ID3v1.TrackNumber>" },
+    { "name": "f-image-basic", "tag": { "kind": 2 }, "format": "<IPTC.ObjectName>_<IPTC.Caption>_<IPTC.Byline>" },
+    { "name": "f-image-place", "tag": { "kind": 2 }, "format": "<IPTC.City>_<IPTC.State>_<IPTC.Country>_<IPTC.Category>" },
+    { "name": "f-image-other", "tag": { "kind": 2 }, "format": "<IPTC.Headline>_<IPTC.Credits>_<IPTC.CopyrightNotice>_<IPTC.CaptionWriter>_<IPTC.BylineTitle>_<IPTC.OriginalTransmissionReference>" },
+    { "name": "f-image-date", "tag": { "kind": 2 }, "format": "<IPTC.DateCreated>" }
+  ]
+}

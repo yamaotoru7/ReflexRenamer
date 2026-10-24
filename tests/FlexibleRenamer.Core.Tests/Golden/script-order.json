@@ -1,0 +1,987 @@
+{
+  "source": "tools/FrTools/golden/script-order.json から `FrTools golden script-order` で生成。手で編集しない。",
+  "fixtureName": "basic",
+  "fixture": [
+    {
+      "path": "DSC0001.JPG",
+      "time": "2003-01-15 10:20:30",
+      "created": "2003-01-15 10:20:30",
+      "size": 1024,
+      "content": null
+    },
+    {
+      "path": "DSC0002.jpg",
+      "time": "2003-01-15 14:05:06",
+      "created": "2003-01-15 14:05:06",
+      "size": 2048,
+      "content": null
+    },
+    {
+      "path": "DSC0003.jpeg",
+      "time": "2003-01-16 09:00:00",
+      "created": "2003-01-16 09:00:00",
+      "size": 3000,
+      "content": null
+    },
+    {
+      "path": "photo (1).jpg",
+      "time": "2003-01-17 23:59:59",
+      "created": "2003-01-17 23:59:59",
+      "size": 100,
+      "content": null
+    },
+    {
+      "path": "photo [2].jpg",
+      "time": "2003-01-17 00:00:01",
+      "created": "2003-01-17 00:00:01",
+      "size": 100,
+      "content": null
+    },
+    {
+      "path": "Copy of report.txt",
+      "time": "2010-05-01 12:00:00",
+      "created": "2010-05-01 12:00:00",
+      "size": 10,
+      "content": null
+    },
+    {
+      "path": "report - Copy (2).txt",
+      "time": "2010-05-02 12:00:00",
+      "created": "2010-05-02 12:00:00",
+      "size": 10,
+      "content": null
+    },
+    {
+      "path": "hello world.TXT",
+      "time": "2011-03-06 08:30:00",
+      "created": "2011-03-06 08:30:00",
+      "size": 5,
+      "content": null
+    },
+    {
+      "path": "a-b.c-d.txt",
+      "time": "2011-03-06 08:30:00",
+      "created": "2011-03-06 08:30:00",
+      "size": 5,
+      "content": null
+    },
+    {
+      "path": "README",
+      "time": "2009-12-31 23:59:59",
+      "created": "2009-12-31 23:59:59",
+      "size": 1,
+      "content": null
+    },
+    {
+      "path": "テスト ファイル.txt",
+      "time": "2008-03-09 01:02:03",
+      "created": "2008-03-09 01:02:03",
+      "size": 7,
+      "content": null
+    },
+    {
+      "path": "ﾃｽﾄｶﾅ.txt",
+      "time": "2008-03-09 01:02:04",
+      "created": "2008-03-09 01:02:04",
+      "size": 7,
+      "content": null
+    },
+    {
+      "path": "ＡＢＣ１２３.txt",
+      "time": "2008-03-09 01:02:05",
+      "created": "2008-03-09 01:02:05",
+      "size": 7,
+      "content": null
+    },
+    {
+      "path": "song10.mp3",
+      "time": "2007-06-03 06:09:02",
+      "created": "2007-06-03 06:09:02",
+      "size": 0,
+      "content": null
+    },
+    {
+      "path": "song2.mp3",
+      "time": "2007-06-03 06:09:03",
+      "created": "2007-06-03 06:09:03",
+      "size": 0,
+      "content": null
+    },
+    {
+      "path": "sub1/",
+      "time": "2005-05-05 05:05:05",
+      "created": "2005-05-05 05:05:05",
+      "size": 0,
+      "content": null
+    },
+    {
+      "path": "sub1/inner.txt",
+      "time": "2005-05-05 05:05:06",
+      "created": "2005-05-05 05:05:06",
+      "size": 3,
+      "content": null
+    },
+    {
+      "path": "サブフォルダ/",
+      "time": "2006-06-06 06:06:06",
+      "created": "2006-06-06 06:06:06",
+      "size": 0,
+      "content": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "so-plain",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^(.*)\\.(.*)$",
+      "replace": "UCase(\"\\1\") & \".\" & \"\\2\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "A-B.C-D.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "COPY OF REPORT.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "HELLO WORLD.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "PHOTO (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "PHOTO [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "REPORT - COPY (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "SONG10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "SONG2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-number-before",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "Replace(\"???\", \"0\", \"x\") & \"_\\0\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "xxx_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "xx1_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "xx2_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "xx3_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "xx4_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "xx5_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "xx6_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "xx7_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "xx8_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "xx9_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "x1x_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "x11_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "x12_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "x13_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "x14_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-number-len",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "Len(\"??\") & \"_\\0\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "2_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "2_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "2_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "2_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "2_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "2_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "2_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "2_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "2_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "2_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "2_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "2_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "2_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "2_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "2_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-tag-title",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "Len(\"\\t\") & \"_\\e\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "7_.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "14_.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "7_.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "7_.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "7_.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "11_.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "9_.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "9_.jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "6_"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "17_.txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "6_.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "5_.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "8_.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "6_.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "5_.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-tag-ext",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "wildcard",
+      "search": "*",
+      "replace": "LCase(\"\\0\") & \"[\" & Len(\"\\e\") & \"]\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "copy of report.txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "dsc0001.jpg[4]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "dsc0002.jpg[4]"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "dsc0003.jpeg[5]"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg[4]"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg[4]"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "readme[0]"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - copy (2).txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3[4]"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3[4]"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ａｂｃ１２３.txt[4]"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt[4]"
+        }
+      ]
+    },
+    {
+      "name": "so-date",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "Len(\"\\Y\") & \"_\\0\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "4_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "4_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "4_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "4_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "4_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "4_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "4_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "4_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "4_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "4_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "4_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "4_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "4_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "4_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "4_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-error",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "1/0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-number-start",
+      "options": {
+        "script": "VBScript",
+        "numberStart": 3
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "(??? * 2) & \"_\\0\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "6_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "8_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "10_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "12_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "14_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "16_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "18_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "20_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "22_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "24_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "26_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "28_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "30_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "32_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "34_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-star-probe",
+      "options": {
+        "script": "VBScript"
+      },
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "\"a*b\" & \"_\\0\"",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "a*b_a-b.c-d.txt"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "a*b_Copy of report.txt"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "a*b_DSC0001.JPG"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "a*b_DSC0002.jpg"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "a*b_DSC0003.jpeg"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "a*b_hello world.TXT"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "a*b_photo (1).jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "a*b_photo [2].jpg"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "a*b_README"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "a*b_report - Copy (2).txt"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "a*b_song10.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "a*b_song2.mp3"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "a*b_テスト ファイル.txt"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "a*b_ＡＢＣ１２３.txt"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "a*b_ﾃｽﾄｶﾅ.txt"
+        }
+      ]
+    },
+    {
+      "name": "so-off",
+      "method": "regex",
+      "search": "^.*$",
+      "replace": "UCase(\"\\0\")",
+      "results": [
+        {
+          "folder": "",
+          "name": "a-b.c-d.txt",
+          "newName": "UCase(\"a-b.c-d.txt\")"
+        },
+        {
+          "folder": "",
+          "name": "Copy of report.txt",
+          "newName": "UCase(\"Copy of report.txt\")"
+        },
+        {
+          "folder": "",
+          "name": "DSC0001.JPG",
+          "newName": "UCase(\"DSC0001.JPG\")"
+        },
+        {
+          "folder": "",
+          "name": "DSC0002.jpg",
+          "newName": "UCase(\"DSC0002.jpg\")"
+        },
+        {
+          "folder": "",
+          "name": "DSC0003.jpeg",
+          "newName": "UCase(\"DSC0003.jpeg\")"
+        },
+        {
+          "folder": "",
+          "name": "hello world.TXT",
+          "newName": "UCase(\"hello world.TXT\")"
+        },
+        {
+          "folder": "",
+          "name": "photo (1).jpg",
+          "newName": "UCase(\"photo (1).jpg\")"
+        },
+        {
+          "folder": "",
+          "name": "photo [2].jpg",
+          "newName": "UCase(\"photo [2].jpg\")"
+        },
+        {
+          "folder": "",
+          "name": "README",
+          "newName": "UCase(\"README\")"
+        },
+        {
+          "folder": "",
+          "name": "report - Copy (2).txt",
+          "newName": "UCase(\"report - Copy (2).txt\")"
+        },
+        {
+          "folder": "",
+          "name": "song10.mp3",
+          "newName": "UCase(\"song10.mp3\")"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "UCase(\"song2.mp3\")"
+        },
+        {
+          "folder": "",
+          "name": "テスト ファイル.txt",
+          "newName": "UCase(\"テスト ファイル.txt\")"
+        },
+        {
+          "folder": "",
+          "name": "ＡＢＣ１２３.txt",
+          "newName": "UCase(\"ＡＢＣ１２３.txt\")"
+        },
+        {
+          "folder": "",
+          "name": "ﾃｽﾄｶﾅ.txt",
+          "newName": "UCase(\"ﾃｽﾄｶﾅ.txt\")"
+        }
+      ]
+    }
+  ]
+}

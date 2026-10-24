@@ -1,0 +1,16 @@
+// 高度なリネームのワイルドカードで、プレビュー（新しい名前）を確認する
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "capture", "name": "initial" },
+    { "do": "tree", "name": "initial" },
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1037" },
+    { "do": "setText", "target": "id:1010", "text": "*.*" },
+    { "do": "setText", "target": "id:1019", "text": "??_\\1.\\2" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "preview" },
+    { "do": "capture", "name": "advanced" },
+    { "do": "tree", "name": "advanced" }
+  ]
+}

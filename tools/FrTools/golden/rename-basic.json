@@ -1,0 +1,53 @@
+// 高度なリネームの基本挙動（既定の設定のまま）
+{
+  "fixture": "basic",
+  "setup": [
+    { "do": "toggle", "target": "id:1025", "on": true }
+  ],
+  "cases": [
+    // ワイルドカード
+    { "name": "wc-dot", "method": "wildcard", "search": "*.*", "replace": "\\1_x.\\2" },
+    { "name": "wc-star", "method": "wildcard", "search": "*", "replace": "[\\1]" },
+    { "name": "wc-prefix", "method": "wildcard", "search": "DSC*", "replace": "IMG\\1" },
+    { "name": "wc-contains", "method": "wildcard", "search": "*DSC*", "replace": "\\1IMG\\2" },
+    { "name": "wc-ext-case", "method": "wildcard", "search": "*.jpg", "replace": "\\1.jpeg" },
+    { "name": "wc-question", "method": "wildcard", "search": "s???*", "replace": "<\\1|\\2|\\3|\\4>" },
+    { "name": "wc-swap", "method": "wildcard", "search": "*-*", "replace": "\\2-\\1" },
+    { "name": "wc-number", "method": "wildcard", "search": "*", "replace": "???_\\0" },
+    { "name": "wc-number1", "method": "wildcard", "search": "*", "replace": "?_\\0" },
+    { "name": "wc-file-tags", "method": "wildcard", "search": "*", "replace": "\\0|\\t|\\e|\\f|\\F" },
+    { "name": "wc-size", "method": "wildcard", "search": "*", "replace": "\\;|\\:" },
+    { "name": "wc-date", "method": "wildcard", "search": "*", "replace": "\\Y\\m\\d_\\H\\M\\S" },
+    { "name": "wc-date2", "method": "wildcard", "search": "*", "replace": "\\y-\\p\\I-\\a-\\A-\\b-\\B" },
+    { "name": "wc-date-nozero", "method": "wildcard", "search": "*", "replace": "\\#m-\\#d-\\#H" },
+    { "name": "wc-date-strftime", "method": "wildcard", "search": "*", "replace": "\\j|\\w|\\U|\\x" },
+    { "name": "wc-case", "method": "wildcard", "search": "*.*", "replace": "\\U\\1\\E.\\2" },
+    { "name": "wc-case2", "method": "wildcard", "search": "*.*", "replace": "\\u\\1.\\L\\2" },
+    { "name": "wc-case3", "method": "wildcard", "search": "*", "replace": "\\l\\0" },
+    { "name": "wc-path", "method": "wildcard", "search": "*", "replace": "../\\Y/\\0" },
+
+    // 正規表現
+    { "name": "re-swap", "method": "regex", "search": "(.*)\\.(.*)", "replace": "\\2.\\1" },
+    { "name": "re-partial", "method": "regex", "search": "DSC", "replace": "IMG" },
+    { "name": "re-global", "method": "regex", "search": "o", "replace": "0" },
+    { "name": "re-anchor", "method": "regex", "search": "^(.)", "replace": "\\u\\1" },
+    { "name": "re-digits", "method": "regex", "search": "\\d+", "replace": "<\\0>" },
+    { "name": "re-ext-lower", "method": "regex", "search": "(\\.[^.]*)$", "replace": "\\L\\1" },
+    { "name": "re-wordstart", "method": "regex", "search": "\\<\\w", "replace": "X" },
+    { "name": "re-lookbehind", "method": "regex", "search": "(?<=o)\\w", "replace": "_" },
+    { "name": "re-number", "method": "regex", "search": "(.*?)(\\.[^.]*)?$", "replace": "\\1_??\\2" },
+    { "name": "re-upper", "method": "regex", "search": "[a-z]+", "replace": "\\U\\0\\E" },
+    { "name": "re-case", "method": "regex", "search": "dsc", "replace": "img" },
+    { "name": "re-capitalize", "method": "regex", "search": "((?:[^ \\-+~=#$%&_,.(){}\\[\\]=!]|\\.)+)", "replace": "\\L\\u\\1" },
+    { "name": "re-bracket", "method": "regex", "search": "\\s*[(（【\\[].*?[\\]】）)]\\s*", "replace": "" },
+
+    // 文字変換
+    { "name": "tr-upper", "method": "translation", "search": "a-z", "replace": "A-Z" },
+    { "name": "tr-swapcase", "method": "translation", "search": "a-zA-Z", "replace": "A-Za-z" },
+    { "name": "tr-full", "method": "translation", "search": "0-9a-zA-Z", "replace": "０-９ａ-ｚＡ-Ｚ" },
+    { "name": "tr-half", "method": "translation", "search": "０-９ａ-ｚＡ-Ｚ", "replace": "0-9a-zA-Z" },
+    { "name": "tr-kana", "method": "translation", "search": "ァ-ン", "replace": "ぁ-ん" },
+    { "name": "tr-kanji", "method": "translation", "search": "0-9", "replace": "〇一二三四五六七八九" },
+    { "name": "tr-roman", "method": "translation", "search": "0-9", "replace": "０Ⅰ-Ⅹ" }
+  ]
+}

@@ -1,0 +1,19 @@
+// 定型メニューの項目を選んだ状態で「高度なリネーム (選択されたメニュー項目)」（1032）をクリックすると、検索・置換欄に何が入るか（B04）
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "expandAll", "target": "id:1014" },
+    { "do": "treeSelect", "target": "id:1014", "item": "拡張子を小文字" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "typical" },
+    { "do": "click", "target": "id:1032" },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "id:127", "name": "advanced" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "advanced" },
+    { "do": "capture", "name": "advanced" },
+    { "do": "toggle", "target": "id:1025", "on": false },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "id:127", "name": "back" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "back" }
+  ]
+}

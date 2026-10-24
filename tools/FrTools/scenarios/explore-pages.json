@@ -1,0 +1,26 @@
+// 4つのページ（リネーム、タグ・リネーム、属性、連番オブジェクト）と、定型メニューの全項目を記録する
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "expandAll", "target": "id:1014" },
+    { "do": "tree", "target": "id:1014", "name": "typical-menu" },
+    { "do": "comboItems", "target": "id:1146", "name": "rename-operation" },
+    { "do": "capture", "name": "rename" },
+
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "capture", "name": "tagrename" },
+    { "do": "tree", "name": "tagrename" },
+
+    { "do": "command", "id": 67, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Modify attributes", "only": "clone" },
+    { "do": "comboItems", "target": "id:1017", "name": "attribute-timestamp" },
+    { "do": "capture", "name": "attribute" },
+    { "do": "tree", "name": "attribute" },
+
+    { "do": "command", "id": 68, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Create numbered object", "only": "clone" },
+    { "do": "capture", "name": "numbered" },
+    { "do": "tree", "name": "numbered" }
+  ]
+}

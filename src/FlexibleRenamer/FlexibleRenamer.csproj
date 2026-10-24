@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlexibleRenamer.Core\FlexibleRenamer.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>FlexibleRenamer</AssemblyName>
+    <!-- フォームはデザイナーを使わずコードで組み立てるので、デザイナー向けのシリアル化の警告は出さない -->
+    <NoWarn>$(NoWarn);WFO1000</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- exe から抽出したダイアログ・メニューの定義（FrTools res-dump で生成） -->
+    <EmbeddedResource Include="..\..\docs\spec\resources.json" LogicalName="resources.json" />
+    <!-- exe から抽出したアイコンとビットマップ（同じく res-dump で生成） -->
+    <EmbeddedResource Include="Assets\Icons\*.ico" LogicalName="Icons/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Assets\Bitmaps\*.bmp" LogicalName="Bitmaps/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- オリジナル版と同じく、データファイルは exe と同じフォルダに置く。設定（ini）とログは実行時に作られる -->
+    <None Include="..\..\FlexRenamer\*.Strings.ini;..\..\FlexRenamer\Preset.ini;..\..\FlexRenamer\TagDef.ini;..\..\FlexRenamer\Script.Preset.*;..\..\FlexRenamer\*.chm"
+          Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

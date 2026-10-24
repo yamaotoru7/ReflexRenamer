@@ -1,0 +1,33 @@
+// 属性ページ：タイムスタンプの方式ごとの入力欄と、一覧の内容を記録する
+{
+  "fixture": "tree",
+  "steps": [
+    { "do": "command", "id": 67, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Modify attributes", "only": "clone" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-default" },
+    { "do": "tree", "target": "id:127", "name": "specify" },
+    { "do": "capture", "name": "specify" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "シフト" },
+    { "do": "tree", "target": "id:127", "name": "shift" },
+    { "do": "capture", "name": "shift" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "ランダム生成" },
+    { "do": "tree", "target": "id:127", "name": "random" },
+    { "do": "capture", "name": "random" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "連続生成" },
+    { "do": "tree", "target": "id:127", "name": "sequential" },
+    { "do": "capture", "name": "sequential" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "揃える" },
+    { "do": "tree", "target": "id:127", "name": "makesame" },
+    { "do": "capture", "name": "makesame" },
+    { "do": "toggle", "target": "id:1034,type:CheckBox", "on": true },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-folders" },
+    { "do": "toggle", "target": "id:1033,type:CheckBox", "on": false },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-folders-only" },
+    { "do": "toggle", "target": "id:1024,type:CheckBox", "on": false },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-nonrecursive" }
+  ]
+}

@@ -1,0 +1,27 @@
+// 手動確認項目（T803）の自動化：フォルダの監視（ファイルを作ると一覧に出る）、シャッフル、グループ表示の見た目
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "before" },
+    { "do": "createFile", "path": "zz-watch.txt" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "after-watch" },
+    { "do": "click", "target": "type:HeaderItem,name:フォルダ", "at": [20, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextSelect", "path": ["シャッフル"] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "shuffle1" },
+    { "do": "capture", "name": "shuffle1" },
+    { "do": "click", "target": "type:HeaderItem,name:フォルダ", "at": [20, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextSelect", "path": ["シャッフル"] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "shuffle2" },
+    { "do": "click", "target": "type:HeaderItem,name:フォルダ", "at": [20, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "key", "keys": ["DOWN", "RIGHT", "DOWN", "DOWN", "DOWN", "DOWN", "ENTER"], "each": true },
+    { "do": "wait", "ms": 1000 },
+    { "do": "capture", "name": "group-ext" }
+  ]
+}

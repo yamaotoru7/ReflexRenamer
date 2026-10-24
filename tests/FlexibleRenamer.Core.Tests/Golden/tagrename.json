@@ -1,0 +1,422 @@
+{
+  "source": "tools/FrTools/golden/tagrename.json から `FrTools golden tagrename` で生成。手で編集しない。",
+  "fixtureName": "tags",
+  "fixture": [
+    {
+      "path": "song1.mp3",
+      "time": "2012-03-04 05:06:07",
+      "created": "2012-03-04 05:06:07",
+      "size": 0,
+      "content": "SUQzAwAAAAABK1RJVDIAAAAbAAAB//5PAHAAZQBuAGkAbgBnACAAUwBvAG4AZwBUUEUxAAAAEwAAAf/+VABoAGUAIABCAGEAbgBkAFRBTEIAAAAZAAAB//5GAGkAcgBzAHQAIABBAGwAYgB1AG0AVFlFUgAAAAUAAAAyMDA1VFJDSwAAAAIAAAAxVENPTgAAAAUAAAAoMTcpQ09NTQAAABIAAAFlbmf//gAA//5uAGkAYwBlAP/7kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFRBR1YxIE9wZW5pbmcgU29uZwAAAAAAAAAAAAAAAAAAAFYxIFRoZSBCYW5kAAAAAAAAAAAAAAAAAAAAAAAAAFYxIEZpcnN0IEFsYnVtAAAAAAAAAAAAAAAAAAAAADE5OTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsR"
+    },
+    {
+      "path": "song2.mp3",
+      "time": "2012-03-04 05:06:08",
+      "created": "2012-03-04 05:06:08",
+      "size": 0,
+      "content": "SUQzAwAAAAABAFRJVDIAAAARAAAAi8iCu4LMMjogl7cvi0GLvVRQRTEAAAAGAAAAicyO6EFUQUxCAAAADAAAAINBg4uDb4OAKpa8VFlFUgAAAAUAAAAyMDA2VFJDSwAAAAMAAAAxMlRDT04AAAAFAAAASmF6ekNPTU0AAAAKAAABZW5n//4AAP/+//uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVEFHVjEgPz8/MjogPy8/PwAAAAAAAAAAAAAAAAAAAAAAVjEgPz9BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjEgPz8/Pyo/AAAAAAAAAAAAAAAAAAAAAAAAAAAAMTk5MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhE="
+    },
+    {
+      "path": "song3.mp3",
+      "time": "2012-03-04 05:06:13",
+      "created": "2012-03-04 05:06:13",
+      "size": 0,
+      "content": "//uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVEFHVjEgT25seSBWMQAAAAAAAAAAAAAAAAAAAAAAAAAAVjEgU29sbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVjEgTG9uZSBBbGJ1bQAAAAAAAAAAAAAAAAAAAAAAMTk5MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERE="
+    },
+    {
+      "path": "photo1.jpg",
+      "time": "2012-03-04 05:06:09",
+      "created": "2012-03-04 05:06:09",
+      "size": 0,
+      "content": "/9j/4QCaRXhpZgAASUkqAAgAAAADAA8BAgAGAAAAMgAAABABAgAHAAAAOAAAAGmHBAABAAAAQAAAAAAAAABDYW5vbgBFT1MgNUQAAAQAmoIFAAEAAAB2AAAAJ4gDAAEAAACQAQAAA5ACABQAAAB+AAAACZIDAAEAAAABAAAAAAAAAAEAAAD6AAAAMjAxMDoxMToxMiAxMzoxNDoxNQD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAALCAABAAEBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/9oACAEBAAA/AAD/2Q=="
+    },
+    {
+      "path": "photo2.jpg",
+      "time": "2012-03-04 05:06:10",
+      "created": "2012-03-04 05:06:10",
+      "size": 0,
+      "content": "/9j/4QCYRXhpZgAASUkqAAgAAAADAA8BAgAGAAAAMgAAABABAgAFAAAAOAAAAGmHBAABAAAAPgAAAAAAAABOSUtPTgBENzAwAAAEAJqCBQABAAAAdAAAACeIAwABAAAAZAAAAAOQAgAUAAAAfAAAAAmSAwABAAAAAAAAAAAAAAACAAAAAQAAADIwMTE6MDE6MDIgMDM6MDQ6MDUA/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/8AACwgAAQABAQERAP/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//aAAgBAQAAPwAA/9k="
+    },
+    {
+      "path": "page.htm",
+      "time": "2012-03-04 05:06:11",
+      "created": "2012-03-04 05:06:11",
+      "size": 0,
+      "content": "PGh0bWw+PGhlYWQ+PG1ldGEgY2hhcnNldD0idXRmLTgiPjx0aXRsZT5QYWdlIFRpdGxlPC90aXRsZT48L2hlYWQ+PGJvZHk+PC9ib2R5PjwvaHRtbD4="
+    },
+    {
+      "path": "doc.pdf",
+      "time": "2012-03-04 05:06:12",
+      "created": "2012-03-04 05:06:12",
+      "size": 0,
+      "content": "JVBERi0xLjQKMSAwIG9iaiA8PCAvVGl0bGUgKFBERiBUaXRsZSkgL0F1dGhvciAoV3JpdGVyKSAvQ3JlYXRpb25EYXRlIChEOjIwMjAwMTAyMDMwNDA1KSA+PiBlbmRvYmoKdHJhaWxlciA8PCAvSW5mbyAxIDAgUiA+PgolJUVPRg=="
+    },
+    {
+      "path": "plain.txt",
+      "time": "2012-03-04 05:06:13",
+      "created": "2012-03-04 05:06:13",
+      "size": 3,
+      "content": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "music-empty",
+      "tag": {
+        "kind": 0
+      },
+      "format": "",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": ".mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": ".mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": ".mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-name-only",
+      "tag": {
+        "kind": 0
+      },
+      "format": "\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "song1.mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "song2.mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "song3.mp3.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-basic",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Artist> - <ID3.Track>.\\e",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "The Band - Opening Song..mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "歌手A - 曲その2; 旅%帰郷..mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "V1 Solo - V1 Only V1..mp3.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-all",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Album>_<ID3.Year>_<ID3.TrackNumber>_<ID3.Genre>_<ID3.Comment>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "First Album_2005_01_Rock_nice.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "アルバム#名_2006_12_(Other)_.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "V1 Lone Album_1990_17_Rock_.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-v1",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3v1.Artist>_<ID3v1.Track>_<ID3v1.TrackNumber>_<ID3v1.Year>_<ID3v1.Genre>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "__-1__.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "__-1__.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "V1 Solo_V1 Only V1_17_1990_Rock.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-v2",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3v2.TIT2>_<ID3v2.TPE1>_<ID3v2.TRCK>_<ID3v2.TCON>_<ID3v2.COMM>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "Opening Song_The Band_1_Rock_nice.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "曲その2; 旅%帰郷_歌手A_12_Jazz_.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "____.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-number",
+      "tag": {
+        "kind": 0
+      },
+      "format": "??_<ID3.Track>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "00_Opening Song.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "01_曲その2; 旅%帰郷.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "02_V1 Only V1.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-unknown-tag",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Nope>x<Nope>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "<ID3.Nope>x<Nope>.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "<ID3.Nope>x<Nope>.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "<ID3.Nope>x<Nope>.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-folder",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Artist>/<ID3.Album>/\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "The Band/First Album/song1.mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "歌手A/アルバム#名/song2.mp3.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "V1 Solo/V1 Lone Album/song3.mp3.mp3"
+        }
+      ]
+    },
+    {
+      "name": "music-case",
+      "tag": {
+        "kind": 0
+      },
+      "format": "\\U<ID3.Artist>\\E_\\u<ID3.Track>",
+      "results": [
+        {
+          "folder": "",
+          "name": "song1.mp3",
+          "newName": "THE BAND_Opening Song.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song2.mp3",
+          "newName": "歌手A_曲その2; 旅%帰郷.mp3"
+        },
+        {
+          "folder": "",
+          "name": "song3.mp3",
+          "newName": "V1 SOLO_V1 Only V1.mp3"
+        }
+      ]
+    },
+    {
+      "name": "picture-basic",
+      "tag": {
+        "kind": 1
+      },
+      "format": "<EXIF.Maker>_<EXIF.Model>_<EXIF.Software>",
+      "results": [
+        {
+          "folder": "",
+          "name": "photo1.jpg",
+          "newName": "Canon_EOS 5D_.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo2.jpg",
+          "newName": "NIKON_D700_.jpg"
+        }
+      ]
+    },
+    {
+      "name": "picture-time",
+      "tag": {
+        "kind": 1
+      },
+      "format": "<EXIF.OriginalTime>",
+      "results": [
+        {
+          "folder": "",
+          "name": "photo1.jpg",
+          "newName": "Invalid DateTime.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo2.jpg",
+          "newName": "Invalid DateTime.jpg"
+        }
+      ]
+    },
+    {
+      "name": "picture-unknown-tag",
+      "tag": {
+        "kind": 1
+      },
+      "format": "<ID3.Artist>_<EXIF.Nope>_<IPTC.Caption>",
+      "results": [
+        {
+          "folder": "",
+          "name": "photo1.jpg",
+          "newName": "<ID3.Artist>_<EXIF.Nope>_<IPTC.Caption>.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo2.jpg",
+          "newName": "<ID3.Artist>_<EXIF.Nope>_<IPTC.Caption>.jpg"
+        }
+      ]
+    },
+    {
+      "name": "picture-values",
+      "tag": {
+        "kind": 1
+      },
+      "format": "<EXIF.Flash>_<EXIF.ExposureTime>_<EXIF.ISOSpeed>_<EXIF.MeteringMode>",
+      "results": [
+        {
+          "folder": "",
+          "name": "photo1.jpg",
+          "newName": "フラッシュ_‎1%250 秒_ISO-400_.jpg"
+        },
+        {
+          "folder": "",
+          "name": "photo2.jpg",
+          "newName": "フラッシュなし_‎2.00 秒_ISO-100_.jpg"
+        }
+      ]
+    },
+    {
+      "name": "document-basic",
+      "tag": {
+        "kind": 3
+      },
+      "format": "<DOC.Title>_<DOC.Author>_<DOC.Created>",
+      "results": [
+        {
+          "folder": "",
+          "name": "doc.pdf",
+          "newName": "__.pdf"
+        }
+      ]
+    },
+    {
+      "name": "web-basic",
+      "tag": {
+        "kind": 4
+      },
+      "format": "<HTML.Title>.\\e",
+      "results": [
+        {
+          "folder": "",
+          "name": "page.htm",
+          "newName": "Page Title..htm.htm"
+        }
+      ]
+    },
+    {
+      "name": "web-time",
+      "tag": {
+        "kind": 4
+      },
+      "format": "<HTML.Title>_\\Y\\m\\d_??",
+      "results": [
+        {
+          "folder": "",
+          "name": "page.htm",
+          "newName": "Page Title_20120304_00.htm"
+        }
+      ]
+    }
+  ]
+}

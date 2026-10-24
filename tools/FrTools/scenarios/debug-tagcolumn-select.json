@@ -1,0 +1,36 @@
+// タグ・リネームページ：見出しメニューでタグを選ぶと列が増えるか
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextSelect", "path": ["アーティスト"] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "tree", "target": "id:1000,type:List", "name": "after-artist" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-artist" },
+    { "do": "capture", "name": "after-artist" },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextItems", "name": "header-after" },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextSelect", "path": ["v1", "アーティスト"] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-artist-v1" },
+    { "do": "click", "target": "id:1000,type:List", "at": [300, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "contextSelect", "path": ["アーティスト"] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-artist-off" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 29] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-picture" },
+    { "do": "command", "id": 65, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Rename", "only": "clone" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-rename" }
+  ]
+}

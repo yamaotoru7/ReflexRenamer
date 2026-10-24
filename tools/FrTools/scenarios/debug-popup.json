@@ -1,0 +1,12 @@
+// ポップアップのサブメニュー操作の確認用
+{
+  "fixture": "tree",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "setText", "target": "id:1010", "text": "*" },
+    { "do": "setText", "target": "id:1019", "text": "\\Y\\m\\d\\H\\M\\S" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "before" },
+    { "do": "popup", "target": "id:1049", "path": ["タイムスタンプ(T)", "作成日時をタイムスタンプとして使う(C)"] },
+    { "do": "readList", "target": "id:1000,type:List", "name": "after" }
+  ]
+}

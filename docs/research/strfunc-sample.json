@@ -1,0 +1,1892 @@
+[
+    {
+        "expr":  "f.LCMAP_LOWERCASE",
+        "type":  "Long",
+        "value":  "256"
+    },
+    {
+        "expr":  "f.LCMAP_UPPERCASE",
+        "type":  "Long",
+        "value":  "512"
+    },
+    {
+        "expr":  "f.LCMAP_PROPERCASE",
+        "type":  "Long",
+        "value":  "768"
+    },
+    {
+        "expr":  "f.LCMAP_SORTKEY",
+        "type":  "Long",
+        "value":  "1024"
+    },
+    {
+        "expr":  "f.LCMAP_BYTEREV",
+        "type":  "Long",
+        "value":  "2048"
+    },
+    {
+        "expr":  "f.LCMAP_HIRAGANA",
+        "type":  "Long",
+        "value":  "1048576"
+    },
+    {
+        "expr":  "f.LCMAP_KATAKANA",
+        "type":  "Long",
+        "value":  "2097152"
+    },
+    {
+        "expr":  "f.LCMAP_HALFWIDTH",
+        "type":  "Long",
+        "value":  "4194304"
+    },
+    {
+        "expr":  "f.LCMAP_FULLWIDTH",
+        "type":  "Long",
+        "value":  "8388608"
+    },
+    {
+        "expr":  "f.LCMAP_LINGUISTIC_CASING",
+        "type":  "Long",
+        "value":  "16777216"
+    },
+    {
+        "expr":  "f.LCMAP_SIMPLIFIED_CHINESE",
+        "type":  "Long",
+        "value":  "33554432"
+    },
+    {
+        "expr":  "f.LCMAP_TRADITIONAL_CHINESE",
+        "type":  "Long",
+        "value":  "67108864"
+    },
+    {
+        "expr":  "f.NORM_IGNORENONSPACE",
+        "type":  "Long",
+        "value":  "2"
+    },
+    {
+        "expr":  "f.NORM_IGNORESYMBOLS",
+        "type":  "Long",
+        "value":  "4"
+    },
+    {
+        "expr":  "f.NORM_IGNORECASE",
+        "type":  "Long",
+        "value":  "1"
+    },
+    {
+        "expr":  "f.NORM_IGNOREKANATYPE",
+        "type":  "Long",
+        "value":  "65536"
+    },
+    {
+        "expr":  "f.NORM_IGNOREWIDTH",
+        "type":  "Long",
+        "value":  "131072"
+    },
+    {
+        "expr":  "f.SORT_STRINGSORT",
+        "type":  "Long",
+        "value":  "4096"
+    },
+    {
+        "expr":  "f.vbNone",
+        "type":  "Long",
+        "value":  "0"
+    },
+    {
+        "expr":  "f.vbUpperCase",
+        "type":  "Long",
+        "value":  "1"
+    },
+    {
+        "expr":  "f.vbLowerCase",
+        "type":  "Long",
+        "value":  "2"
+    },
+    {
+        "expr":  "f.vbProperCase",
+        "type":  "Long",
+        "value":  "3"
+    },
+    {
+        "expr":  "f.vbWide",
+        "type":  "Long",
+        "value":  "4"
+    },
+    {
+        "expr":  "f.vbNarrow",
+        "type":  "Long",
+        "value":  "8"
+    },
+    {
+        "expr":  "f.vbKatakana",
+        "type":  "Long",
+        "value":  "16"
+    },
+    {
+        "expr":  "f.vbHiragana",
+        "type":  "Long",
+        "value":  "32"
+    },
+    {
+        "expr":  "f.vbSimplifiedChinese",
+        "type":  "Long",
+        "value":  "256"
+    },
+    {
+        "expr":  "f.vbTraditionalChinese",
+        "type":  "Long",
+        "value":  "512"
+    },
+    {
+        "expr":  "f.vbLinguisticCasing",
+        "type":  "Long",
+        "value":  "1024"
+    },
+    {
+        "expr":  "f.LOCALE_NOUSEROVERRIDE",
+        "type":  "Long",
+        "value":  "-2147483648"
+    },
+    {
+        "expr":  "f.LOCALE_USE_CP_ACP",
+        "type":  "Long",
+        "value":  "1073741824"
+    },
+    {
+        "expr":  "f.DATE_SHORTDATE",
+        "type":  "Long",
+        "value":  "1"
+    },
+    {
+        "expr":  "f.DATE_LONGDATE",
+        "type":  "Long",
+        "value":  "2"
+    },
+    {
+        "expr":  "f.DATE_USE_ALT_CALENDAR",
+        "type":  "Long",
+        "value":  "4"
+    },
+    {
+        "expr":  "f.DATE_YEARMONTH",
+        "type":  "Long",
+        "value":  "8"
+    },
+    {
+        "expr":  "f.DATE_LTRREADING",
+        "type":  "Long",
+        "value":  "16"
+    },
+    {
+        "expr":  "f.DATE_RTLREADING",
+        "type":  "Long",
+        "value":  "32"
+    },
+    {
+        "expr":  "f.TIME_NOMINUTESORSECONDS",
+        "type":  "Long",
+        "value":  "1"
+    },
+    {
+        "expr":  "f.TIME_NOSECONDS",
+        "type":  "Long",
+        "value":  "2"
+    },
+    {
+        "expr":  "f.TIME_NOTIMEMARKER",
+        "type":  "Long",
+        "value":  "4"
+    },
+    {
+        "expr":  "f.TIME_FORCE24HOURFORMAT",
+        "type":  "Long",
+        "value":  "8"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100, \"AbC ÀÉ ＡＢＣ aBC_def\")",
+        "type":  "String",
+        "value":  "abc àé ａｂｃ abc_def"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, \"AbC àé ａｂｃ aBC_def\")",
+        "type":  "String",
+        "value":  "ABC ÀÉ ＡＢＣ ABC_DEF"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"aBC_def-ghi.jKL mno\")",
+        "type":  "String",
+        "value":  "Abc_def-ghi.jkl Mno"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"hello world\u0027s o\u0027neil mcDONALD 1st x2y\")",
+        "type":  "String",
+        "value":  "Hello World\u0027s O\u0027neil Mcdonald 1st X2y"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"ÀÉ àé ａｂｃ ＡＢＣ\")",
+        "type":  "String",
+        "value":  "Àé Àé Ａｂｃ Ａｂｃ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"the(quick)[brown]{fox},jumps;over:lazy!dog?yes\")",
+        "type":  "String",
+        "value":  "The(quick)[brown]{fox},jumps;over:lazy!dog?yes"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"tab\" \u0026 vbTab \u0026 \"line\" \u0026 vbLf \u0026 \"end\")",
+        "type":  "String",
+        "value":  "Tab\tLine\nEnd"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100000, \"アイウヴカガパーヵヶｱｲｳ\")",
+        "type":  "String",
+        "value":  "あいうゔかがぱーゕゖｱｲｳ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200000, \"あいうゔかがぱーゕゖ\")",
+        "type":  "String",
+        "value":  "アイウヴカガパーヵヶ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H400000, \"ＡＢＣ　１２３アイウガパー。「」・ヴ\")",
+        "type":  "String",
+        "value":  "ABC 123ｱｲｳｶﾞﾊﾟｰ｡｢｣･ｳﾞ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H800000, \"ABC 123ｱｲｳｶﾞﾊﾟｰ｡｢｣･ｳﾞ~\\\u0027\"\"\")",
+        "type":  "String",
+        "value":  "ＡＢＣ　１２３アイウガパー。「」・ヴ～\\＇＂"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H800000, \"あいうアイウ\")",
+        "type":  "String",
+        "value":  "あいうアイウ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H2000000, \"國語學體\")",
+        "type":  "String",
+        "value":  "国语学体"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H4000000, \"国语学体\")",
+        "type":  "String",
+        "value":  "國語學體"
+    },
+    {
+        "expr":  "f.LCMapString(2052, \u0026H2000000, \"國語學體\")",
+        "type":  "String",
+        "value":  "国语学体"
+    },
+    {
+        "expr":  "f.LCMapString(1028, \u0026H4000000, \"国语学体\")",
+        "type":  "String",
+        "value":  "國語學體"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H800, \"AB\")",
+        "type":  "String",
+        "value":  "䄀䈀"
+    },
+    {
+        "expr":  "f.LCMapString(0, 0, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H1000000 Or \u0026H200, \"iıİ\")",
+        "type":  "String",
+        "value":  "IIİ"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H1000000 Or \u0026H200, \"iıİ\")",
+        "type":  "String",
+        "value":  "İIİ"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H200, \"iıİ\")",
+        "type":  "String",
+        "value":  "Iıİ"
+    },
+    {
+        "expr":  "f.LCMapString(1033, \u0026H300, \"aBC_def-ghi.jKL mno\")",
+        "type":  "String",
+        "value":  "Abc_def-ghi.jkl Mno"
+    },
+    {
+        "expr":  "f.LCMapString(1041, \u0026H800000, \"ABC\")",
+        "type":  "String",
+        "value":  "ＡＢＣ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100000 Or \u0026H300 Or \u0026H800000, \"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\")",
+        "type":  "String",
+        "value":  "＜あいうあいうあいうａｂｃａｂｃａｂｃａｂｃ＞　Ａｂｃ＿ｄｅｆ　Ａｂｃ＿ｄｅｆ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200000 Or \u0026H400000, \"あいうがぱアイウ\")",
+        "type":  "String",
+        "value":  "ｱｲｳｶﾞﾊﾟｱｲｳ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100000 Or \u0026H400000, \"アイウガパ\")",
+        "type":  "String",
+        "value":  "あいうがぱ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200 Or \u0026H800000, \"abc def\")",
+        "type":  "String",
+        "value":  "ＡＢＣ　ＤＥＦ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100 Or \u0026H400000, \"ＡＢＣ\")",
+        "type":  "String",
+        "value":  "abc"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100 Or \u0026H200 Or \u0026H400000 Or \u0026H800000, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100000 Or \u0026H200000, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H2000000 Or \u0026H4000000, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H400 Or \u0026H100000, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H12345678, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.LCMapString\u0027"
+    },
+    {
+        "expr":  "f.LCMapString(0)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.LCMapString\u0027"
+    },
+    {
+        "expr":  "f.LCMapString()",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.LCMapString\u0027"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, \"abc\", 1)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.LCMapString\u0027"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, Null)",
+        "error":  13,
+        "description":  "型が一致しません。: \u0027f.LCMapString\u0027"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, 123)",
+        "type":  "String",
+        "value":  "123"
+    },
+    {
+        "expr":  "f.LCMapString(\"0\", \"512\", \"abc\")",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, Empty)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 0, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 1, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうアイウｱｲｳABCABCＡＢＣＡＢＣ\u003e ABC_DEF　ＡＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 2, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうアイウｱｲｳabcabcａｂｃａｂｃ\u003e abc_def　ａｂｃ＿ｄｅｆ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 3, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうアイウｱｲｳabcabcａｂｃａｂｃ\u003e Abc_def　Ａｂｃ＿ｄｅｆ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 4, 0)",
+        "type":  "String",
+        "value":  "＜あいうアイウアイウＡＢＣａｂｃＡＢＣａｂｃ＞　ａＢＣ＿ＤＥＦ　ａＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 8, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうｱｲｳｱｲｳABCabcABCabc\u003e aBC_DEF aBC_DEF"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 16, 0)",
+        "type":  "String",
+        "value":  "\u003cアイウアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 32, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうあいうｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"國語學體国语学体\", 256, 0)",
+        "type":  "String",
+        "value":  "国语学体国语学体"
+    },
+    {
+        "expr":  "f.StrConv(\"國語學體国语学体\", 512, 0)",
+        "type":  "String",
+        "value":  "國語學體國語學體"
+    },
+    {
+        "expr":  "f.StrConv(\"iıİ abc\", 1024, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"iıİ abc\", 1025, 0)",
+        "type":  "String",
+        "value":  "IIİ ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"iıİ ABC\", 1026, 0)",
+        "type":  "String",
+        "value":  "iıi abc"
+    },
+    {
+        "expr":  "f.StrConv(\"iıİ abc\", 1025, 1055)",
+        "type":  "String",
+        "value":  "İIİ ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 3 Or 16 Or 8, 0)",
+        "type":  "String",
+        "value":  "\u003cｱｲｳｱｲｳｱｲｳabcabcabcabc\u003e Abc_def Abc_def"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 4 Or 16, 0)",
+        "type":  "String",
+        "value":  "＜アイウアイウアイウＡＢＣａｂｃＡＢＣａｂｃ＞　ａＢＣ＿ＤＥＦ　ａＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 8 Or 32, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうあいうｱｲｳABCabcABCabc\u003e aBC_DEF aBC_DEF"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 1 Or 4, 0)",
+        "type":  "String",
+        "value":  "＜あいうアイウアイウＡＢＣＡＢＣＡＢＣＡＢＣ＞　ＡＢＣ＿ＤＥＦ　ＡＢＣ＿ＤＥＦ"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cあいうアイウｱｲｳABCabcＡＢＣａｂｃ\u003e aBC_DEF　ａＢＣ＿ＤＥＦ\", 2 Or 8 Or 32, 0)",
+        "type":  "String",
+        "value":  "\u003cあいうあいうｱｲｳabcabcabcabc\u003e abc_def abc_def"
+    },
+    {
+        "expr":  "f.StrConv(\"aBC_def-ghi.jKL mno\", 3, 0)",
+        "type":  "String",
+        "value":  "Abc_def-ghi.jkl Mno"
+    },
+    {
+        "expr":  "f.StrConv(\"hello world\u0027s o\u0027neil mcDONALD 1st x2y\", 3, 0)",
+        "type":  "String",
+        "value":  "Hello World\u0027s O\u0027neil Mcdonald 1st X2y"
+    },
+    {
+        "expr":  "f.StrConv(\"the(quick)[brown]{fox},jumps;over:lazy!dog?yes\", 3, 0)",
+        "type":  "String",
+        "value":  "The(quick)[brown]{fox},jumps;over:lazy!dog?yes"
+    },
+    {
+        "expr":  "f.StrConv(\"tab\" \u0026 vbTab \u0026 \"line\" \u0026 vbLf \u0026 \"end\" \u0026 vbCr \u0026 \"x\" \u0026 Chr(0) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "Tab\tLine\nEnd\rX"
+    },
+    {
+        "expr":  "f.StrConv(\"ａｂｃ　ｄｅｆ ÀÉ àé\", 3, 0)",
+        "type":  "String",
+        "value":  "Ａｂｃ　Ｄｅｆ Àé Àé"
+    },
+    {
+        "expr":  "f.StrConv(\"ABCabc 123\", 4, 0)",
+        "type":  "String",
+        "value":  "ＡＢＣａｂｃ　１２３"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 0, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"\", 1, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 1)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"abc def\", 3)",
+        "type":  "String",
+        "value":  "Abc Def"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 1, 1041)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"abc def\", 3, 1033)",
+        "type":  "String",
+        "value":  "Abc Def"
+    },
+    {
+        "expr":  "f.StrConv(\"ABCabc 123ｱｲｳ\", 4, 1033)",
+        "type":  "String",
+        "value":  "ＡＢＣａｂｃ　１２３アイウ"
+    },
+    {
+        "expr":  "f.StrConv(\"ＡＢＣ　アイウ\", 8, 1033)",
+        "type":  "String",
+        "value":  "ABC ｱｲｳ"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 1 Or 2, 0)",
+        "type":  "String",
+        "value":  "Abc"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 4 Or 8, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 16 Or 32, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 256 Or 512, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 64, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 128, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 2048, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", \u0026H10000, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", -1, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\")",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.StrConv\u0027"
+    },
+    {
+        "expr":  "f.StrConv()",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.StrConv\u0027"
+    },
+    {
+        "expr":  "f.StrConv(Null, 1, 0)",
+        "error":  13,
+        "description":  "型が一致しません。: \u0027f.StrConv\u0027"
+    },
+    {
+        "expr":  "f.StrConv(123, 1, 0)",
+        "type":  "String",
+        "value":  "123"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", \"1\", 0)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 1, 0, 0)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.StrConv\u0027"
+    },
+    {
+        "expr":  "f.StrConv(Empty, 1, 0)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.sprintf(\"%s=%08x, %s=%10.8lf\", \"Value\", 512, \"PI\", 3.141592)",
+        "type":  "String",
+        "value":  "Value=00000200, PI=3.14159200"
+    },
+    {
+        "expr":  "f.sprintf(\"%s=%08x, %s=%10.8lf\", Array(\"Value\", 512, \"PI\", 3.141592))",
+        "type":  "String",
+        "value":  "Value=00000200, PI=3.14159200"
+    },
+    {
+        "expr":  "f.vsprintf(\"%s=%08x, %s=%10.8lf\", Array(\"Value\", 512, \"PI\", 3.141592))",
+        "type":  "String",
+        "value":  "Value=00000200, PI=3.14159200"
+    },
+    {
+        "expr":  "f.sprintf(\"abc\")",
+        "type":  "String",
+        "value":  "abc"
+    },
+    {
+        "expr":  "f.sprintf(\"100%%\")",
+        "type":  "String",
+        "value":  "100%"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", 42)",
+        "type":  "String",
+        "value":  "[42]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%i]\", -42)",
+        "type":  "String",
+        "value":  "[-42]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%5d|%-5d|%05d|%+d|% d]\", 42, 42, 42, 42, 42)",
+        "type":  "String",
+        "value":  "[   42|42   |00042|+42| 42]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%+d|% d|%+05d]\", -7, -7, -7)",
+        "type":  "String",
+        "value":  "[-7|-7|-0007]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%u]\", -1)",
+        "type":  "String",
+        "value":  "[4294967295]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%x|%X|%o|%#x|%#X|%#o]\", 255, 255, 255, 255, 255, 255)",
+        "type":  "String",
+        "value":  "[ff|FF|377|0xff|0XFF|0377]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%x]\", -1)",
+        "type":  "String",
+        "value":  "[ffffffff]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%08X]\", -2)",
+        "type":  "String",
+        "value":  "[FFFFFFFE]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%ld|%lu|%lx|%hd|%hx]\", 70000, 70000, 70000, 70000, 70000)",
+        "type":  "String",
+        "value":  "[70000|70000|11170|4464|1170]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%I64d]\", 123)",
+        "type":  "String",
+        "value":  "[123]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%lld]\", 123)",
+        "type":  "String",
+        "value":  "[123]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%c%c%c]\", 65, 66, 12354)",
+        "type":  "String",
+        "value":  "[ABあ]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%C]\", 65)",
+        "type":  "String",
+        "value":  "[A]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", \"あいう\")",
+        "type":  "String",
+        "value":  "[あいう]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%S]\", \"abc\")",
+        "type":  "String",
+        "value":  "[a]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%ls]\", \"abc\")",
+        "type":  "String",
+        "value":  "[abc]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%hs]\", \"abc\")",
+        "type":  "String",
+        "value":  "[a]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%5s|%-5s|%.2s|%5.1s]\", \"ab\", \"ab\", \"abcd\", \"abcd\")",
+        "type":  "String",
+        "value":  "[   ab|ab   |ab|    a]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%*d|%-*d]\", 6, 42, 6, 42)",
+        "type":  "String",
+        "value":  "[    42|42    ]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.*f]\", 2, 3.14159)",
+        "type":  "String",
+        "value":  "[3.14]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", 3.14159)",
+        "type":  "String",
+        "value":  "[3.141590]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.2f|%8.3f|%-8.1f|%08.2f|%+.1f]\", 3.14159, 3.14159, 3.14159, 3.14159, 3.14159)",
+        "type":  "String",
+        "value":  "[3.14|   3.142|3.1     |00003.14|+3.1]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.0f|%.0f|%.0f|%.0f]\", 0.5, 1.5, 2.5, -0.5)",
+        "type":  "String",
+        "value":  "[1|2|3|-1]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%e|%E|%.2e|%10.3e]\", 12345.678, 12345.678, 12345.678, 12345.678)",
+        "type":  "String",
+        "value":  "[1.234568e+004|1.234568E+004|1.23e+004|1.235e+004]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%g|%G|%g|%g|%g]\", 12345.678, 0.00001234, 100000, 1000000, 0.0001)",
+        "type":  "String",
+        "value":  "[12345.7|1.234E-005|2.122e-308|0.0001|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%#g|%#.0f|%#x]\", 1.5, 3, 0)",
+        "type":  "String",
+        "value":  "[1.50000|0.|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", 1E+20)",
+        "type":  "String",
+        "value":  "[100000000000000000000.000000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%lf|%Lf]\", 2.5, 2.5)",
+        "type":  "String",
+        "value":  "[2.500000|2.500000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%a]\", 1)",
+        "type":  "String",
+        "value":  "[0x0.000000p-1022]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%p]\", 255)",
+        "type":  "String",
+        "value":  "[000000FF]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%q]\", 1)",
+        "type":  "String",
+        "value":  "[q]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%5%]\")",
+        "type":  "String",
+        "value":  "[%]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%\")",
+        "type":  "String",
+        "value":  "["
+    },
+    {
+        "expr":  "f.sprintf(\"[%-08d]\", 42)",
+        "type":  "String",
+        "value":  "[42      ]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.3d|%.0d]\", 7, 0)",
+        "type":  "String",
+        "value":  "[007|]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", \"12\")",
+        "type":  "String",
+        "value":  "[47580364]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", 3.7)",
+        "type":  "String",
+        "value":  "[-1717986918]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", -3.7)",
+        "type":  "String",
+        "value":  "[-1717986918]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", 2.5)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", True)",
+        "type":  "String",
+        "value":  "[-1]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", False)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", 4000000000)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", CByte(200))",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", CCur(12.5))",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", #2003-01-15 10:20:30#)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", \"2.5\")",
+        "type":  "String",
+        "value":  "[0.000000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", 2)",
+        "type":  "String",
+        "value":  "[0.000000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", True)",
+        "type":  "String",
+        "value":  "[0.000000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", #2003-01-15 10:20:30#)",
+        "type":  "String",
+        "value":  "[0.000000]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", 3.5)",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", #2003-01-15 10:20:30#)",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", Null)",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", Empty)",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", Null)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", Empty)",
+        "type":  "String",
+        "value":  "[0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", \"abc\" \u0026 Chr(0) \u0026 \"def\")",
+        "type":  "String",
+        "value":  "[abc]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%c]\", \"A\")",
+        "type":  "String",
+        "value":  "[ˬ]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%x]\", \"ff\")",
+        "type":  "String",
+        "value":  "[2d6033c]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d %d]\", 1)",
+        "type":  "String",
+        "value":  "[1 0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s|%s]\", \"a\")",
+        "type":  "String",
+        "value":  "[a|(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d]\", 1, 2, 3)",
+        "type":  "String",
+        "value":  "[1]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\")",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%s]\", Array(1, \"x\"))",
+        "type":  "String",
+        "value":  "[1|x]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", Array(\"a\", \"b\"))",
+        "type":  "String",
+        "value":  "[a]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", Array())",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s|%s]\", Array(\"a\"), \"b\")",
+        "type":  "String",
+        "value":  "[a|b]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%s|%s]\", \"a\", Array(\"b\"))",
+        "type":  "String",
+        "value":  "[a|b]"
+    },
+    {
+        "expr":  "f.sprintf()",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.sprintf\u0027"
+    },
+    {
+        "expr":  "f.sprintf(Null)",
+        "error":  13,
+        "description":  "型が一致しません。: \u0027f.sprintf\u0027"
+    },
+    {
+        "expr":  "f.sprintf(123)",
+        "type":  "String",
+        "value":  "123"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%d|%s]\", Array(1, \"x\"))",
+        "type":  "String",
+        "value":  "[1|x]"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%s]\", \"a\")",
+        "type":  "String",
+        "value":  "[a]"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%s]\", Array())",
+        "type":  "String",
+        "value":  "[(null)]"
+    },
+    {
+        "expr":  "f.vsprintf(\"abc\", Array())",
+        "type":  "String",
+        "value":  "abc"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%s]\")",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.vsprintf\u0027"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%s]\", Array(\"a\"), 1)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.vsprintf\u0027"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%d %d]\", Array(1))",
+        "type":  "String",
+        "value":  "[1 0]"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"yyyy-MM-dd dddd\")",
+        "type":  "String",
+        "value":  "2003-01-15 水曜日"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"yyyy/MM/dd ddd dddd MMM MMMM\")",
+        "type":  "String",
+        "value":  "2003/01/15 水 水曜日 1 1月"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"y yy yyy yyyy M MM d dd\")",
+        "type":  "String",
+        "value":  "3 03 2003 2003 1 01 15 15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"gg y\u0027年\u0027M\u0027月\u0027d\u0027日\u0027\")",
+        "type":  "String",
+        "value":  "西暦 3年1月15日"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"\u0027quote\u0027\u0027s\u0027 yyyy\")",
+        "type":  "String",
+        "value":  "quote\u0027s 2003"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 4, #2003-01-15 10:20:30#, \"gg y\u0027年\u0027M\u0027月\u0027d\u0027日\u0027\")",
+        "type":  "String",
+        "value":  "平成 15年1月15日"
+    },
+    {
+        "expr":  "f.GetDateFormat(1041, 4, #2003-01-15 10:20:30#, \"gg y\u0027年\u0027M\u0027月\u0027d\u0027日\u0027\")",
+        "type":  "String",
+        "value":  "平成 15年1月15日"
+    },
+    {
+        "expr":  "f.GetDateFormat(1041, 4, #2003-01-15 10:20:30#, \"ggg yy\")",
+        "type":  "String",
+        "value":  "平成 15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 1, #2003-01-15 10:20:30#, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 2, #2003-01-15 10:20:30#, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 8, #2003-01-15 10:20:30#, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 1, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 2, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 2 Or 4, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(1041, 2 Or 4, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(1033, 0, #2003-01-15 10:20:30#, \"dddd, MMMM dd, yyyy\")",
+        "type":  "String",
+        "value":  "Wednesday, January 15, 2003"
+    },
+    {
+        "expr":  "f.GetDateFormat(1033, 2, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(1033, 1, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(1036, 0, #2003-01-15 10:20:30#, \"dddd d MMMM yyyy\")",
+        "type":  "String",
+        "value":  "mercredi 15 janvier 2003"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, \u0026H80000000, #2003-01-15 10:20:30#, \"dddd\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #1899-12-30#, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "1899-12-30"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #1601-01-01#, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "1601-01-01"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #1600-12-31#, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #9999-12-31#, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "9999-12-31"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2019-05-01#, \"gg y\")",
+        "type":  "String",
+        "value":  "西暦 19"
+    },
+    {
+        "expr":  "f.GetDateFormat(1041, 4, #2019-05-01#, \"gg y\")",
+        "type":  "String",
+        "value":  "令和 1"
+    },
+    {
+        "expr":  "f.GetDateFormat(1041, 4, #2019-04-30#, \"gg y\")",
+        "type":  "String",
+        "value":  "平成 31"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, \"2003/01/15\", \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2019-04-30"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, 37636, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2019-04-30"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, 37636.75, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, \"abc\", \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, Null, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, Empty, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 3, #2003-01-15 10:20:30#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 1, #2003-01-15 10:20:30#, \"yyyy\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat()",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, \"yyyy\", 1)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, Null)",
+        "error":  13,
+        "description":  "型が一致しません。: \u0027f.GetDateFormat\u0027"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 10:20:30#, 123)",
+        "type":  "String",
+        "value":  "123"
+    },
+    {
+        "expr":  "f.GetDateFormat(99999, 0, #2003-01-15 10:20:30#, \"yyyy\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 10:20:30#, \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "10:20:30"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#, \"hh:mm:ss tt\")",
+        "type":  "String",
+        "value":  "03:04:05 午後"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#, \"h:m:s t H\")",
+        "type":  "String",
+        "value":  "3:4:5 午 15"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#, \"\u0027at\u0027 HH\u0027h\u0027\")",
+        "type":  "String",
+        "value":  "at 15h"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#, \"\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 1, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 2, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 4, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 8, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 4 Or 8, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 2, #2003-01-15 15:04:05#, \"hh:mm:ss tt\")",
+        "type":  "String",
+        "value":  "03:04 午後"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 4, #2003-01-15 15:04:05#, \"hh:mm:ss tt\")",
+        "type":  "String",
+        "value":  "03:04:05"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 8, #2003-01-15 15:04:05#, \"hh:mm:ss tt\")",
+        "type":  "String",
+        "value":  "15:04:05 午後"
+    },
+    {
+        "expr":  "f.GetTimeFormat(1033, 0, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(1033, 0, #2003-01-15 15:04:05#, \"hh:mm:ss tt\")",
+        "type":  "String",
+        "value":  "03:04:05 PM"
+    },
+    {
+        "expr":  "f.GetTimeFormat(1033, 2, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(1033, 8, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15#, \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "00:00:00"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, \"15:04:05\", \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "00:00:32"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, 0.5, \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "12:00:00"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 23:59:59#, \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "23:59:59"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, \"abc\", \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "23:15:32"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, Null, \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "23:15:32"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 3, #2003-01-15 15:04:05#)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat()",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, #2003-01-15 15:04:05#, \"HH\", 1)",
+        "error":  450,
+        "description":  "引数の数が一致していません。または不正なプロパティを指定しています。: \u0027f.GetTimeFormat\u0027"
+    },
+    {
+        "expr":  "f.GetTimeFormat(99999, 0, #2003-01-15 15:04:05#, \"HH\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.NoSuchMethod(1)",
+        "error":  438,
+        "description":  "オブジェクトでサポートされていないプロパティまたはメソッドです。: \u0027f.NoSuchMethod\u0027"
+    },
+    {
+        "expr":  "f.vbUpperCase(1)",
+        "error":  451,
+        "description":  "オブジェクトがコレクションではありません。: \u0027f.vbUpperCase\u0027"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", CByte(200), 5, 6)",
+        "type":  "String",
+        "value":  "[5|6|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", CCur(12.5), 5, 6)",
+        "type":  "String",
+        "value":  "[5|6|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", #2003-01-15#, 5, 6)",
+        "type":  "String",
+        "value":  "[5|6|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f|%d]\", #2003-01-15#, 5)",
+        "type":  "String",
+        "value":  "[0.000000|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", Null, 5, 6)",
+        "type":  "String",
+        "value":  "[5|6|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", Empty, 5, 6)",
+        "type":  "String",
+        "value":  "[5|6|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", CSng(1.5), 5, 6)",
+        "type":  "String",
+        "value":  "[1069547520|5|6]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f|%d]\", CSng(1.5), 5)",
+        "type":  "String",
+        "value":  "[0.000000|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", True, 5, 6)",
+        "type":  "String",
+        "value":  "[-1|5|6]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", 3.5, 5, 6)",
+        "type":  "String",
+        "value":  "[0|1074528256|5]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", CLng(7), 5, 6)",
+        "type":  "String",
+        "value":  "[7|5|6]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", 4000000000, 5, 6)",
+        "type":  "String",
+        "value":  "[0|1106103653|5]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d]\", Array(), 5)",
+        "type":  "String",
+        "value":  "[5|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d]\", Array(Array(1, 2)), 5, 6)",
+        "type":  "String",
+        "value":  "[1|2|5]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d]\", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)",
+        "type":  "String",
+        "value":  "[1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d|%d]\", 1)",
+        "type":  "String",
+        "value":  "[1|0|0|0|0|0|0|0|0|0|0|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%I64d|%d]\", 1, 2, 3)",
+        "type":  "String",
+        "value":  "[8589934593|3]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%I64x]\", -1, -1)",
+        "type":  "String",
+        "value":  "[ffffffffffffffff]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", -1, -1)",
+        "type":  "String",
+        "value":  "[-1.#QNAN0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f|%e|%g]\", 0, 2146435072, 0, 2146435072, 0, -1048576)",
+        "type":  "String",
+        "value":  "[1.#INF00|1.#INF00e+000|-1.#INF]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%f]\", 0, -524288)",
+        "type":  "String",
+        "value":  "[-1.#IND00]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%a|%A|%.2a|%a]\", 1.5, -0.1, CDbl(3), CDbl(0))",
+        "type":  "String",
+        "value":  "[0x1.800000p+0|-0X1.99999AP-4|0x1.80p+1|0x0.000000p+0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%e|%e|%e]\", CDbl(0), 1E-300, 1.5E+300)",
+        "type":  "String",
+        "value":  "[0.000000e+000|1.000000e-300|1.500000e+300]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.20f|%.17g|%.3f|%.2f]\", 0.1, 0.1, 1.0005, 1.005)",
+        "type":  "String",
+        "value":  "[0.10000000000000001000|0.10000000000000001|1.000|1.00]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%10.4g|%-10.2e|%+g|%#.3g]\", 3.14159, 3.14159, 3.14159, 1)",
+        "type":  "String",
+        "value":  "[     3.142|3.14e+000 |+3.14159|4.94e-324]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%g|%g|%g]\", 123456, 1234567, 0.00012345)",
+        "type":  "String",
+        "value":  "[2.61975e-308|0.00012345|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%05s|%-05d|%+s]\", \"ab\", 3, \"x\")",
+        "type":  "String",
+        "value":  "[000ab|3    |x]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%#5o|%#08x|% 05d]\", 8, 255, 42)",
+        "type":  "String",
+        "value":  "[  010|0x0000ff| 0042]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%hhd|%wc|%wS|%I32d]\", 300, 66, \"abc\", 5)",
+        "type":  "String",
+        "value":  "[300|B|abc|5]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.3s]\", \"あいうえお\")",
+        "type":  "String",
+        "value":  "[あいう]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%-*d|%*d]\", -4, 1, -4, 2)",
+        "type":  "String",
+        "value":  "[1   |2   ]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%.*d]\", -1, 5)",
+        "type":  "String",
+        "value":  "[5]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%c]\", 0)",
+        "type":  "String",
+        "value":  "["
+    },
+    {
+        "expr":  "f.sprintf(\"[%s]\", \"\")",
+        "type":  "String",
+        "value":  "[]"
+    },
+    {
+        "expr":  "f.sprintf(\"\", 1)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.sprintf(\"%\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 1 Or 64, 0)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.StrConv(\"abc\", 2 Or 2048, 0)",
+        "type":  "String",
+        "value":  "abc"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H400, \"abc\")",
+        "type":  "String",
+        "value":  "Ȏऎ਎āā"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H400 Or 1, \"abc\")",
+        "type":  "String",
+        "value":  "Ȏऎ਎āā"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200 Or 1, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200 Or \u0026H10000, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H100000 Or \u0026H800000, \"ｱｲｳ\")",
+        "type":  "String",
+        "value":  "あいう"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 1, #2003-01-15#, Empty)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 2, #2003-01-15 15:04:05#, Empty)",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, CDate(\"2003/01/15\"), \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, Now - Now + #2003-01-15#, \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, #2003-01-15 23:59:59.6#, \"yyyy-MM-dd\")",
+        "error":  1002,
+        "description":  "構文エラーです。"
+    },
+    {
+        "expr":  "f.StrConv(vs, 1)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.StrConv(vs, vn - 4)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, vs)",
+        "type":  "String",
+        "value":  "ABC"
+    },
+    {
+        "expr":  "f.sprintf(vs)",
+        "type":  "String",
+        "value":  "abc"
+    },
+    {
+        "expr":  "f.vsprintf(\"[%s]\", Array(vs))",
+        "type":  "String",
+        "value":  "[abc]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d]\", vn, 7)",
+        "type":  "String",
+        "value":  "[7|0]"
+    },
+    {
+        "expr":  "f.sprintf(\"[%d|%d]\", (vn), 7)",
+        "type":  "String",
+        "value":  "[5|7]"
+    },
+    {
+        "expr":  "f.GetDateFormat(0, 0, (vd), \"yyyy-MM-dd\")",
+        "type":  "String",
+        "value":  "2003-01-15"
+    },
+    {
+        "expr":  "f.GetTimeFormat(0, 0, (vd), \"HH:mm:ss\")",
+        "type":  "String",
+        "value":  "10:20:30"
+    },
+    {
+        "expr":  "f.StrConv(\"\u003cabc 1abc \u0027abc (abc\", 3, 0)",
+        "type":  "String",
+        "value":  "\u003cabc 1abc \u0027abc (abc"
+    },
+    {
+        "expr":  "f.StrConv(\"ABC DEF\", 3, 0)",
+        "type":  "String",
+        "value":  "Abc Def"
+    },
+    {
+        "expr":  "f.StrConv(\" abc  def\", 3, 0)",
+        "type":  "String",
+        "value":  " Abc  Def"
+    },
+    {
+        "expr":  "f.StrConv(\"a\" \u0026 Chr(12) \u0026 \"b\" \u0026 Chr(11) \u0026 \"c\" \u0026 Chr(13) \u0026 Chr(10) \u0026 \"d\", 3, 0)",
+        "type":  "String",
+        "value":  "A\fB\u000bC\r\nD"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H3000) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X　Y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(160) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X Y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H2003) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X Y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H200B) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X​y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H85) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X\u0085y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H2028) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X\u2028Y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026HFEFF) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X﻿y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 ChrW(\u0026H1680) \u0026 \"y\", 3, 0)",
+        "type":  "String",
+        "value":  "X Y"
+    },
+    {
+        "expr":  "f.StrConv(\"x\" \u0026 Chr(28) \u0026 \"y\" \u0026 Chr(31) \u0026 \"z\", 3, 0)",
+        "type":  "String",
+        "value":  "X\u001cy\u001fz"
+    },
+    {
+        "expr":  "f.StrConv(\"x_y-z.w,v;u\", 3, 0)",
+        "type":  "String",
+        "value":  "X_y-z.w,v;u"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"\u003cabc 1abc \u0027abc (abc\")",
+        "type":  "String",
+        "value":  "\u003cabc 1abc \u0027abc (abc"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"x\" \u0026 ChrW(\u0026H3000) \u0026 \"y\" \u0026 ChrW(160) \u0026 \"z\")",
+        "type":  "String",
+        "value":  "X　Y Z"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"x\" \u0026 ChrW(\u0026H2003) \u0026 \"y\" \u0026 ChrW(\u0026H85) \u0026 \"z\")",
+        "type":  "String",
+        "value":  "X Y\u0085z"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H400000, \"ａｂｃ＿ｄｅｆ　ｇｈｉ\")",
+        "type":  "String",
+        "value":  "Abc_def Ghi"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H800000, \"abc_def ghi\")",
+        "type":  "String",
+        "value":  "Ａｂｃ＿ｄｅｆ　Ｇｈｉ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H400, \"abc\")",
+        "type":  "String",
+        "value":  ""
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H800, \"ab cd\")",
+        "type":  "String",
+        "value":  "愀戀 挀搀"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H1000000, \"iıİ iıİ\")",
+        "type":  "String",
+        "value":  "Iıi Iıi"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H300 Or \u0026H1000000, \"iıİ iıİ\")",
+        "type":  "String",
+        "value":  "Iıi Iıi"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H300, \"iıİ iıİ\")",
+        "type":  "String",
+        "value":  "Iıİ Iıİ"
+    },
+    {
+        "expr":  "f.StrConv(\"iıİ iıİ\", 3 Or 1024, 1055)",
+        "type":  "String",
+        "value":  "Iıi Iıi"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300 Or \u0026H100000, \"アイウ ｶﾞｷﾞ\")",
+        "type":  "String",
+        "value":  "あいう ｶﾞｷﾞ"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H300, \"ǆa ǆb ß ﬁx\")",
+        "type":  "String",
+        "value":  "Ǆa Ǆb ß ﬁx"
+    },
+    {
+        "expr":  "f.LCMapString(0, \u0026H200, \"ǆa ß ﬁx\")",
+        "type":  "String",
+        "value":  "ǄA ß ﬁX"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H300 Or \u0026H1000000, \"AI BI ia\")",
+        "type":  "String",
+        "value":  "Aı Bı Ia"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H100 Or \u0026H1000000, \"AI BI ia\")",
+        "type":  "String",
+        "value":  "aı bı ia"
+    },
+    {
+        "expr":  "f.LCMapString(1055, \u0026H200 Or \u0026H1000000, \"ia\")",
+        "type":  "String",
+        "value":  "İA"
+    },
+    {
+        "expr":  "f.StrConv(\"AI BI ia\", 3 Or 1024, 1055)",
+        "type":  "String",
+        "value":  "Aı Bı Ia"
+    },
+    {
+        "expr":  "f.StrConv(\"AI BI ia\", 3, 1055)",
+        "type":  "String",
+        "value":  "Ai Bi Ia"
+    }
+]

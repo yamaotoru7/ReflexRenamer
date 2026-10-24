@@ -1,0 +1,22 @@
+// エラー時のダイアログ（B15、DIALOG 130）：長すぎる名前にリネームしてエラーを起こす
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1037" },
+    { "do": "setText", "target": "id:1057", "text": "*.txt" },
+    { "do": "setText", "target": "id:1010", "text": "*" },
+    { "do": "setText", "target": "id:1019", "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa_\\0" },
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "key", "keys": ["ENTER"] },
+    { "do": "wait", "ms": 2000 },
+    { "do": "capture", "name": "error" },
+    { "do": "tree", "target": "window:Flexible Renamer", "name": "error" },
+    { "do": "key", "keys": ["ESCAPE"] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "capture", "name": "after" },
+    { "do": "files", "name": "after" }
+  ]
+}

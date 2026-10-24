@@ -1,0 +1,24 @@
+// 重複時の処理（B14）：「連番を付ける」（既定の書式 (?)、末尾、開始 1、ステップ 1）で続行したときの結果
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1037" },
+    { "do": "setText", "target": "id:1057", "text": "*.txt" },
+    { "do": "setText", "target": "id:1010", "text": "*" },
+    { "do": "setText", "target": "id:1019", "text": "same.\\e" },
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "key", "keys": ["ENTER"] },
+    { "do": "wait", "ms": 2000 },
+    { "do": "click", "target": "window:Flexible Renamer,id:1064,type:RadioButton" },
+    { "do": "wait", "ms": 500 },
+    { "do": "tree", "target": "window:Flexible Renamer", "name": "conflict-number" },
+    { "do": "click", "target": "window:Flexible Renamer,id:1,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "capture", "name": "after" },
+    { "do": "files", "name": "after" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "after" }
+  ]
+}

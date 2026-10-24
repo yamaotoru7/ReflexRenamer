@@ -1,0 +1,95 @@
+// T803 の自動化：debug-float-save で保存した BarState（フォルダ一覧が浮いた状態）から起動して、浮いたまま戻るか（移植版だけ）
+{
+ "fixture": "basic",
+ "settings": {
+  "BarState-SCBar-126": {
+   "sizeHorzCX": "175",
+   "sizeHorzCY": "175",
+   "sizeVertCX": "175",
+   "sizeVertCY": "618",
+   "sizeFloatCX": "175",
+   "sizeFloatCY": "175"
+  },
+  "BarState-SCBar-127": {
+   "sizeHorzCX": "271",
+   "sizeHorzCY": "503",
+   "sizeVertCX": "271",
+   "sizeVertCY": "618",
+   "sizeFloatCX": "271",
+   "sizeFloatCY": "503"
+  },
+  "BarState-Bar0": {
+   "BarID": "59392"
+  },
+  "BarState-Bar1": {
+   "BarID": "59392"
+  },
+  "BarState-Bar2": {
+   "BarID": "59396"
+  },
+  "BarState-Bar3": {
+   "BarID": "59393"
+  },
+  "BarState-Bar4": {
+   "BarID": "59420",
+   "Bars": "3",
+   "Bar#0": "0",
+   "Bar#1": "127",
+   "Bar#2": "0"
+  },
+  "BarState-Bar5": {
+   "BarID": "59423",
+   "Horz": "1",
+   "Floating": "1",
+   "XPos": "46",
+   "YPos": "159",
+   "Bars": "3",
+   "Bar#0": "0",
+   "Bar#1": "126",
+   "Bar#2": "0"
+  },
+  "BarState-Bar6": {
+   "BarID": "127",
+   "XPos": "-2",
+   "YPos": "-2",
+   "Docking": "1",
+   "MRUDockID": "0",
+   "MRUDockLeftPos": "-2",
+   "MRUDockTopPos": "-2",
+   "MRUDockRightPos": "269",
+   "MRUDockBottomPos": "616",
+   "MRUFloatStyle": "8196",
+   "MRUFloatXPos": "-2147483648",
+   "MRUFloatYPos": "0"
+  },
+  "BarState-Bar7": {
+   "BarID": "126",
+   "XPos": "-2",
+   "YPos": "-2",
+   "Docking": "1",
+   "MRUDockID": "59420",
+   "MRUDockLeftPos": "-2",
+   "MRUDockTopPos": "-2",
+   "MRUDockRightPos": "173",
+   "MRUDockBottomPos": "616",
+   "MRUFloatStyle": "8196",
+   "MRUFloatXPos": "46",
+   "MRUFloatYPos": "159"
+  },
+  "BarState-Summary": {
+   "Bars": "8",
+   "ScreenCX": "5760",
+   "ScreenCY": "1200"
+  }
+ },
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "capture",
+   "name": "restored"
+  }
+ ]
+}

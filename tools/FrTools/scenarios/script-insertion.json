@@ -1,0 +1,19 @@
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "toggle", "target": "id:1026", "on": true },
+    { "do": "setText", "target": "id:1019", "text": "seed" },
+    { "do": "popup", "target": "id:1047", "path": ["DigitNumber"] },
+    { "do": "key", "keys": ["X"] },
+    { "do": "readValue", "target": "id:1019", "name": "function-caret" },
+    { "do": "setText", "target": "id:1019", "text": "" },
+    { "do": "popup", "target": "id:1047", "native": true, "path": ["埋め込み関数(E)", "UCase(string)"] },
+    { "do": "key", "keys": ["X"] },
+    { "do": "readValue", "target": "id:1019", "name": "builtin-caret" },
+    { "do": "setText", "target": "id:1019", "text": "" },
+    { "do": "popup", "target": "id:1047", "native": true, "path": ["埋め込み関数(E)", "Left(string,length)"] },
+    { "do": "key", "keys": ["X"] },
+    { "do": "readValue", "target": "id:1019", "name": "multiple-arguments" }
+  ]
+}

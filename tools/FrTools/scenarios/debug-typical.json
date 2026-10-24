@@ -1,0 +1,11 @@
+{
+  "fixture": "typical",
+  "steps": [
+    { "do": "expandAll", "target": "id:1014" },
+    { "do": "treeSelect", "target": "id:1014", "item": "文字列置換" },
+    { "do": "tree", "target": "id:127", "name": "before" },
+    { "do": "setText", "target": "id:1025", "text": "o" },
+    { "do": "tree", "target": "id:127", "name": "after" },
+    { "do": "capture", "name": "after" }
+  ]
+}

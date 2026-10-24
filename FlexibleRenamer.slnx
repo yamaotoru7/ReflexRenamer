@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/FlexibleRenamer.Core/FlexibleRenamer.Core.csproj" />
+    <Project Path="src/FlexibleRenamer/FlexibleRenamer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FlexibleRenamer.Core.Tests/FlexibleRenamer.Core.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/FrTools/FrTools.csproj" />
+  </Folder>
+</Solution>

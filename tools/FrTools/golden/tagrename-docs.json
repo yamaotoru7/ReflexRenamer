@@ -1,0 +1,13 @@
+// タグ・リネーム：OLE 複合文書の文書情報（T405、フィクスチャ docs）
+{
+  "fixture": "docs",
+  "setup": [
+    { "do": "command", "id": 66 },
+    { "do": "wait", "ms": 1000 }
+  ],
+  "cases": [
+    { "name": "d-basic", "tag": { "kind": 3 }, "format": "<DOC.Title>_<DOC.Subject>_<DOC.Author>" },
+    { "name": "d-other", "tag": { "kind": 3 }, "format": "<DOC.Keywords>_<DOC.Comments>_<DOC.AppName>_<DOC.Company>" },
+    { "name": "d-dates", "tag": { "kind": 3 }, "format": "<DOC.Created>_<DOC.LastSaved>" }
+  ]
+}

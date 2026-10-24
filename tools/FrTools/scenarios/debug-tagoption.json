@@ -1,0 +1,16 @@
+// タグ・リネームのオプションメニューから設定ダイアログを開く手順の確認
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "popup", "target": "id:1049", "path": ["タグ・リネーム (日付の書式と無効な文字)(T)"] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "capture", "name": "after-popup" },
+    { "do": "key", "keys": ["ESCAPE"] },
+    { "do": "wait", "ms": 500 },
+    { "do": "command", "id": 32951, "only": "original" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "capture", "name": "after-command" }
+  ]
+}

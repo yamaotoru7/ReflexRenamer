@@ -1,0 +1,29 @@
+// 連番オブジェクトページ：種類ごとの入力欄、名前と個数を入れたときのプレビュー
+{
+  "fixture": "tree",
+  "steps": [
+    { "do": "command", "id": 68, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Create numbered object", "only": "clone" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-default" },
+    { "do": "tree", "target": "id:127", "name": "default" },
+    { "do": "capture", "name": "default" },
+    { "do": "setText", "target": "id:1018,type:Edit", "text": "file??.txt" },
+    { "do": "setText", "target": "id:1022,type:Edit", "text": "3" },
+    { "do": "setText", "target": "id:1065,type:Edit", "text": "5" },
+    { "do": "setText", "target": "id:1067,type:Edit", "text": "2" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-named" },
+    { "do": "setText", "target": "id:1018,type:Edit", "text": "noq" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-noq" },
+    { "do": "setText", "target": "id:1002,type:Edit", "text": "1K" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-size" },
+    { "do": "click", "target": "id:1079,type:RadioButton" },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "id:127", "name": "folder" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-folder" },
+    { "do": "capture", "name": "folder" }
+  ]
+}

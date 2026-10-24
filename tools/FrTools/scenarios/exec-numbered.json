@@ -1,0 +1,29 @@
+// 連番オブジェクトの生成の実行結果（F01〜F03）
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "command", "id": 68, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Create numbered object", "only": "clone" },
+    { "do": "wait", "ms": 800 },
+    { "do": "setText", "target": "id:1018,type:Edit", "text": "file??.txt" },
+    { "do": "setText", "target": "id:1022,type:Edit", "text": "3" },
+    { "do": "setText", "target": "id:1065,type:Edit", "text": "5" },
+    { "do": "setText", "target": "id:1067,type:Edit", "text": "2" },
+    { "do": "setText", "target": "id:1002,type:Edit", "text": "1K" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "preview" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "capture", "name": "after-click" },
+    { "do": "tree", "name": "after-click" },
+    { "do": "capture", "name": "after-exec" },
+    { "do": "files", "name": "after-exec" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "after-exec" },
+    { "do": "click", "target": "id:1079,type:RadioButton" },
+    { "do": "setText", "target": "id:1018,type:Edit", "text": "dir?" },
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "files", "name": "after-folders" }
+  ]
+}

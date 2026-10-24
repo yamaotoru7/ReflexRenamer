@@ -1,0 +1,300 @@
+// フィルタの規則（B01）：拡張子だけの指定、; 区切りの順、フォルダへの適用、空白
+{
+ "fixture": "tree",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "toggle",
+   "target": "id:1034",
+   "on": true
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p01-star"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "dir*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p02-dirstar"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "jpg"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p03-jpg"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "txt;jpg"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p04-txt-jpg"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "a*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p05-a"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": " a*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p06-space-a"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.txt;a*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p07-txt-a"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.jpg;*.txt"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p08-jpg-txt"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.txt;*.TXT"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p09-dup"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*;*.txt"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p10-star-txt"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": ""
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p11-empty"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p12-starstar"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.txt;"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p13-trail"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "dir1"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p14-dir1"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "?.txt"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p15-question"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "dir?"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "p16-dirq"
+  },
+  {
+   "do": "toggle",
+   "target": "id:1024",
+   "on": true
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "dir*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "r01-dirstar"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "x*"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "r02-x"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "*.txt;*.jpg"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "r03-txt-jpg"
+  },
+  {
+   "do": "setText",
+   "target": "id:1057",
+   "text": "jpg"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "readList",
+   "target": "id:1000,type:List",
+   "name": "r04-jpg"
+  }
+ ]
+}

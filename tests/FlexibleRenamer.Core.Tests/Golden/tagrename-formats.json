@@ -1,0 +1,252 @@
+{
+  "source": "tools/FrTools/golden/tagrename-formats.json から `FrTools golden tagrename-formats` で生成。手で編集しない。",
+  "fixtureName": "tags2",
+  "fixture": [
+    {
+      "path": "wma1.wma",
+      "time": "2013-04-05 06:07:01",
+      "created": "2013-04-05 06:07:01",
+      "size": 0,
+      "content": "MCaydY5mzxGm2QCqAGLObEABAAAAAAAAAgAAAAECMyaydY5mzxGm2QCqAGLObGgAAAAAAAAAFAAWAAIAGAACAFcATQBBACAAVABpAHQAbABlAAAAVwBNAEEAIABBAHIAdABpAHMAdAAAAAAAdwBtAGEAIABjAG8AbQBtAGUAbgB0AAAAAABApNDSB+PSEZfwAKDJXqhQugAAAAAAAAAEABwAVwBNAC8AQQBsAGIAdQBtAFQAaQB0AGwAZQAAAAAAFABXAE0AQQAgAEEAbABiAHUAbQAAABAAVwBNAC8AWQBlAGEAcgAAAAAACgAyADAAMAA0AAAAEgBXAE0ALwBHAGUAbgByAGUAAAAAAAoAUgBvAGMAawAAAB4AVwBNAC8AVAByAGEAYwBrAE4AdQBtAGIAZQByAAAAAwAEAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    {
+      "path": "wma2.wma",
+      "time": "2013-04-05 06:07:02",
+      "created": "2013-04-05 06:07:02",
+      "size": 0,
+      "content": "MCaydY5mzxGm2QCqAGLObPgAAAAAAAAAAgAAAAECMyaydY5mzxGm2QCqAGLObEIAAAAAAAAADgAMAAIAAgACAFMAZQBjAG8AbgBkAAAATwB0AGgAZQByAAAAAAAAAAAAQKTQ0gfj0hGX8ACgyV6oUJgAAAAAAAAAAwAcAFcATQAvAEEAbABiAHUAbQBUAGkAdABsAGUAAAAAABAAQQBsAGIAdQBtACAAMgAAAB4AVwBNAC8AVAByAGEAYwBrAE4AdQBtAGIAZQByAAAAAAAGADEAMgAAABIAVwBNAC8ARwBlAG4AcgBlAAAAAAAKAEoAYQB6AHoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    {
+      "path": "wma3.wma",
+      "time": "2013-04-05 06:07:03",
+      "created": "2013-04-05 06:07:03",
+      "size": 0,
+      "content": "MCaydY5mzxGm2QCqAGLObJYAAAAAAAAAAgAAAAECMyaydY5mzxGm2QCqAGLObEIAAAAAAAAAFgAEAAIAAgACAFQAcgBhAGMAawAgAE8AbgBsAHkAAABYAAAAAAAAAAAAQKTQ0gfj0hGX8ACgyV6oUDYAAAAAAAAAAQASAFcATQAvAFQAcgBhAGMAawAAAAMABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+    },
+    {
+      "path": "ape1.ape",
+      "time": "2013-04-05 06:07:04",
+      "created": "2013-04-05 06:07:04",
+      "size": 0,
+      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAVGl0bGUAQVBFIFRpdGxlCgAAAAAAAABBcnRpc3QAQVBFIEFydGlzdAkAAAAAAAAAQWxidW0AQVBFIEFsYnVtAQAAAAAAAABUcmFjawAzBAAAAAAAAABZZWFyADIwMDcDAAAAAAAAAEdlbnJlAFBvcAUAAAAAAAAAQ29tbWVudABhcGUgY0FQRVRBR0VY0AcAAK0AAAAHAAAAAAAAAAAAAAAAAAAA"
+    },
+    {
+      "path": "ape2.ape",
+      "time": "2013-04-05 06:07:05",
+      "created": "2013-04-05 06:07:05",
+      "size": 0,
+      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEFQRVRBR0VY0AcAAFwAAAADAAAAAAAAoAAAAAAAAAAACwAAAAAAAABUaXRsZQBXaXRoIEhlYWRlcgEAAAAAAAAAQXJ0aXN0AEgFAAAAAAAAAFRyYWNrADExLzEyQVBFVEFHRVjQBwAAXAAAAAMAAAAAAACAAAAAAAAAAAA="
+    },
+    {
+      "path": "mpc1.mpc",
+      "time": "2013-04-05 06:07:06",
+      "created": "2013-04-05 06:07:06",
+      "size": 0,
+      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAVGl0bGUATVBDIFRpdGxlCgAAAAAAAABBcnRpc3QATVBDIEFydGlzdEFQRVRBR0VY0AcAAFAAAAACAAAAAAAAAAAAAAAAAAAA"
+    },
+    {
+      "path": "ogg1.ogg",
+      "time": "2013-04-05 06:07:12",
+      "created": "2013-04-05 06:07:12",
+      "size": 0,
+      "content": "T2dnUwACAAAAAAAAAAAxVHJGAAAAAFYNZRwBHgF2b3JiaXMAAAAAAkSsAAAAAAAAAPQBAAAAAAC4AU9nZ1MAAAAAAAAAAAAAMVRyRgEAAAB9+0kKApInA3ZvcmJpcwcAAABGclRvb2xzBwAAAA8AAABUSVRMRT1PR0cgVGl0bGURAAAAQVJUSVNUPU9HRyBBcnRpc3QPAAAAQUxCVU09T0dHIEFsYnVtDQAAAFRSQUNLTlVNQkVSPTUJAAAAREFURT0yMDA5DQAAAEdFTlJFPUFtYmllbnQNAAAAQ09NTUVOVD1vZ2cgYwEFdm9yYmlzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPZ2dTAAQAEAAAAAAAADFUckYCAAAAJiWYTAFkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="
+    },
+    {
+      "path": "iptc5.jpg",
+      "time": "2013-04-05 06:07:11",
+      "created": "2013-04-05 06:07:11",
+      "size": 0,
+      "content": "/9j/4AAQSkZJRgABAQEAYABgAAD/7QDMUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAALAcAgAAAgACHAIFAAtSZWFsIE9iamVjdBwCDwADQ2F0HAI3AAgyMDI0MDMxNRwCUAAMUGhvdG9ncmFwaGVyHAJVAAVTdGFmZhwCWgAFT3Nha2EcAl8ABkthbnNhaRwCZQAFSmFwYW4cAmcABFJFRjEcAmkACEhlYWRsaW5lHAJuAAZDcmVkaXQcAnQACyhjKSBTb21lb25lHAJ4AAlSIGNhcHRpb24cAnoABldyaXRlcv/bAEMAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhQYEhQVFP/bAEMBAwQEBQQFCQUFCRQNCw0UFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFP/AABEIAAgACAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AMSiiiv10/JD/9k="
+    }
+  ],
+  "cases": [
+    {
+      "name": "f-music-basic",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Artist> - <ID3.Track>",
+      "results": [
+        {
+          "folder": "",
+          "name": "wma1.wma",
+          "newName": "WMA Artist - WMA Title.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma2.wma",
+          "newName": "Other - Second.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma3.wma",
+          "newName": "X - Track Only.wma"
+        },
+        {
+          "folder": "",
+          "name": "ape1.ape",
+          "newName": "APE Artist - APE Title.ape"
+        },
+        {
+          "folder": "",
+          "name": "ape2.ape",
+          "newName": "H - With Header.ape"
+        },
+        {
+          "folder": "",
+          "name": "mpc1.mpc",
+          "newName": "MPC Artist - MPC Title.mpc"
+        },
+        {
+          "folder": "",
+          "name": "ogg1.ogg",
+          "newName": "OGG Artist - OGG Title.ogg"
+        }
+      ]
+    },
+    {
+      "name": "f-music-all",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3.Album>_<ID3.Year>_<ID3.TrackNumber>_<ID3.Genre>_<ID3.Comment>",
+      "results": [
+        {
+          "folder": "",
+          "name": "wma1.wma",
+          "newName": "WMA Album_2004_07_Rock_wma comment.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma2.wma",
+          "newName": "Album 2__-1_Jazz_.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma3.wma",
+          "newName": "__05__.wma"
+        },
+        {
+          "folder": "",
+          "name": "ape1.ape",
+          "newName": "APE Album_2007_03_Pop_ape c.ape"
+        },
+        {
+          "folder": "",
+          "name": "ape2.ape",
+          "newName": "__11_(Other)_.ape"
+        },
+        {
+          "folder": "",
+          "name": "mpc1.mpc",
+          "newName": "__00_(Other)_.mpc"
+        },
+        {
+          "folder": "",
+          "name": "ogg1.ogg",
+          "newName": "OGG Album_2009_05_Ambient_ogg c.ogg"
+        }
+      ]
+    },
+    {
+      "name": "f-music-v1",
+      "tag": {
+        "kind": 0
+      },
+      "format": "<ID3v1.Artist>_<ID3v1.Track>_<ID3v1.TrackNumber>",
+      "results": [
+        {
+          "folder": "",
+          "name": "wma1.wma",
+          "newName": "WMA Artist_WMA Title_07.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma2.wma",
+          "newName": "Other_Second_-1.wma"
+        },
+        {
+          "folder": "",
+          "name": "wma3.wma",
+          "newName": "X_Track Only_05.wma"
+        },
+        {
+          "folder": "",
+          "name": "ape1.ape",
+          "newName": "APE Artist_APE Title_03.ape"
+        },
+        {
+          "folder": "",
+          "name": "ape2.ape",
+          "newName": "H_With Header_11.ape"
+        },
+        {
+          "folder": "",
+          "name": "mpc1.mpc",
+          "newName": "MPC Artist_MPC Title_00.mpc"
+        },
+        {
+          "folder": "",
+          "name": "ogg1.ogg",
+          "newName": "OGG Artist_OGG Title_05.ogg"
+        }
+      ]
+    },
+    {
+      "name": "f-image-basic",
+      "tag": {
+        "kind": 2
+      },
+      "format": "<IPTC.ObjectName>_<IPTC.Caption>_<IPTC.Byline>",
+      "results": [
+        {
+          "folder": "",
+          "name": "iptc5.jpg",
+          "newName": "Real Object_R caption_Photographer.jpg"
+        }
+      ]
+    },
+    {
+      "name": "f-image-place",
+      "tag": {
+        "kind": 2
+      },
+      "format": "<IPTC.City>_<IPTC.State>_<IPTC.Country>_<IPTC.Category>",
+      "results": [
+        {
+          "folder": "",
+          "name": "iptc5.jpg",
+          "newName": "Osaka_Kansai_Japan_Cat.jpg"
+        }
+      ]
+    },
+    {
+      "name": "f-image-other",
+      "tag": {
+        "kind": 2
+      },
+      "format": "<IPTC.Headline>_<IPTC.Credits>_<IPTC.CopyrightNotice>_<IPTC.CaptionWriter>_<IPTC.BylineTitle>_<IPTC.OriginalTransmissionReference>",
+      "results": [
+        {
+          "folder": "",
+          "name": "iptc5.jpg",
+          "newName": "Headline_Credit_(c) Someone_Writer_Staff_REF1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "f-image-date",
+      "tag": {
+        "kind": 2
+      },
+      "format": "<IPTC.DateCreated>",
+      "results": [
+        {
+          "folder": "",
+          "name": "iptc5.jpg",
+          "newName": "20240315.jpg"
+        }
+      ]
+    }
+  ]
+}

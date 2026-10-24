@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="FrTools.StrFuncProbe" version="1.0.0.0" processorArchitecture="x86" />
+  <file name="StrFunc.dll">
+    <comClass clsid="{4FCD6060-957F-476A-B8DA-A4A44D06E594}" threadingModel="Apartment" progid="StrFunc.Wrapper" tlbid="{088E76DC-EEFF-48DB-B193-2FE1A10A3A2F}" />
+    <typelib tlbid="{088E76DC-EEFF-48DB-B193-2FE1A10A3A2F}" version="1.0" helpdir="" />
+  </file>
+</assembly>

@@ -1,0 +1,13 @@
+{
+  "fixture": "basic",
+  "settings": {
+    "Rename": { "AdvancedRename": "1", "Mode": "1", "UseScript": "1", "ScriptLanguage": "JScript" }
+  },
+  "steps": [
+    { "do": "popupItems", "target": "id:1047", "path": ["スクリプト言語(S)"], "name": "restored-language" },
+    { "do": "popupItems", "target": "id:1047", "name": "restored-functions" },
+    { "do": "setText", "target": "id:1010", "text": "(.*)\\.(.*)" },
+    { "do": "setText", "target": "id:1019", "text": "\"\\1\".toUpperCase()+\".\\2\"" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "restored-preview" }
+  ]
+}

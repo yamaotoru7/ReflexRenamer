@@ -1,0 +1,9 @@
+<Project>
+  <!--
+    オリジナル版と同じ Windows のロケールデータ（NLS）を使う。
+    .NET 既定の ICU では、日本語の月の短縮名が「3」ではなく「3月」になるなど、置換結果が変わる。
+  -->
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.Globalization.UseNls" Value="true" />
+  </ItemGroup>
+</Project>

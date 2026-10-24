@@ -1,0 +1,26 @@
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1038" },
+    { "do": "toggle", "target": "id:1026", "on": true },
+    { "do": "setText", "target": "id:1010", "text": "(.*)\\.(.*)" },
+    { "do": "setText", "target": "id:1019", "text": "seed" },
+    { "do": "popupItems", "target": "id:1047", "path": ["埋め込み関数(E)"], "name": "vb-builtins" },
+    { "do": "popupItems", "target": "id:1047", "path": ["スクリプト言語(S)"], "name": "languages" },
+    { "do": "popup", "target": "id:1047", "path": ["DigitNumber"] },
+    { "do": "tree", "target": "id:1019", "name": "insert-digit" },
+    { "do": "setText", "target": "id:1019", "text": "" },
+    { "do": "popup", "target": "id:1047", "path": ["toFullKana"] },
+    { "do": "tree", "target": "id:1019", "name": "insert-kana" },
+    { "do": "setText", "target": "id:1019", "text": "" },
+    { "do": "popup", "target": "id:1047", "native": true, "path": ["埋め込み関数(E)", "UCase(string)"] },
+    { "do": "tree", "target": "id:1019", "name": "insert-builtin" },
+    { "do": "popup", "target": "id:1047", "native": true, "path": ["スクリプト言語(S)", "JScript"] },
+    { "do": "popupItems", "target": "id:1047", "name": "js-menu" },
+    { "do": "popupItems", "target": "id:1047", "path": ["スクリプト言語(S)"], "name": "js-language" },
+    { "do": "popupItems", "target": "id:1047", "path": ["埋め込み関数(E)"], "name": "js-builtins" },
+    { "do": "setText", "target": "id:1019", "text": "\"\\1\".toUpperCase()+\".\\2\"" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "js-preview" }
+  ]
+}

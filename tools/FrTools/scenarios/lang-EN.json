@@ -1,0 +1,76 @@
+// 言語 EN での各ページの表示（T802）。移植版だけで実行し、崩れがないかを画像で確認する
+{
+  "fixture": "basic",
+  "settings": {
+    "Flexible Renamer": {
+      "Language": "EN"
+    }
+  },
+  "steps": [
+    {
+      "do": "capture",
+      "name": "rename"
+    },
+    {
+      "do": "tree",
+      "name": "rename"
+    },
+    {
+      "do": "click",
+      "target": "type:CheckBox,name:TagRename"
+    },
+    {
+      "do": "wait",
+      "ms": 1000
+    },
+    {
+      "do": "capture",
+      "name": "tagrename"
+    },
+    {
+      "do": "click",
+      "target": "type:CheckBox,name:Modify attributes"
+    },
+    {
+      "do": "wait",
+      "ms": 1000
+    },
+    {
+      "do": "capture",
+      "name": "attribute"
+    },
+    {
+      "do": "click",
+      "target": "type:CheckBox,name:Create numbered object"
+    },
+    {
+      "do": "wait",
+      "ms": 1000
+    },
+    {
+      "do": "capture",
+      "name": "numbered"
+    },
+    {
+      "do": "click",
+      "target": "type:CheckBox,name:Rename"
+    },
+    {
+      "do": "toggle",
+      "target": "id:1025",
+      "on": true
+    },
+    {
+      "do": "wait",
+      "ms": 800
+    },
+    {
+      "do": "capture",
+      "name": "advanced"
+    },
+    {
+      "do": "tree",
+      "name": "advanced"
+    }
+  ]
+}

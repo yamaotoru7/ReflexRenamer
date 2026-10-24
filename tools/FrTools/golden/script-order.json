@@ -1,0 +1,24 @@
+// スクリプト評価（E09、T116）：タグ・日時・連番の展開とスクリプト評価の順序、StrFunc 経由の付属関数、評価エラー
+// StrFunc を使う付属関数（toProperCase など）はオリジナル版では StrFunc.dll の COM 登録が要り、この環境では評価エラーになるので正解データを取らない（StrFuncTests で DLL の実測と照合）
+{
+  "fixture": "basic",
+  "setup": [
+    { "do": "toggle", "target": "id:1025,type:CheckBox", "on": true },
+    { "do": "click", "target": "id:1038" }
+  ],
+  "cases": [
+    { "name": "so-plain", "options": {"script": "VBScript"}, "method": "regex", "search": "^(.*)\\.(.*)$", "replace": "UCase(\"\\1\") & \".\" & \"\\2\"",
+      "steps": [ { "do": "toggle", "target": "id:1026", "on": true } ] },
+    { "name": "so-number-before", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "Replace(\"???\", \"0\", \"x\") & \"_\\0\"" },
+    { "name": "so-number-len", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "Len(\"??\") & \"_\\0\"" },
+    { "name": "so-tag-title", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "Len(\"\\t\") & \"_\\e\"" },
+    { "name": "so-tag-ext", "options": {"script": "VBScript"}, "method": "wildcard", "search": "*", "replace": "LCase(\"\\0\") & \"[\" & Len(\"\\e\") & \"]\"" },
+    { "name": "so-date", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "Len(\"\\Y\") & \"_\\0\"" },
+    { "name": "so-error", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "1/0" },
+    { "name": "so-number-start", "options": {"script": "VBScript", "numberStart": 3}, "method": "regex", "search": "^.*$", "replace": "(??? * 2) & \"_\\0\"",
+      "steps": [ { "do": "setText", "target": "id:1065,type:Edit", "text": "3" } ] },
+    { "name": "so-star-probe", "options": {"script": "VBScript"}, "method": "regex", "search": "^.*$", "replace": "\"a*b\" & \"_\\0\"" },
+    { "name": "so-off", "method": "regex", "search": "^.*$", "replace": "UCase(\"\\0\")",
+      "steps": [ { "do": "setText", "target": "id:1065,type:Edit", "text": "0" }, { "do": "toggle", "target": "id:1026", "on": false } ] }
+  ]
+}

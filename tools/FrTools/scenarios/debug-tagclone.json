@@ -1,0 +1,12 @@
+// 移植版のタグ・リネームページが正しく表示されるかの確認
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 2000 },
+    { "do": "tree", "target": "id:127", "name": "page" },
+    { "do": "capture", "name": "page" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list" }
+  ]
+}

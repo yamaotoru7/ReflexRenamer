@@ -1,0 +1,21 @@
+// タグ・リネームの種類一覧（ListBox 1088）の切り替え方法の確認
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1088,type:List", "at": [10, 29] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "tree", "target": "id:1088,type:List", "name": "after-glyph" },
+    { "do": "capture", "name": "after-glyph" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 65] },
+    { "do": "wait", "ms": 1000 },
+    { "do": "tree", "target": "id:1088,type:List", "name": "after-text" },
+    { "do": "capture", "name": "after-text" },
+    { "do": "popupItems", "target": "id:1046", "name": "taglist-image" },
+    { "do": "popup", "target": "id:1049", "path": ["タグ・リネーム (日付の書式と無効な文字)(T)"] },
+    { "do": "wait", "ms": 800 },
+    { "do": "comboItems", "target": "window:タグ・リネーム,id:1045", "name": "datetime-formats" },
+    { "do": "key", "keys": ["ESCAPE"] }
+  ]
+}

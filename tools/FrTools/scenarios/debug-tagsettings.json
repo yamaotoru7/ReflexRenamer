@@ -1,0 +1,15 @@
+// タグ・リネームの設定ダイアログ（172）の表示確認
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "popup", "target": "id:1049", "path": ["タグ・リネーム (日付の書式と無効な文字)(T)"] },
+    { "do": "wait", "ms": 800 },
+    { "do": "tree", "target": "window:タグ・リネーム", "name": "settings" },
+    { "do": "capture", "target": "window:タグ・リネーム", "name": "settings" },
+    { "do": "key", "keys": ["ESCAPE"] },
+    { "do": "tree", "target": "id:127", "name": "page" }
+  ]
+}

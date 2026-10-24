@@ -1,0 +1,36 @@
+// 属性ページ（D02、T501）：連続生成の間隔（日数）と、揃えるの元に写真の撮影日を使う
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 67, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:Modify attributes", "only": "clone" },
+    { "do": "wait", "ms": 800 },
+    { "do": "toggle", "target": "id:1024,type:CheckBox", "on": false },
+    { "do": "wait", "ms": 800 },
+    { "do": "files", "name": "before" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "揃える" },
+    { "do": "click", "target": "id:1142,type:RadioButton" },
+    { "do": "toggle", "target": "id:1121,type:CheckBox", "on": false },
+    { "do": "toggle", "target": "id:1122,type:CheckBox", "on": true },
+    { "do": "toggle", "target": "id:1123,type:CheckBox", "on": false },
+    { "do": "tree", "target": "id:127", "name": "photo" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "files", "name": "after-photo" },
+    { "do": "select", "target": "id:1017,type:ComboBox", "item": "連続生成" },
+    { "do": "wait", "ms": 500 },
+    { "do": "tree", "target": "id:127", "name": "sequential" },
+    { "do": "capture", "target": "id:127", "name": "sequential" },
+    { "do": "setText", "target": "id:1125,type:Edit", "text": "2" },
+    { "do": "toggle", "target": "id:1121,type:CheckBox", "on": true },
+    { "do": "toggle", "target": "id:1122,type:CheckBox", "on": false },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "files", "name": "after-sequential" },
+    { "do": "click", "target": "id:1144,type:RadioButton" },
+    { "do": "setText", "target": "id:1125,type:Edit", "text": "1" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 2500 },
+    { "do": "files", "name": "after-sequential-later" }
+  ]
+}

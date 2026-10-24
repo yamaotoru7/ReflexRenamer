@@ -1,0 +1,23 @@
+// リネームページのボタンから出るポップアップメニューを記録する
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "popupItems", "target": "id:1048", "name": "preset" },
+    { "do": "popupItems", "target": "id:1051", "name": "regex-option" },
+    { "do": "popupItems", "target": "id:1045", "name": "search-support" },
+    { "do": "popupItems", "target": "id:1046", "name": "replace-support" },
+    { "do": "popupItems", "target": "id:1054", "name": "numbering" },
+    { "do": "popupItems", "target": "id:1049", "name": "option" },
+    { "do": "popupItems", "target": "id:1047", "name": "script" },
+    { "do": "click", "target": "id:1038" },
+    { "do": "popupItems", "target": "id:1045", "name": "search-support-regex" },
+    { "do": "click", "target": "id:1039" },
+    { "do": "popupItems", "target": "id:1045", "name": "search-support-translation" },
+    { "do": "popupItems", "target": "id:1046", "name": "replace-support-translation" },
+    { "do": "click", "target": "id:1037" },
+    { "do": "select", "target": "id:1146", "item": "別フォルダにコピー&リネーム" },
+    { "do": "capture", "name": "copy-mode" },
+    { "do": "tree", "name": "copy-mode" }
+  ]
+}

@@ -1,0 +1,18 @@
+// 見出しの右クリックメニューが、見出しをクリックして並べ替えたあとも出るか
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1034", "on": true },
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "type:HeaderItem,name:フォルダ", "at": [20, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "name": "menu-before-sort" },
+    { "do": "contextItems", "name": "menu-before-sort" },
+    { "do": "click", "target": "type:HeaderItem,name:現在の名前" },
+    { "do": "wait", "ms": 800 },
+    { "do": "click", "target": "type:HeaderItem,name:フォルダ", "at": [20, 8], "button": "right" },
+    { "do": "wait", "ms": 800 },
+    { "do": "capture", "name": "menu-after-sort" },
+    { "do": "contextItems", "name": "menu-after-sort" }
+  ]
+}

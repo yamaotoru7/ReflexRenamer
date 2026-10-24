@@ -1,0 +1,6 @@
+{
+  "fixture": "tree",
+  "steps": [
+    { "do": "comboItems", "target": "id:1146", "name": "operation" }
+  ]
+}

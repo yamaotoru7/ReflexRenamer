@@ -1,0 +1,36 @@
+// プロパティモード：タグ一覧から挿入される書式と、展開結果
+{
+  "fixture": "tags",
+  "steps": [
+    { "do": "command", "id": 66, "only": "original" },
+    { "do": "click", "target": "type:CheckBox,name:TagRename", "only": "clone" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1169,type:CheckBox" },
+    { "do": "wait", "ms": 1000 },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 29] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "popup", "target": "id:1046", "path": ["撮影日時"] },
+    { "do": "wait", "ms": 500 },
+    { "do": "tree", "target": "id:1019,type:ComboBox", "name": "after-insert" },
+    { "do": "popup", "target": "id:1046", "path": ["カメラのモデル"] },
+    { "do": "wait", "ms": 500 },
+    { "do": "tree", "target": "id:1019,type:ComboBox", "name": "after-insert-2" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-photo" },
+    { "do": "setText", "target": "id:1019,type:ComboBox", "text": "<タイトル>_<大きさ>_<Nope>_<ID3.Artist>" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-photo-2" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 11] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "popupItems", "target": "id:1046", "name": "taglist-music" },
+    { "do": "setText", "target": "id:1019,type:ComboBox", "text": "<タイトル>_<参加アーティスト>_<アルバム>_<ジャンル>_<コメント>" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-music" },
+    { "do": "click", "target": "id:1088,type:List", "at": [100, 83] },
+    { "do": "wait", "ms": 1500 },
+    { "do": "tree", "target": "id:127", "name": "document" },
+    { "do": "setText", "target": "id:1019,type:ComboBox", "text": "<タイトル>_<作成者>" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "list-document" }
+  ]
+}

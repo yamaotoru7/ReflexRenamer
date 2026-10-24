@@ -1,0 +1,19 @@
+// 定型メニューのうち VBScript を使う項目（Preset.ini の [Typical] 33、34、38〜41）。T116
+{
+  "fixture": "typical",
+  "setup": [
+    { "do": "expandAll", "target": "id:1014" }
+  ],
+  "cases": [
+    { "name": "s33-to-fullkana", "typical": { "index": 33, "label": "半角ｶﾅ ⇒ 全角カナ" } },
+    { "name": "s34-to-halfkana", "typical": { "index": 34, "label": "全角カナ ⇒ 半角ｶﾅ" } },
+    { "name": "s38-digit-start-0", "typical": { "index": 38, "label": "先頭からn番目の数値の桁合わせ" }, "params": { "position": "0", "digits": "4" } },
+    { "name": "s38-digit-start-1", "typical": { "index": 38, "label": "先頭からn番目の数値の桁合わせ" }, "params": { "position": "1", "digits": "3" } },
+    { "name": "s39-digit-end-0", "typical": { "index": 39, "label": "末尾からn番目の数値の桁合わせ" }, "params": { "position": "0", "digits": "3" } },
+    { "name": "s39-digit-end-1", "typical": { "index": 39, "label": "末尾からn番目の数値の桁合わせ" }, "params": { "position": "1", "digits": "1" } },
+    { "name": "s40-inc-start-0", "typical": { "index": 40, "label": "先頭からn番目の数値を増減" }, "params": { "position": "0", "value": "5" } },
+    { "name": "s40-inc-start-1", "typical": { "index": 40, "label": "先頭からn番目の数値を増減" }, "params": { "position": "1", "value": "-1" } },
+    { "name": "s41-inc-end-0", "typical": { "index": 41, "label": "末尾からn番目の数値を増減" }, "params": { "position": "0", "value": "10" } },
+    { "name": "s41-inc-end-1", "typical": { "index": 41, "label": "末尾からn番目の数値を増減" }, "params": { "position": "1", "value": "-2" } }
+  ]
+}

@@ -1,0 +1,20 @@
+// T203：起動時に BarState からペインの幅を戻す（オリジナル版が書いた形式で、フォルダ一覧の幅を 300 にしたもの）
+{
+  "fixture": "basic",
+  "settings": {
+    "BarState-SCBar-127": { "sizeHorzCX": "262", "sizeHorzCY": "503", "sizeVertCX": "262", "sizeVertCY": "614", "sizeFloatCX": "262", "sizeFloatCY": "503" },
+    "BarState-SCBar-126": { "sizeHorzCX": "175", "sizeHorzCY": "175", "sizeVertCX": "300", "sizeVertCY": "614", "sizeFloatCX": "175", "sizeFloatCY": "175" },
+    "BarState-Bar0": { "BarID": "59392" },
+    "BarState-Bar1": { "BarID": "59392" },
+    "BarState-Bar2": { "BarID": "59396" },
+    "BarState-Bar3": { "BarID": "59393" },
+    "BarState-Bar4": { "BarID": "59420", "Bars": "5", "Bar#0": "0", "Bar#1": "126", "Bar#2": "0", "Bar#3": "127", "Bar#4": "0" },
+    "BarState-Bar5": { "BarID": "127", "XPos": "296", "YPos": "-2", "Docking": "1", "MRUDockID": "0", "MRUDockLeftPos": "296", "MRUDockTopPos": "-2", "MRUDockRightPos": "567", "MRUDockBottomPos": "612", "MRUFloatStyle": "8196", "MRUFloatXPos": "-2147483648", "MRUFloatYPos": "0" },
+    "BarState-Bar6": { "BarID": "126", "XPos": "-2", "YPos": "-2", "Docking": "1", "MRUDockID": "0", "MRUDockLeftPos": "-2", "MRUDockTopPos": "-2", "MRUDockRightPos": "298", "MRUDockBottomPos": "612", "MRUFloatStyle": "8196", "MRUFloatXPos": "-2147483648", "MRUFloatYPos": "0" },
+    "BarState-Summary": { "Bars": "7", "ScreenCX": "3840", "ScreenCY": "1200" }
+  },
+  "steps": [
+    { "do": "wait", "ms": 1000 },
+    { "do": "capture", "name": "restored" }
+  ]
+}

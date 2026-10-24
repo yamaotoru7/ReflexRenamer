@@ -1,0 +1,740 @@
+{
+  "source": "tools/FrTools/golden/rename-options.json から `FrTools golden rename-options` で生成。手で編集しない。",
+  "fixtureName": "tree",
+  "fixture": [
+    {
+      "path": "b.txt",
+      "time": "2020-01-02 03:04:05",
+      "created": "2019-12-31 23:00:00",
+      "size": 10
+    },
+    {
+      "path": "a.jpg",
+      "time": "2020-02-03 04:05:06",
+      "created": "2018-07-08 09:10:11",
+      "size": 20
+    },
+    {
+      "path": "C.TXT",
+      "time": "2020-03-04 05:06:07",
+      "created": "2017-01-01 00:00:00",
+      "size": 30
+    },
+    {
+      "path": "dir1/",
+      "time": "2015-01-01 00:00:00",
+      "created": "2015-01-01 00:00:00",
+      "size": 0
+    },
+    {
+      "path": "dir1/x.txt",
+      "time": "2021-01-01 01:01:01",
+      "created": "2021-01-01 01:01:01",
+      "size": 1
+    },
+    {
+      "path": "dir1/y.jpg",
+      "time": "2021-01-01 01:01:02",
+      "created": "2021-01-01 01:01:02",
+      "size": 2
+    },
+    {
+      "path": "dir1/deep/",
+      "time": "2015-01-01 00:00:00",
+      "created": "2015-01-01 00:00:00",
+      "size": 0
+    },
+    {
+      "path": "dir1/deep/z.txt",
+      "time": "2022-02-02 02:02:02",
+      "created": "2022-02-02 02:02:02",
+      "size": 3
+    },
+    {
+      "path": "dir2/",
+      "time": "2016-01-01 00:00:00",
+      "created": "2016-01-01 00:00:00",
+      "size": 0
+    },
+    {
+      "path": "dir2/w.txt",
+      "time": "2023-03-03 03:03:03",
+      "created": "2023-03-03 03:03:03",
+      "size": 4
+    }
+  ],
+  "cases": [
+    {
+      "name": "default",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\0]",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "[a.jpg]"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "[b.txt]"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "[C.TXT]"
+        }
+      ]
+    },
+    {
+      "name": "re-default-case",
+      "method": "regex",
+      "search": "c",
+      "replace": "#",
+      "results": [
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "#.TXT"
+        }
+      ]
+    },
+    {
+      "name": "re-case-sensitive",
+      "method": "regex",
+      "search": "c",
+      "replace": "#",
+      "results": [],
+      "options": {
+        "caseSensitive": true
+      }
+    },
+    {
+      "name": "re-complete-only",
+      "method": "regex",
+      "search": "[a-z]\\.txt",
+      "replace": "!",
+      "results": [
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "!"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "!"
+        }
+      ],
+      "options": {
+        "completeMatchOnly": true
+      }
+    },
+    {
+      "name": "re-complete-only-partial",
+      "method": "regex",
+      "search": "txt",
+      "replace": "!",
+      "results": [],
+      "options": {
+        "completeMatchOnly": true
+      }
+    },
+    {
+      "name": "re-options-reset",
+      "method": "regex",
+      "search": "c",
+      "replace": "#",
+      "results": [
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "#.TXT"
+        }
+      ]
+    },
+    {
+      "name": "number-start-step",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "???_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "005_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "008_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "011_C.TXT"
+        }
+      ],
+      "options": {
+        "numberStart": 5,
+        "numberStep": 3
+      }
+    },
+    {
+      "name": "number-hex",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "??_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "09_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "0a_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "0b_C.TXT"
+        }
+      ],
+      "options": {
+        "numberStart": 9,
+        "numberType": "hex"
+      }
+    },
+    {
+      "name": "number-alpha",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "???_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "aay_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "aaz_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "aba_C.TXT"
+        }
+      ],
+      "options": {
+        "numberStart": 24,
+        "numberType": "alpha"
+      }
+    },
+    {
+      "name": "number-alpha-1digit",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "?_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "y_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "z_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "ba_C.TXT"
+        }
+      ],
+      "options": {
+        "numberStart": 24,
+        "numberType": "alpha"
+      }
+    },
+    {
+      "name": "number-reset",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "?_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "0_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "1_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "2_C.TXT"
+        }
+      ]
+    },
+    {
+      "name": "timestamp-modified",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\Y\\m\\d\\H\\M\\S",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "20200203040506"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "20200102030405"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "20200304050607"
+        }
+      ]
+    },
+    {
+      "name": "timestamp-created",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\Y\\m\\d\\H\\M\\S",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "20180708091011"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "20191231230000"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "20170101000000"
+        }
+      ],
+      "options": {
+        "useCreationTime": true
+      }
+    },
+    {
+      "name": "timestamp-back",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\Y\\m\\d\\H\\M\\S",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "20200203040506"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "20200102030405"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "20200304050607"
+        }
+      ]
+    },
+    {
+      "name": "filter-multi",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\0]",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "[a.jpg]"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "[b.txt]"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "[C.TXT]"
+        }
+      ],
+      "options": {
+        "filter": "*.jpg;*.TXT"
+      }
+    },
+    {
+      "name": "filter-reset",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\0]",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "[a.jpg]"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "[b.txt]"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "[C.TXT]"
+        }
+      ]
+    },
+    {
+      "name": "target-folders",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\0|\\t|\\e]",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "[a.jpg|a|.jpg]"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "[b.txt|b|.txt]"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "[C.TXT|C|.TXT]"
+        },
+        {
+          "folder": "",
+          "name": "dir1",
+          "newName": "[dir1|dir1|]"
+        },
+        {
+          "folder": "",
+          "name": "dir2",
+          "newName": "[dir2|dir2|]"
+        }
+      ],
+      "options": {
+        "folders": true
+      }
+    },
+    {
+      "name": "target-folders-only",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "[\\0]",
+      "results": [
+        {
+          "folder": "",
+          "name": "dir1",
+          "newName": "[dir1]"
+        },
+        {
+          "folder": "",
+          "name": "dir2",
+          "newName": "[dir2]"
+        }
+      ],
+      "options": {
+        "files": false,
+        "folders": true
+      }
+    },
+    {
+      "name": "recursive-folders-only",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\f_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "dir1",
+          "newName": "tree_dir1"
+        },
+        {
+          "folder": "",
+          "name": "dir2",
+          "newName": "tree_dir2"
+        },
+        {
+          "folder": "dir1",
+          "name": "deep",
+          "newName": "dir1_deep"
+        }
+      ],
+      "options": {
+        "files": false,
+        "folders": true,
+        "recursive": true
+      }
+    },
+    {
+      "name": "recursive-both",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "??_\\f_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "dir1",
+          "newName": "00_tree_dir1"
+        },
+        {
+          "folder": "",
+          "name": "dir2",
+          "newName": "01_tree_dir2"
+        },
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "02_tree_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "03_tree_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "04_tree_C.TXT"
+        },
+        {
+          "folder": "dir1",
+          "name": "deep",
+          "newName": "05_dir1_deep"
+        },
+        {
+          "folder": "dir1",
+          "name": "x.txt",
+          "newName": "06_dir1_x.txt"
+        },
+        {
+          "folder": "dir1",
+          "name": "y.jpg",
+          "newName": "07_dir1_y.jpg"
+        },
+        {
+          "folder": "dir1/deep",
+          "name": "z.txt",
+          "newName": "08_deep_z.txt"
+        },
+        {
+          "folder": "dir2",
+          "name": "w.txt",
+          "newName": "09_dir2_w.txt"
+        }
+      ],
+      "options": {
+        "folders": true,
+        "recursive": true
+      }
+    },
+    {
+      "name": "recursive-files",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "??_\\f_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "00_tree_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "01_tree_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "02_tree_C.TXT"
+        },
+        {
+          "folder": "dir1",
+          "name": "x.txt",
+          "newName": "03_dir1_x.txt"
+        },
+        {
+          "folder": "dir1",
+          "name": "y.jpg",
+          "newName": "04_dir1_y.jpg"
+        },
+        {
+          "folder": "dir1/deep",
+          "name": "z.txt",
+          "newName": "05_deep_z.txt"
+        },
+        {
+          "folder": "dir2",
+          "name": "w.txt",
+          "newName": "06_dir2_w.txt"
+        }
+      ],
+      "options": {
+        "recursive": true
+      }
+    },
+    {
+      "name": "recursive-depth1",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "??_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "00_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "01_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "02_C.TXT"
+        },
+        {
+          "folder": "dir1",
+          "name": "x.txt",
+          "newName": "03_x.txt"
+        },
+        {
+          "folder": "dir1",
+          "name": "y.jpg",
+          "newName": "04_y.jpg"
+        },
+        {
+          "folder": "dir2",
+          "name": "w.txt",
+          "newName": "05_w.txt"
+        }
+      ],
+      "options": {
+        "recursive": true,
+        "depth": 1
+      }
+    },
+    {
+      "name": "recursive-reset-by-folder",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "??_\\0",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "00_a.jpg"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "01_b.txt"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "02_C.TXT"
+        },
+        {
+          "folder": "dir1",
+          "name": "x.txt",
+          "newName": "00_x.txt"
+        },
+        {
+          "folder": "dir1",
+          "name": "y.jpg",
+          "newName": "01_y.jpg"
+        },
+        {
+          "folder": "dir1/deep",
+          "name": "z.txt",
+          "newName": "00_z.txt"
+        },
+        {
+          "folder": "dir2",
+          "name": "w.txt",
+          "newName": "00_w.txt"
+        }
+      ],
+      "options": {
+        "recursive": true,
+        "resetByFolder": true
+      }
+    },
+    {
+      "name": "recursive-path-tags",
+      "method": "wildcard",
+      "search": "*",
+      "replace": "\\P|\\F",
+      "results": [
+        {
+          "folder": "",
+          "name": "a.jpg",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "b.txt",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%|fixtures"
+        },
+        {
+          "folder": "",
+          "name": "C.TXT",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%|fixtures"
+        },
+        {
+          "folder": "dir1",
+          "name": "x.txt",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%dir1%|tree"
+        },
+        {
+          "folder": "dir1",
+          "name": "y.jpg",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%dir1%|tree"
+        },
+        {
+          "folder": "dir1/deep",
+          "name": "z.txt",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%dir1%deep%|dir1"
+        },
+        {
+          "folder": "dir2",
+          "name": "w.txt",
+          "newName": "D;%Proj%_external%FlexibleRenamer%.work%fixtures%tree%dir2%|tree"
+        }
+      ],
+      "options": {
+        "recursive": true,
+        "resetByFolder": true
+      }
+    }
+  ]
+}

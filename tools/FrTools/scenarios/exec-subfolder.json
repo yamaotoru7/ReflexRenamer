@@ -1,0 +1,29 @@
+// フォルダ振り分け（B17）：新しい名前に「/」を含めると、そのサブフォルダへ移す
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "toggle", "target": "id:1025", "on": true },
+    { "do": "click", "target": "id:1037" },
+    { "do": "setText", "target": "id:1057", "text": "*.txt" },
+    { "do": "setText", "target": "id:1010", "text": "*" },
+    { "do": "setText", "target": "id:1019", "text": "newdir/\\0" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "preview" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "key", "keys": ["ENTER"] },
+    { "do": "wait", "ms": 2500 },
+    { "do": "capture", "name": "after-exec" },
+    { "do": "files", "name": "after-exec" },
+    { "do": "readList", "target": "id:1000,type:List", "name": "after-exec" },
+    { "do": "setText", "target": "id:1057", "text": "*.jpg" },
+    { "do": "setText", "target": "id:1019", "text": "sub1/\\0" },
+    { "do": "wait", "ms": 800 },
+    { "do": "readList", "target": "id:1000,type:List", "name": "preview-existing" },
+    { "do": "click", "target": "id:1011,type:Button" },
+    { "do": "wait", "ms": 1500 },
+    { "do": "key", "keys": ["ENTER"] },
+    { "do": "wait", "ms": 2500 },
+    { "do": "files", "name": "after-existing" }
+  ]
+}

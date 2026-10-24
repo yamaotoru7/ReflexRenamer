@@ -1,0 +1,27 @@
+// タグ・リネーム：種類ごとの書式の展開（フィクスチャ tags の合成ファイル）
+{
+  "fixture": "tags",
+  "setup": [
+    { "do": "command", "id": 66 },
+    { "do": "wait", "ms": 1000 }
+  ],
+  "cases": [
+    { "name": "music-empty", "tag": { "kind": 0 }, "format": "" },
+    { "name": "music-name-only", "tag": { "kind": 0 }, "format": "\\0" },
+    { "name": "music-basic", "tag": { "kind": 0 }, "format": "<ID3.Artist> - <ID3.Track>.\\e" },
+    { "name": "music-all", "tag": { "kind": 0 }, "format": "<ID3.Album>_<ID3.Year>_<ID3.TrackNumber>_<ID3.Genre>_<ID3.Comment>" },
+    { "name": "music-v1", "tag": { "kind": 0 }, "format": "<ID3v1.Artist>_<ID3v1.Track>_<ID3v1.TrackNumber>_<ID3v1.Year>_<ID3v1.Genre>" },
+    { "name": "music-v2", "tag": { "kind": 0 }, "format": "<ID3v2.TIT2>_<ID3v2.TPE1>_<ID3v2.TRCK>_<ID3v2.TCON>_<ID3v2.COMM>" },
+    { "name": "music-number", "tag": { "kind": 0 }, "format": "??_<ID3.Track>" },
+    { "name": "music-unknown-tag", "tag": { "kind": 0 }, "format": "<ID3.Nope>x<Nope>" },
+    { "name": "music-folder", "tag": { "kind": 0 }, "format": "<ID3.Artist>/<ID3.Album>/\\0" },
+    { "name": "music-case", "tag": { "kind": 0 }, "format": "\\U<ID3.Artist>\\E_\\u<ID3.Track>" },
+    { "name": "picture-basic", "tag": { "kind": 1 }, "format": "<EXIF.Maker>_<EXIF.Model>_<EXIF.Software>" },
+    { "name": "picture-time", "tag": { "kind": 1 }, "format": "<EXIF.OriginalTime>" },
+    { "name": "picture-unknown-tag", "tag": { "kind": 1 }, "format": "<ID3.Artist>_<EXIF.Nope>_<IPTC.Caption>" },
+    { "name": "picture-values", "tag": { "kind": 1 }, "format": "<EXIF.Flash>_<EXIF.ExposureTime>_<EXIF.ISOSpeed>_<EXIF.MeteringMode>" },
+    { "name": "document-basic", "tag": { "kind": 3 }, "format": "<DOC.Title>_<DOC.Author>_<DOC.Created>" },
+    { "name": "web-basic", "tag": { "kind": 4 }, "format": "<HTML.Title>.\\e" },
+    { "name": "web-time", "tag": { "kind": 4 }, "format": "<HTML.Title>_\\Y\\m\\d_??" }
+  ]
+}
