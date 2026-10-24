@@ -53,7 +53,51 @@ public sealed class AppResources
         }
     }
 
-    public string T(string key) => Strings.Translate(key);
+    /// <summary>
+    /// 言語ファイル（オリジナル版の配布物）にない、移植版で足した文言の訳。キーは英語の原文。
+    /// 言語ファイルに訳がなく、ここにもなければ英語のまま出る。
+    /// </summary>
+    private static readonly Dictionary<string, Dictionary<string, string>> ExtraStrings = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["JA"] = new()
+        {
+            ["Color &mode"] = "配色(&M)",
+            ["Follow &system"] = "システムに従う(&S)",
+            ["&Light"] = "ライト(&L)",
+            ["&Dark"] = "ダーク(&D)",
+            ["Changing the color mode is applied at the next starts."] = "配色の変更は次回の起動から反映されます。",
+            ["built in"] = "内蔵済み",
+        },
+    };
+
+    public string T(string key)
+    {
+        string translated = Strings.Translate(key);
+        if (translated == key && ExtraStrings.TryGetValue(Strings.ShortName, out var extra) && extra.TryGetValue(key, out var v))
+        {
+            return v;
+        }
+        return translated;
+    }
+
+    /// <summary>ini の [Flexible Renamer] ColorMode。System（既定）／Light／Dark。</summary>
+    public const string ColorModeKey = "ColorMode";
+
+    public SystemColorMode ColorMode => Settings.Get("Flexible Renamer", ColorModeKey) switch
+    {
+        "Light" => SystemColorMode.Classic,
+        "Dark" => SystemColorMode.Dark,
+        _ => SystemColorMode.System,
+    };
+
+    /// <summary>配色の設定を保存する（反映は次回の起動から。SetColorMode はフォームを作る前にしか効かない）。</summary>
+    public void SaveColorMode(SystemColorMode mode) =>
+        Settings.Set("Flexible Renamer", ColorModeKey, mode switch
+        {
+            SystemColorMode.Classic => "Light",
+            SystemColorMode.Dark => "Dark",
+            _ => "System",
+        });
 
     public static AppResources Load()
     {

@@ -69,6 +69,12 @@ public sealed class MainForm : Form
         {
             language.DropDownOpening += (_, _) => RebuildLanguageMenu(language);
         }
+        // 表示 > 配色（移植版で足した項目。メニューリソースにはないので、フォントの項目があるメニューの末尾に足す）
+        if (MenuBuilder.Find(_menu.Items, Commands.Font)?.OwnerItem is ToolStripMenuItem view)
+        {
+            view.DropDownItems.Add(new ToolStripSeparator());
+            view.DropDownItems.Add(BuildColorModeMenu());
+        }
         // メニューバーはシステムのメニューフォント（オリジナル版も同じ）
         _menu.Font = SystemFonts.MenuFont ?? Font;
 
@@ -482,6 +488,36 @@ public sealed class MainForm : Form
         {
             _res.Settings.SetList(FavoritesSection, "MRU", dialog.Result.Select(r => (string)r.Tag));
         }
+    }
+
+    /// <summary>表示 > 配色：システムに従う／ライト／ダーク。選ぶと設定に保存し、次回起動時に反映される。</summary>
+    private ToolStripMenuItem BuildColorModeMenu()
+    {
+        var menu = new ToolStripMenuItem(_res.T("Color &mode")) { Name = "ColorMode" };
+        var modes = new[]
+        {
+            (SystemColorMode.System, _res.T("Follow &system")),
+            (SystemColorMode.Classic, _res.T("&Light")),
+            (SystemColorMode.Dark, _res.T("&Dark")),
+        };
+        foreach (var (mode, text) in modes)
+        {
+            var item = new ToolStripMenuItem(text) { Tag = mode };
+            item.Click += (_, _) =>
+            {
+                _res.SaveColorMode(mode);
+                MessageBox.Show(this, _res.T("Changing the color mode is applied at the next starts."), AppResources.ProductName);
+            };
+            menu.DropDownItems.Add(item);
+        }
+        menu.DropDownOpening += (_, _) =>
+        {
+            foreach (ToolStripMenuItem item in menu.DropDownItems)
+            {
+                item.Checked = Equals(item.Tag, _res.ColorMode);
+            }
+        };
+        return menu;
     }
 
     /// <summary>ヘルプ > 言語：言語ファイルの一覧。選ぶと設定に保存し、次回起動時に反映される。</summary>

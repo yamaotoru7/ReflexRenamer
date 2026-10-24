@@ -1,0 +1,11 @@
+// 配色の設定：ini の ColorMode=Light で起動してライトモードの画面を撮り、表示 > 配色 > ダーク を選ぶと「次回から反映」の案内が出る（移植版だけ）
+{
+  "fixture": "basic",
+  "settings": { "Flexible Renamer": { "ColorMode": "Light" } },
+  "steps": [
+    { "do": "capture", "name": "light", "only": "clone" },
+    { "do": "menu", "path": ["表示(V)", "配色(M)", "ダーク(D)"], "only": "clone" },
+    { "do": "capture", "name": "notice", "target": "window:Flexible Renamer", "only": "clone" },
+    { "do": "key", "keys": ["Enter"], "only": "clone" }
+  ]
+}

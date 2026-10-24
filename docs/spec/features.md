@@ -42,6 +42,7 @@
 | A18 | お気に入り | 現在のフォルダを追加（最大20件）、整理ダイアログ、メニューから移動 | R S | 画面 |
 | A19 | フォルダの監視 | 表示中のフォルダを監視し、変化したら一覧を更新する | H | 手動 |
 | A20 | 表示設定 | ツールバー／ステータスバーの表示切り替え、フォント設定（表示 > フォント） | R | 画面 |
+| A21 | 配色（移植版独自） | 表示 > 配色：システムに従う／ライト／ダーク。ini の `[Flexible Renamer] ColorMode`（System／Light／Dark、既定 System）。反映は次回起動から（`Application.SetColorMode` はフォームを作る前にしか効かない） | 移植版独自 | 画面（color-light：Light で起動した画面と、ダークを選んだときの案内） |
 | A21 | ウィンドウレイアウト | ウィンドウ位置、ペイン配置（BarState。MFC SaveBarState＋CSizingControlBar の [BarState-Summary]／[BarState-BarN]／[BarState-SCBar-ID]。左のドックバー BarID=59420 の Bar#n が並び（0 は列区切り）、sizeVertCX がペインの幅。浮かせたペインは BarID=59423・Floating=1 のドックバーに入り、XPos/YPos がウィンドウ位置、ペイン側に MRUFloatXPos/YPos と sizeFloatCX/CY。隠したペインは Visible=0）、列幅を ini に保存。ツール > ウィンドウレイアウトのリセット | R D | 画面 |
 | A22 | 設定ファイル | 実行ディレクトリの `Flexible Renamer.ini`（UTF-16）。入力欄ごとの履歴。前回が異常終了だった場合はリネーム設定を初期化する | D H | 単体 |
 | A23 | 多言語対応 | `*.Strings.ini` による9言語。ヘルプ > 言語で切り替え（次回起動時に反映）。`%%Key%%` の展開。既定は OS の言語 | S | 単体・画面 |

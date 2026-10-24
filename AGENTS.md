@@ -21,7 +21,7 @@ FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってク�
 
 ### コードの構成（src/ReflexRenamer）
 
-- `MainForm`：メニュー、ツールバー1段（ファイル指定／フォルダ指定とフォルダ欄）、ページ切り替えタブ（`PageTabStrip`）、3ペイン（`ShellFolderTree`、入力フォーム、`FileListView`。`DockPane` は右端のドラッグで幅を変えるだけ）、ステータスバー。設定の保存・復元、フォルダ監視、ドロップ、お気に入り、言語、フォント。ダークモードは `Program` の `SetColorMode`、色は SystemColors から取る。
+- `MainForm`：メニュー、ツールバー1段（ファイル指定／フォルダ指定とフォルダ欄）、ページ切り替えタブ（`PageTabStrip`）、3ペイン（`ShellFolderTree`、入力フォーム、`FileListView`。`DockPane` は右端のドラッグで幅を変えるだけ）、ステータスバー。設定の保存・復元、フォルダ監視、ドロップ、お気に入り、言語、フォント。ダークモードは `Program` の `SetColorMode`（表示 > 配色、ini の ColorMode）、色は SystemColors から取る。言語ファイルにない文言は `AppResources.ExtraStrings` で訳す。
 - `Pages/`：入力フォームの4ページ。`PageBase`（並べ替え・グループ・シャッフル）→ `RenamePageBase`（連番、実行する動作、実行と元に戻す、直接編集、オプション／スクリプトのメニュー）→ `RenamePage`（DIALOG 143 と定型メニュー `TypicalPanel`）／`TagRenamePage`（DIALOG 170）。`AttributePage`（141）、`NumberedObjectPage`（142）は `PageBase` 直下。
 - `Dialogs/`：`TemplateForm` を継承したダイアログ（連番 166、重複 168、エラー 130、進行状況 133、プリセット整理 139、タグ・リネーム設定 172、オプション 237+238）。
 - `Ui/`：`DialogBuilder`（テンプレートからの組み立て。DLU の基本値はフォントの実測）、`Anchors`、`PopupMenu`（Win32 メニュー）、`NativeUpDown`、`MruCombo`、`ShellInfo`、`ShellContextMenu`、`Assets`（オリジナルのアイコン）、`FluentGlyphs`（Segoe Fluent Icons のグリフ）、`FlatToolStripRenderer`。

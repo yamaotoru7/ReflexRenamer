@@ -11,14 +11,15 @@ static class Program
     static void Main(string[] args)
     {
         ApplicationConfiguration.Initialize();
-#pragma warning disable WFO5001
-        Application.SetColorMode(SystemColorMode.System);
-#pragma warning restore WFO5001
         // 画面の処理中の例外は exe と同じ場所の error.log に書く（自動操作中にメッセージボックスで止まらないように）
         Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
         Application.ThreadException += (_, e) => LogError(e.Exception);
         AppDomain.CurrentDomain.UnhandledException += (_, e) => LogError(e.ExceptionObject as Exception);
         var resources = AppResources.Load();
+        // 配色（表示 > 配色）。既定は OS の設定に従う。フォームを作る前に決める必要があるので、設定を読んでから
+#pragma warning disable WFO5001
+        Application.SetColorMode(resources.ColorMode);
+#pragma warning restore WFO5001
         // 「送る」のショートカットは /Rename /TagRename /Attribute /NumberedObject でページを指定する。それ以外の引数はフォルダ（またはファイル）
         int? page = null;
         string? target = null;
