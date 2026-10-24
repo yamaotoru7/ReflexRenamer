@@ -8,7 +8,7 @@ namespace FrTools;
 /// <summary>
 /// オリジナル版のプレビュー一覧から、リネーム処理の正解データを取る。
 /// <c>tools/FrTools/golden/&lt;セット&gt;.json</c> のケースを順に入力し、結果を
-/// <c>tests/FlexibleRenamer.Core.Tests/Golden/&lt;セット&gt;.json</c> に書く。
+/// <c>tests/ReflexRenamer.Core.Tests/Golden/&lt;セット&gt;.json</c> に書く。
 /// </summary>
 /// <remarks>
 /// 入力の形式:
@@ -53,7 +53,7 @@ internal static class Golden
 
     public static string InputDir => Path.Combine(Repo.Root, "tools", "FrTools", "golden");
 
-    public static string OutputDir => Path.Combine(Repo.Root, "tests", "FlexibleRenamer.Core.Tests", "Golden");
+    public static string OutputDir => Path.Combine(Repo.Root, "tests", "ReflexRenamer.Core.Tests", "Golden");
 
     public static IEnumerable<string> All() =>
         Directory.GetFiles(InputDir, "*.json").Select(Path.GetFileNameWithoutExtension).Order()!;

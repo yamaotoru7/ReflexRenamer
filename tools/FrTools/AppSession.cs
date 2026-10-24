@@ -50,7 +50,7 @@ internal sealed class AppSession : IDisposable
         if (kind == AppKind.Clone)
         {
             // 移植版も設定とログを実行ディレクトリに書くので、オリジナル版と同じく毎回まっさらな状態で起動する
-            foreach (var stateFile in new[] { "Flexible Renamer.ini", "Rename.log" })
+            foreach (var stateFile in new[] { Sandbox.IniName(kind), "Rename.log" })
             {
                 File.Delete(Path.Combine(Path.GetDirectoryName(exe)!, stateFile));
             }
@@ -68,7 +68,7 @@ internal sealed class AppSession : IDisposable
                     text.Append(key).Append('=').Append(value).Append("\r\n");
                 }
             }
-            File.WriteAllText(Path.Combine(Path.GetDirectoryName(exe)!, "Flexible Renamer.ini"), text.ToString(), new System.Text.UnicodeEncoding(false, true));
+            File.WriteAllText(Path.Combine(Path.GetDirectoryName(exe)!, Sandbox.IniName(kind)), text.ToString(), new System.Text.UnicodeEncoding(false, true));
         }
 
         var psi = new ProcessStartInfo(exe)

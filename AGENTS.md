@@ -1,4 +1,4 @@
-FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってクローンする
+FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってクローンする。移植版の製品名は **Reflex Renamer**（exe は `ReflexRenamer.exe`、設定は `Reflex Renamer.ini`、版は csproj の `<Version>`、0.1.0 から）。見た目の方針は [docs/ui-redesign.md](docs/ui-redesign.md)。
 
 ## 前提
 
@@ -9,22 +9,22 @@ FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってク�
 ## 技術スタック
 
 - Windows 専用。C# / .NET 10 / WinForms。元の UI が Win32 標準の TreeView・ListView 構成なので、WinForms で見た目を寄せる。
-- ソリューションは `FlexibleRenamer.slnx`。
-  - `src/FlexibleRenamer.Core`：リネーム処理や設定ファイルの読み書きなど、UI に依存しない部分。ロジックはできるだけここに置いてテストする。
-  - `src/FlexibleRenamer`：WinForms の UI（`net10.0-windows`）。
-  - `tests/FlexibleRenamer.Core.Tests`：xUnit。`ReferenceFiles.Get("Preset.ini")` で `FlexRenamer/` 内のオリジナルのファイルを読み、互換性を確認する。
+- ソリューションは `ReflexRenamer.slnx`。
+  - `src/ReflexRenamer.Core`：リネーム処理や設定ファイルの読み書きなど、UI に依存しない部分。ロジックはできるだけここに置いてテストする。
+  - `src/ReflexRenamer`：WinForms の UI（`net10.0-windows`）。
+  - `tests/ReflexRenamer.Core.Tests`：xUnit。`ReferenceFiles.Get("Preset.ini")` で `FlexRenamer/` 内のオリジナルのファイルを読み、互換性を確認する。
   - `tools/FrTools`：解析・自動操作・比較のツール（後述）。
 - 方針として決めたこと：
   - VBScript は Microsoft が段階的に廃止しているため、スクリプト機能を VBScript だけに頼らない（現状は ActiveScript 経由で VBScript/JScript を使う `ScriptHost`）。
   - `StrFunc.dll` は 32bit COM で 64bit プロセスから読めないので、同等の機能をアプリ側で実装する。
   - 日時の曜日名・月名はオリジナル版と同じ Windows のロケールデータ（NLS）を使う（`Directory.Build.props` の `UseNls`）。
 
-### コードの構成（src/FlexibleRenamer）
+### コードの構成（src/ReflexRenamer）
 
-- `MainForm`：メニュー、リバー（ツールバー2段とフォルダ欄）、3ペイン（`ShellFolderTree`、入力フォーム、`FileListView`）、ステータスバー。設定の保存・復元、フォルダ監視、ドロップ、お気に入り、言語、フォント。
+- `MainForm`：メニュー、ツールバー1段（ファイル指定／フォルダ指定とフォルダ欄）、ページ切り替えタブ（`PageTabStrip`）、3ペイン（`ShellFolderTree`、入力フォーム、`FileListView`。`DockPane` は右端のドラッグで幅を変えるだけ）、ステータスバー。設定の保存・復元、フォルダ監視、ドロップ、お気に入り、言語、フォント。ダークモードは `Program` の `SetColorMode`、色は SystemColors から取る。
 - `Pages/`：入力フォームの4ページ。`PageBase`（並べ替え・グループ・シャッフル）→ `RenamePageBase`（連番、実行する動作、実行と元に戻す、直接編集、オプション／スクリプトのメニュー）→ `RenamePage`（DIALOG 143 と定型メニュー `TypicalPanel`）／`TagRenamePage`（DIALOG 170）。`AttributePage`（141）、`NumberedObjectPage`（142）は `PageBase` 直下。
 - `Dialogs/`：`TemplateForm` を継承したダイアログ（連番 166、重複 168、エラー 130、進行状況 133、プリセット整理 139、タグ・リネーム設定 172、オプション 237+238）。
-- `Ui/`：`DialogBuilder`（テンプレートからの組み立て）、`Anchors`、`PopupMenu`（Win32 メニュー）、`NativeUpDown`、`MruCombo`、`ShellInfo`、`ShellContextMenu`、`Assets`。
+- `Ui/`：`DialogBuilder`（テンプレートからの組み立て。DLU の基本値はフォントの実測）、`Anchors`、`PopupMenu`（Win32 メニュー）、`NativeUpDown`、`MruCombo`、`ShellInfo`、`ShellContextMenu`、`Assets`（オリジナルのアイコン）、`FluentGlyphs`（Segoe Fluent Icons のグリフ）、`FlatToolStripRenderer`。
 - Core 側：`Rename/`（`FileCollector` → `RenameEngine`（3段階の置換）→ `RenameExecutor`、`RenameLog`）、`Presets/`（Preset.ini、定型処理の展開、ユーザーのプリセット）、`Tags/`（各形式の読み取りと `TagFormatter`）、`Attributes/`、`NumberedObjects/`、`Settings/`（ini）、`Localization/`、`Scripting/`。
 
 ## コマンド
@@ -33,12 +33,12 @@ FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってク�
 dotnet build                                   # 全体をビルド
 dotnet test                                    # 全テスト
 dotnet test --filter "FullyQualifiedName~PresetFileTests"   # 一部のテストだけ実行
-dotnet run --project src/FlexibleRenamer       # アプリを起動
+dotnet run --project src/ReflexRenamer       # アプリを起動
 dotnet run --project tools/FrTools             # ツールの使い方を表示
-pwsh tools/build-installer.ps1                 # インストーラーを作る（.work/installer/FlexibleRenamer-Setup-<版>.exe）
+pwsh tools/build-installer.ps1                 # インストーラーを作る（.work/installer/ReflexRenamer-Setup-<版>.exe）
 ```
 
-- インストーラーは Inno Setup 6（`winget install --id JRSoftware.InnoSetup -e --scope user`）。スクリプトは `installer/FlexibleRenamer.iss`。.NET 同梱（win-x64、self-contained）で、管理者権限なしに `%LocalAppData%\Programs\Flexible Renamer` へ入れる（アプリが ini とログを exe の横に書くため）。版は csproj の `<Version>`。
+- インストーラーは Inno Setup 6（`winget install --id JRSoftware.InnoSetup -e --scope user`）。スクリプトは `installer/ReflexRenamer.iss`。.NET 同梱（win-x64、self-contained）で、管理者権限なしに `%LocalAppData%\Programs\Reflex Renamer` へ入れる（アプリが ini とログを exe の横に書くため）。版は csproj の `<Version>`。
 
 ## 仕様とタスク
 
@@ -61,12 +61,13 @@ dotnet run --project tools/FrTools -- golden <セット>             # リネー
 
 ### 正解データ（リネーム処理の照合）
 
-- `tools/FrTools/golden/<セット>.json` に検索・置換のケースを並べ、`golden <セット>` を実行すると、オリジナル版に1件ずつ入力してプレビュー一覧を読み、`tests/FlexibleRenamer.Core.Tests/Golden/<セット>.json` に保存する。
+- `tools/FrTools/golden/<セット>.json` に検索・置換のケースを並べ、`golden <セット>` を実行すると、オリジナル版に1件ずつ入力してプレビュー一覧を読み、`tests/ReflexRenamer.Core.Tests/Golden/<セット>.json` に保存する。
 - `GoldenRenameTests` がこの全ケースを Core のリネーム処理と照合する。挙動を調べたいときは、まずケースを足して正解データを取り、それに合わせて実装する。
 - ケースごとの `steps` で変えた設定（オプションやチェック）は次のケースにも残る。使い終わったら戻すケースを置く。
 - 正解データは日本語の Windows で取っているので、曜日名や日付書式が絡むケースは同じ環境でしか一致しない。
 
-- 実行結果の照合は `exec-*` シナリオ（`exec-rename`、`exec-recycle`、`exec-attribute`、`exec-numbered`）。`files` ステップがフォルダの中身（名前、更新日時、作成日時、属性、サイズ。直近1時間の時刻は `(now)`）を書き出す。実行ボタンの後に出る確認メッセージは `window:Flexible Renamer` で木を取り、Enter で進める。
+- 実行結果の照合は `exec-*` シナリオ（`exec-rename`、`exec-recycle`、`exec-attribute`、`exec-numbered`）。`files` ステップがフォルダの中身（名前、更新日時、作成日時、属性、サイズ。直近1時間の時刻は `(now)`）を書き出す。実行ボタンの後に出る確認メッセージは `window:Flexible Renamer` で木を取り、Enter で進める（セレクタの題名はオリジナル版のもので書く。移植版では `Sandbox.TitleFor` が「Reflex Renamer」に読み替える）。
+- compare の合否は、一覧・メニュー・ファイル結果などテキストの記録の一致だけで決める（report.md 末尾の「合否」）。画像と UI ツリーの差は、見た目を Windows 11 風に変えたので参考扱い。
 - 出力先は `.work/out/<シナリオ>/{original,clone,compare}/`。`compare/report.md` が概要。
   - `*.side.png`：左がオリジナル、中央が移植版、右が差分（赤が違う画素）。Read ツールで画像として見られる。
   - `*.tree.txt`：UI ツリーの差分（「移植版にない要素」「移植版にだけある要素」）。

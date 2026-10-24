@@ -119,7 +119,7 @@ static int Usage()
                                          両方（または片方だけ）で実行し、差分を .work/out/<シナリオ>/compare/ に書き出す
           diff <a.png> <b.png> <out.png> 2枚の画像を比べ、横並び＋差分の画像を作る
           golden [セット|all]             tools/FrTools/golden/<セット>.json の各ケースをオリジナル版に入力し、
-                                         プレビュー結果を tests/FlexibleRenamer.Core.Tests/Golden/ に保存
+                                         プレビュー結果を tests/ReflexRenamer.Core.Tests/Golden/ に保存
         """);
     return 1;
 }

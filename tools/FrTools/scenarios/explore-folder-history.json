@@ -3,11 +3,11 @@
   "fixture": "tree",
   "steps": [
     { "do": "comboItems", "target": "id:1003,type:ComboBox", "name": "initial" },
-    { "do": "setText", "target": "id:1003,type:ComboBox", "text": "D:\\Proj\\_external\\FlexibleRenamer\\.work\\fixtures\\basic" },
+    { "do": "setText", "target": "id:1003,type:ComboBox", "text": "D:\\Proj\\_external\\ReflexRenamer\\.work\\fixtures\\basic" },
     { "do": "key", "keys": ["ENTER"] },
     { "do": "wait", "ms": 1500 },
     { "do": "readList", "target": "id:1000,type:List", "name": "basic" },
-    { "do": "setText", "target": "id:1003,type:ComboBox", "text": "D:\\Proj\\_external\\FlexibleRenamer\\.work\\fixtures\\dots" },
+    { "do": "setText", "target": "id:1003,type:ComboBox", "text": "D:\\Proj\\_external\\ReflexRenamer\\.work\\fixtures\\dots" },
     { "do": "key", "keys": ["ENTER"] },
     { "do": "wait", "ms": 1500 },
     { "do": "readList", "target": "id:1000,type:List", "name": "dots" },

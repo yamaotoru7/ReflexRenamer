@@ -1,4 +1,4 @@
-# タスクリスト
+﻿# タスクリスト
 
 [機能一覧](spec/features.md) の機能を漏れなく移植するための作業順。上から順に進める。
 終わったら `[x]` にし、完了条件で使ったシナリオやテストの名前を書き添える。
@@ -8,7 +8,7 @@
 ## 完了条件の決まり
 
 - **正解照合**：`tools/FrTools/scenarios/` にシナリオを書き、`FrTools compare <シナリオ>` で `*.list.json`（プレビュー一覧）が一致すること。
-- **画面比較**：同じく `compare` で、UI ツリー差分の「移植版にない要素」が0件で、横並び画像を目で見て違和感がないこと。フォルダツリーの中身や日時など環境で変わる部分は除く。
+- **画面比較**：2026-10-24 の UI 見直し（[ui-redesign.md](ui-redesign.md)）以降は参考扱い。`compare` の report.md 末尾の「合否」はテキストの記録（一覧・メニュー・ファイル結果）だけで決まる。横並び画像は、文字の欠け・重なり・見えない部品がないかを目で見るために使う。
 - **単体**：Core にユニットテストがあり、`dotnet test` が通ること。
 
 ## 0. 基盤
@@ -16,7 +16,7 @@
 - [x] T001 ツール（FrTools）：リソース抽出、作業コピー、フィクスチャ、シナリオ実行、画面・ツリー・一覧の比較
 - [x] T002 リソース一覧（docs/spec/resources.md）と機能一覧（docs/spec/features.md）
 - [x] T003 Preset.ini の読み込み（単体：PresetFileTests）
-- [x] T004 正解データの保存：`FrTools golden <セット>` で `tools/FrTools/golden/*.json` のケースをオリジナル版に入力し、結果を `tests/FlexibleRenamer.Core.Tests/Golden/` に保存する（GoldenRenameTests）
+- [x] T004 正解データの保存：`FrTools golden <セット>` で `tools/FrTools/golden/*.json` のケースをオリジナル版に入力し、結果を `tests/ReflexRenamer.Core.Tests/Golden/` に保存する（GoldenRenameTests）
 - [x] T005 ini の読み書き（UTF-16。キーの重複と順序を保つ）と `Flexible Renamer.ini` の設定モデル（A22）（AppSettings。ウィンドウ位置・ページ・フォルダ・リネームと属性の入力値・履歴を保存）
 - [x] T006 Strings.ini による多言語化の基盤と `%%Key%%` の展開。キーと値の前後の空白は削る。既定は OS の言語（A23）（LanguageStringsTests、Golden: typical）
 - [x] T007 画面の組み立て基盤：exe のダイアログテンプレートから WinForms のコントロールを作る（DialogBuilder、Name ＝ リソース ID）。メニューも MENU リソースから作る。アイコン・ビットマップを exe から抽出して埋め込む
@@ -102,3 +102,16 @@
 - [x] T801 全シナリオで `compare` を実行し、残った差分を洗い出す（2026-10-24：13 シナリオを実行。一覧・メニュー・ファイルの結果はすべて一致（差があったのは拡張子なしファイルの「種類」とスクリプトエラー時の名前で、修正済み）。残る UI ツリーの差は WinForms の子要素の名前・種類（ComboBox の Edit、DateTimePicker、ListBox 項目名、スピンボタン）とフォルダのアクセス日時）（2026-10-24 夕方：compare all を 55 シナリオ中 39 件まで実行（約 42 分、1 件約 1 分）して中断。残りは lang-* と rename-wildcard・script-*（後者は当日個別に一致を確認済み）。一覧・ファイルの差は既知のもの（フォルダのアクセス日時、合成 JPEG の撮影日時、合成 PDF）だけ。exec-error と exec-subfolder はオリジナル版側の自動操作の失敗（キャプチャの 0x80040201、重複確認でフィルタ欄が戻らない）で比較できず。debug-tagkind は古い観察用シナリオで移植版の一覧を見つけられない）
 - [x] T802 9言語すべてで画面が崩れないことを確認する（lang-*.json：言語を設定して各ページを撮影。例外なし。独語などの長い訳語は Win32 と同じく1行で切る（BS_MULTILINE のないボタン・チェックボックスは折り返さない）ように直した。画像は .work/out/lang-*/clone/。細部の目視は T803）
 - [ ] T803 手動確認項目（シェル連携、ドロップ、監視など）を人が確認する（追加：見出しメニューの「グループで表示」（フォルダ・日付・種類・拡張子）とシャッフルの見た目、フォルダ振り分け `newdir/ ` の実行、スクリプトの編集で開く外部エディタと編集後の反映）（2026-10-24 追加：ペインの幅を変えて終了→再起動で戻ること、浮かせたペインの移動・大きさ変更と再起動後の復元、実行ボタンの ▼ の見た目）（2026-10-24 自動で確認済み：フォルダの監視・シャッフル・拡張子でのグループ表示（debug-watch-shuffle）、`newdir/` の振り分け（exec-subfolder の移植版）、浮かせたペインの保存と再起動後の復元（debug-float-save / debug-float-restore）、幅の保存と復元（debug-dock-save / explore-dock-restore）、実行ボタンの ▼ の見た目。残り：シェル連携（レジストリ等を書き換える）、エクスプローラーからのドロップ、外部エディタでの編集。どれも利用者の環境を操作するので許可を得てから）（2026-10-24：エクスプローラーからのドロップはユーザーが確認済み。シェル連携と外部エディタでの編集は保留）
+
+## 9. UI 見直し（Reflex Renamer）
+
+方針と決定は [ui-redesign.md](ui-redesign.md)。見た目はオリジナル版に合わせず、Windows 11 のアプリとして自然な形にする。
+
+- [x] T901 不具合の修正：重複確認ダイアログの「処理」の中身が GroupBox に隠れる（DialogBuilder の Z オーダー）、ステータスバーの件数が切れる、一覧の右 4 列が 32px で読めない、オプションの見出しアイコン（存在しない ID 128）、エラーダイアログが例外の内容を捨てる、フォルダ欄の先頭文字が隠れる、連番ページの横スクロール、名前欄のプレースホルダー、定型メニューの太字と切れ（2026-10-24：run explore-pages / exec-rename の画面で確認。列幅は狭いときにフォルダ→種類→日時の順に縮めて横スクロールを避ける）
+- [x] T902 土台：既定フォントをシステムフォント（Yu Gothic UI）にし、DLU の基本値をフォントの実測から求める。PerMonitorV2。メニュー・ステータスバーを自動サイズに。アクセスキー下線の強制表示をやめる。フォルダツリーとファイル一覧とページ内の一覧に Explorer テーマ（2026-10-24：Tahoma 9pt では今までどおり 7/14。100% 表示で文字の欠けなし。高 DPI は未検証）
+- [x] T903 名称と版：Reflex Renamer 0.1.0。exe は ReflexRenamer.exe、設定は Reflex Renamer.ini、インストーラーは ReflexRenamer-Setup-<版>.exe。バージョン情報は「Based on Flexible Renamer 8.4 (C) 2000-2011 Naru」。シェル登録名も Reflex Renamer（2026-10-24。FrTools は `Sandbox.TitleFor` で `window:Flexible Renamer` を読み替える）
+- [x] T904 ダークモード：`Application.SetColorMode(SystemColorMode.System)`。追従しない部品を修正（くぼみ線、無効なテキストボックス、ページ内の一覧、ラジオボタンの文字、ツールバー）（2026-10-24：OS がダークの環境で 4 ページと重複確認を目視。ライトモードは第 2 便までの画面で確認。残り：スピンボタン（msctls_updown32）が明るいまま）
+- [x] T905 ページ切り替えをタブに（`PageTabStrip`。各タブは AccessibleRole.CheckButton で AccessibleName は従来どおり）。ツールバーを 1 段に（ファイル指定／フォルダ指定 + フォルダ欄）。アイコンは Segoe Fluent Icons のグリフ（`FluentGlyphs`）。フラットな描画（`FlatToolStripRenderer`）（2026-10-24：explore-pages のクリックがそのまま通る）
+- [x] T906 ドッキング機能の廃止：ペインの並べ替え・浮かせる機能を削除（FloatingPaneWindow を削除、DockPane は右端のドラッグで幅を変えるだけ、ペインは重ねずに並べる）。BarState は幅と表示だけ使う。シナリオ explore-dock*・debug-dock-save・debug-float-* を削除（2026-10-24）
+- [x] T907 compare の合否をテキストの記録だけにする（Compare.Run の「合否」行）。AGENTS.md と tasks.md の完了条件を更新（2026-10-24）
+- [ ] T908 残り：高 DPI（125%・150%）での確認、ライトモードでの第 3 便以降の画面確認、スピンボタンのダークモード、ページ見出しの 32px アイコン（テンプレートの SS_ICON）の扱い、lang-* シナリオで 9 言語の画面を撮り直す

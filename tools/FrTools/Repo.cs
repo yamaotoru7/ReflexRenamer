@@ -2,7 +2,7 @@ namespace FrTools;
 
 internal static class Repo
 {
-    /// <summary>FlexibleRenamer.slnx があるディレクトリ。</summary>
+    /// <summary>ReflexRenamer.slnx があるディレクトリ。</summary>
     public static string Root { get; } = Find();
 
     private static string Find()
@@ -11,12 +11,12 @@ internal static class Repo
         {
             for (var dir = new DirectoryInfo(start); dir is not null; dir = dir.Parent)
             {
-                if (File.Exists(Path.Combine(dir.FullName, "FlexibleRenamer.slnx")))
+                if (File.Exists(Path.Combine(dir.FullName, "ReflexRenamer.slnx")))
                 {
                     return dir.FullName;
                 }
             }
         }
-        throw new DirectoryNotFoundException("FlexibleRenamer.slnx が見つからない");
+        throw new DirectoryNotFoundException("ReflexRenamer.slnx が見つからない");
     }
 }

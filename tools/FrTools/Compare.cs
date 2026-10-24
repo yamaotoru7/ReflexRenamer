@@ -22,31 +22,43 @@ internal static class Compare
 
         var report = new StringBuilder($"# {scenario}\n\n");
 
+        // 合否は、一覧の中身・メニュー・ファイルの結果などテキストの記録の一致だけで決める。
+        // 画面（画像・UI ツリー）は見た目を Windows 11 風に変えたので差が出るのが前提で、参考として残す（docs/ui-redesign.md）
+        var failed = new List<string>();
         foreach (var file in Directory.GetFiles(o).Select(Path.GetFileName).Order())
         {
             string a = Path.Combine(o, file!);
             string b = Path.Combine(c, file!);
+            bool visual = file!.EndsWith(".png") || file.EndsWith(".tree.txt");
             if (!File.Exists(b))
             {
                 report.AppendLine($"- {file}: 移植版の出力がない");
+                if (!visual) failed.Add(file);
                 continue;
             }
 
-            if (file!.EndsWith(".png"))
+            if (file.EndsWith(".png"))
             {
                 string side = Path.Combine(outDir, Path.GetFileNameWithoutExtension(file) + ".side.png");
                 double ratio = DiffImages(a, b, side);
-                report.AppendLine($"- {file}: 画素差 {ratio:P2} → {side}");
+                report.AppendLine($"- {file}（参考）: 画素差 {ratio:P2} → {side}");
             }
             else if (file.EndsWith(".tree.txt"))
             {
-                report.AppendLine($"- {file}: {DiffTrees(a, b, Path.Combine(outDir, file))}");
+                report.AppendLine($"- {file}（参考）: {DiffTrees(a, b, Path.Combine(outDir, file))}");
             }
             else
             {
-                report.AppendLine($"- {file}: {DiffText(a, b, Path.Combine(outDir, file + ".diff"))}");
+                string result = DiffText(a, b, Path.Combine(outDir, file + ".diff"));
+                report.AppendLine($"- {file}: {result}");
+                if (result != "一致") failed.Add(file);
             }
         }
+
+        report.AppendLine();
+        report.AppendLine(failed.Count == 0
+            ? "**合否: OK**（テキストの記録はすべて一致。画像と UI ツリーは参考）"
+            : $"**合否: NG**（{string.Join("、", failed)}）");
 
         File.WriteAllText(Path.Combine(outDir, "report.md"), report.ToString());
         return report.ToString();

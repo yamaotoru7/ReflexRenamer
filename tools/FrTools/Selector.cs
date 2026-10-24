@@ -56,6 +56,11 @@ internal sealed class Selector
     private AutomationElement? TryFind(AppSession session)
     {
         string? window = _parts.FirstOrDefault(p => p.Key == "window").Value;
+        if (window is not null)
+        {
+            // シナリオはオリジナル版の題名で書く。移植版は「Reflex Renamer」に読み替える
+            window = Sandbox.TitleFor(session.Kind, window);
+        }
         // タイトルが完全に一致するウィンドウ（メッセージボックスの「Flexible Renamer」）を、部分一致（メイン「Flexible Renamer v8.4」）より先に探す
         var windows = window is null
             ? session.AllWindows()

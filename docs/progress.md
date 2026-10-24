@@ -4,6 +4,8 @@
 
 ## 現在地
 
+- 2026-10-24 夜：UI 見直し（tasks.md の 9 章、方針は ui-redesign.md）。製品名を Reflex Renamer 0.1.0 に改名。システムフォント・PerMonitorV2・ダークモード・タブ化・1 段ツールバー・ドッキング廃止・列幅と各ダイアログの不具合修正を実施。実装は agy（gemini-4-argon-high）に 3 便に分けて委譲し（ファイル編集のみ）、ビルド・テスト・撮影・FrTools 側の変更（exe 名、ini 名、`window:` の題名の読み替え、合否基準）は Claude。残りは T908。compare の合否はテキストの記録だけで決まり、画像・UI ツリーの差は参考。
+
 - 2026-10-24 夕方の作業で T113、T116、T203、T301、T307、T402、T404、T405、T501、T801 を完了。未チェックは T803（人による手動確認）だけ。T203 は浮いた窓のドラッグでの再ドッキングと上下へのドッキングが未実装。T801 の残る差は tasks.md の T801 行。
 - この回に入れた主な変更（詳細と照合に使ったシナリオ・正解データは tasks.md の各行）：
   - フィルタ（FileCollector）：区切りごとに列挙して重複も残す、`.` のない語は拡張子扱い、再帰なしではフォルダにも適用、既定の履歴5件。
@@ -72,7 +74,7 @@
 - `StrFunc`：定数と各関数。Win32 の `LCMapStringW`／`GetDateFormatW`／`GetTimeFormatW`／`VariantTimeToSystemTime` を 64bit から直接呼ぶ。PROPERCASE は上記の原本の規則で実装。
 - `CFormat`：`sprintf` の書式化。va_list の積み方、旧 CRT の丸め・特殊値表記・`%a`・`%S`（UTF-16 を ANSI として読む）まで再現。
 - `StrFuncObject`：`ComWrappers` で作る IDispatch。引数は `VariantChangeType` で変換し、原本と同じ HRESULT（450/13/438/451 になる）を返す。
-- `ScriptHost`：名前付き項目 `FlexibleRenamerStrFuncWrapper` として渡し、前置きのスクリプトで VBScript の `CreateObject` を差し替える（`StrFunc.Wrapper` 以外は `GetObject("", ProgID)` で作る）。JScript は `ActiveXObject` を無名関数で包み直す。前置きの `CreateObject` は `FunctionNames()` に出さない。`GetItemInfo` は NULL の出力先を受け取るのでポインターで宣言した。
+- `ScriptHost`：名前付き項目 `ReflexRenamerStrFuncWrapper` として渡し、前置きのスクリプトで VBScript の `CreateObject` を差し替える（`StrFunc.Wrapper` 以外は `GetObject("", ProgID)` で作る）。JScript は `ActiveXObject` を無名関数で包み直す。前置きの `CreateObject` は `FunctionNames()` に出さない。`GetItemInfo` は NULL の出力先を受け取るのでポインターで宣言した。
 - 原本との意図的な違い：参照渡しの数値・日付も値として読む。日付引数に日付以外を渡したら日付に変換する（原本は不定）。
 
 テスト：`StrFuncTests.MatchesOriginalDllSamples`（結果が不定の12式を除く366式が型・値・エラーとも一致）、`PresetScriptFunctionsUseStrFunc`（Script.Preset.vbs の toUpperCase など17式）、`PresetStrConvPassesVariablesByReference`、`OtherProgIdsStillCreateObjects`、`JScriptCanUseStrFunc`、`RenameEngineScriptTests.TypicalScriptUsesPresetFunctions`／`ScriptCanCallStrFuncThroughPresetScript`。`GoldenRenameTests` は、ケースの `options.script`（言語名）か定型処理の Script 列があればスクリプトを有効にし、配布物の Script.Preset.* を読み込む（正解データ側のステップでスクリプトのチェックと言語を合わせる）。

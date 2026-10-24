@@ -13,7 +13,17 @@ internal static class Sandbox
     public static string OriginalExe => Path.Combine(OriginalDir, "Flexible Renamer.exe");
 
     public static string CloneExe =>
-        Path.Combine(Repo.Root, "src", "FlexibleRenamer", "bin", "Debug", "net10.0-windows", "FlexibleRenamer.exe");
+        Path.Combine(Repo.Root, "src", "ReflexRenamer", "bin", "Debug", "net10.0-windows", "ReflexRenamer.exe");
+
+    /// <summary>設定ファイルの名前。移植版は Reflex Renamer に改名したので ini の名前も違う。</summary>
+    public static string IniName(AppKind kind) => kind == AppKind.Original ? "Flexible Renamer.ini" : "Reflex Renamer.ini";
+
+    /// <summary>
+    /// シナリオの <c>window:</c> セレクタに書いた題名を、そのアプリの題名に読み替える（「Flexible Renamer」→ 移植版では「Reflex Renamer」）。
+    /// シナリオは両方のアプリで共通なので、オリジナル版の題名で書いてよい。
+    /// </summary>
+    public static string TitleFor(AppKind kind, string title) =>
+        kind == AppKind.Clone ? title.Replace("Flexible Renamer", "Reflex Renamer", StringComparison.Ordinal) : title;
 
     public static string FixturesDir => Path.Combine(WorkDir, "fixtures");
 

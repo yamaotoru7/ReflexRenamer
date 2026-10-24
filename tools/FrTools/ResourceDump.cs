@@ -37,7 +37,7 @@ internal static class ResourceDump
                 Read(module, RtToolbar, ParseToolbar),
                 ReadStringTable(module));
 
-            ExportImages(module, Path.Combine(Repo.Root, "src", "FlexibleRenamer", "Assets"));
+            ExportImages(module, Path.Combine(Repo.Root, "src", "ReflexRenamer", "Assets"));
 
             Directory.CreateDirectory(outDir);
             File.WriteAllText(Path.Combine(outDir, "resources.json"),
