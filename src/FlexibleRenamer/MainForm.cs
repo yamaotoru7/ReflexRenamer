@@ -59,7 +59,7 @@ public sealed class MainForm : Form
         Font = AppResources.UiFont;
         ClientSize = new Size(1084, 721);
         StartPosition = FormStartPosition.WindowsDefaultLocation;
-        Icon = Assets.Icon(128) ?? Icon;
+        Icon = Assets.Icon(64) ?? Icon; // オリジナル版のメインフレームの ID（IDR_MAINFRAME）は 64
         KeyPreview = true;
 
         // メニュー

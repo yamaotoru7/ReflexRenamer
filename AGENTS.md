@@ -35,7 +35,10 @@ dotnet test                                    # 全テスト
 dotnet test --filter "FullyQualifiedName~PresetFileTests"   # 一部のテストだけ実行
 dotnet run --project src/FlexibleRenamer       # アプリを起動
 dotnet run --project tools/FrTools             # ツールの使い方を表示
+pwsh tools/build-installer.ps1                 # インストーラーを作る（.work/installer/FlexibleRenamer-Setup-<版>.exe）
 ```
+
+- インストーラーは Inno Setup 6（`winget install --id JRSoftware.InnoSetup -e --scope user`）。スクリプトは `installer/FlexibleRenamer.iss`。.NET 同梱（win-x64、self-contained）で、管理者権限なしに `%LocalAppData%\Programs\Flexible Renamer` へ入れる（アプリが ini とログを exe の横に書くため）。版は csproj の `<Version>`。
 
 ## 仕様とタスク
 
