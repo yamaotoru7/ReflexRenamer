@@ -40,7 +40,8 @@ static int Snap(string[] args)
 {
     var kind = ParseApp(args.ElementAtOrDefault(0));
     string fixture = args.ElementAtOrDefault(1) ?? "basic";
-    string folder = Sandbox.ResetFixture(fixture);
+    // 3つ目の引数で、フィクスチャの代わりに任意のフォルダを開ける（フォルダツリーの確認など）
+    string folder = args.ElementAtOrDefault(2) ?? Sandbox.ResetFixture(fixture);
     string outDir = Path.Combine(Sandbox.OutDir, "snap", kind.ToString().ToLowerInvariant());
 
     using var session = AppSession.Launch(kind, folder);

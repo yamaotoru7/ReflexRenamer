@@ -81,6 +81,8 @@ public sealed class ShellFolderTree : TreeView
             if (node is not null)
             {
                 SelectedNode = node;
+                // 開いたフォルダ自体も展開して、サブフォルダを見せる
+                node.Expand();
                 node.EnsureVisible();
             }
         }
@@ -92,6 +94,9 @@ public sealed class ShellFolderTree : TreeView
 
     private TreeNode? Find(TreeNodeCollection nodes, string full)
     {
+        // 先にパスが前方一致するフォルダの配下を探し、見つからなければ仮想フォルダ（PC など）の中身を探す。
+        // ルートのデスクトップは実体のパスを持つが、PC やドライブを子に持つので仮想フォルダと同じに扱う
+        var virtuals = new List<TreeNode>();
         foreach (TreeNode node in nodes)
         {
             if (node.Tag is not ShellNode shell)
@@ -103,21 +108,34 @@ public sealed class ShellFolderTree : TreeView
             {
                 return node;
             }
-            // パスを持つフォルダはその配下だけを、仮想フォルダ（デスクトップ、PC）は中身をすべて探す
-            bool descend = p is null || full.StartsWith(p + "\\", StringComparison.OrdinalIgnoreCase);
-            if (!descend)
+            if (p is null || node.Parent is null)
             {
-                continue;
+                virtuals.Add(node);
             }
-            LoadChildren(node);
-            var found = Find(node.Nodes, full);
-            if (found is not null)
+            else if (full.StartsWith(p + "\\", StringComparison.OrdinalIgnoreCase) && FindIn(node, full) is { } found)
             {
-                node.Expand();
+                return found;
+            }
+        }
+        foreach (var node in virtuals)
+        {
+            if (FindIn(node, full) is { } found)
+            {
                 return found;
             }
         }
         return null;
+    }
+
+    private TreeNode? FindIn(TreeNode node, string full)
+    {
+        LoadChildren(node);
+        var found = Find(node.Nodes, full);
+        if (found is not null)
+        {
+            node.Expand();
+        }
+        return found;
     }
 
     private TreeNode CreateNode(ShellNode shell)
