@@ -83,6 +83,45 @@ public sealed class ResourceSet
         return new ResourceSet(dialogs, menus, accelerators);
     }
 
+    /// <summary>
+    /// メニューからコマンドを除いた ResourceSet を返す（移植版で使わない項目。オリジナル版のホームページやメールなど）。
+    /// 除いた結果、先頭・末尾・連続になった区切り線も除く。
+    /// </summary>
+    public ResourceSet WithoutCommands(params int[] commands)
+    {
+        var removed = commands.ToHashSet();
+        var menus = Menus.ToDictionary(m => m.Key, m => (IReadOnlyList<MenuTemplate>)Filter(m.Value, removed));
+        return new ResourceSet(Dialogs.ToDictionary(), menus, Accelerators.ToDictionary());
+    }
+
+    private static List<MenuTemplate> Filter(IReadOnlyList<MenuTemplate> items, HashSet<int> removed)
+    {
+        var result = new List<MenuTemplate>();
+        foreach (var item in items)
+        {
+            if (item.Separator)
+            {
+                if (result.Count > 0 && !result[^1].Separator)
+                {
+                    result.Add(item);
+                }
+            }
+            else if (item.Children is not null)
+            {
+                result.Add(item with { Children = Filter(item.Children, removed) });
+            }
+            else if (!removed.Contains(item.Id))
+            {
+                result.Add(item);
+            }
+        }
+        if (result.Count > 0 && result[^1].Separator)
+        {
+            result.RemoveAt(result.Count - 1);
+        }
+        return result;
+    }
+
     private static List<MenuTemplate> ReadMenu(JsonElement items) => items.EnumerateArray()
         .Select(i => new MenuTemplate(
             i.GetProperty("Id").GetInt32(),

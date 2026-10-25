@@ -4,7 +4,8 @@ using ReflexRenamer.Core.Ini;
 namespace ReflexRenamer.Core.Settings;
 
 /// <summary>
-/// 実行ディレクトリの <c>Flexible Renamer.ini</c>。セクションとキーはオリジナル版と同じ名前を使い、
+/// 実行ディレクトリの <c>Reflex Renamer.ini</c>。セクションとキーはオリジナル版と同じ名前を使い
+/// （アプリ全体の設定だけは <c>[General]</c>。オリジナル版の <c>[Flexible Renamer]</c> から読み替える）、
 /// 読めないキーは既定値にする。入力欄の履歴（MRU）は「セクションに MRU= を並べる」形式。
 /// </summary>
 public sealed class AppSettings
@@ -14,12 +15,38 @@ public sealed class AppSettings
     /// <summary>履歴に残す件数（オリジナル版の実測では 10 件程度）。</summary>
     public const int MruLimit = 10;
 
+    /// <summary>アプリ全体の設定（フォルダ、ページ、フォント、言語、配色など）のセクション。</summary>
+    public const string General = "General";
+
+    /// <summary>オリジナル版と 0.1.0 までの移植版で <see cref="General"/> の代わりに使っていたセクション。</summary>
+    private const string LegacyGeneral = "Flexible Renamer";
+
     private readonly IniDocument _ini;
 
     private AppSettings(IniDocument ini, string path)
     {
         _ini = ini;
         Path = path;
+        MigrateLegacyGeneral();
+    }
+
+    /// <summary>[Flexible Renamer] の値を [General] に移す（[General] に同じキーがあればそちらを優先）。</summary>
+    private void MigrateLegacyGeneral()
+    {
+        var legacy = _ini[LegacyGeneral];
+        if (legacy is null)
+        {
+            return;
+        }
+        var general = _ini.GetOrAdd(General);
+        foreach (var (key, value) in legacy.Entries)
+        {
+            if (general[key] is null)
+            {
+                general.Set(key, value);
+            }
+        }
+        _ini.Remove(LegacyGeneral);
     }
 
     public string Path { get; }

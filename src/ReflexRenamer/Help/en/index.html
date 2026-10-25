@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reflex Renamer Help</title>
+<link rel="stylesheet" href="../help.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <p class="title">Reflex Renamer</p>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#install">Installing and uninstalling</a></li>
+    <li><a href="#window">The main window</a></li>
+    <li><a href="#basics">Basic usage</a></li>
+    <li><a href="#rename">Rename</a>
+      <ol>
+        <li><a href="#rename-target">Targets</a></li>
+        <li><a href="#rename-typical">Typical menu</a></li>
+        <li><a href="#rename-advanced">Advanced Rename</a></li>
+        <li><a href="#rename-numbering">Numbering</a></li>
+        <li><a href="#rename-operation">Operation to perform</a></li>
+        <li><a href="#rename-run">Running and undoing</a></li>
+      </ol>
+    </li>
+    <li><a href="#tagrename">TagRename</a></li>
+    <li><a href="#attribute">Attributes</a></li>
+    <li><a href="#numbered">NumberedObject</a></li>
+    <li><a href="#tips">Tips</a>
+      <ol>
+        <li><a href="#tips-edit">Editing new names directly</a></li>
+        <li><a href="#tips-distribute">Sorting into folders</a></li>
+        <li><a href="#tips-group">Group view</a></li>
+        <li><a href="#tips-tagcolumn">Showing tags as columns</a></li>
+        <li><a href="#tips-script">Scripts</a></li>
+        <li><a href="#tips-shell">Explorer integration</a></li>
+      </ol>
+    </li>
+    <li><a href="#reference">Reference</a>
+      <ol>
+        <li><a href="#ref-tags">Replace tags</a></li>
+        <li><a href="#ref-datetime">Date and time tags</a></li>
+        <li><a href="#ref-wildcard">Wildcards</a></li>
+        <li><a href="#ref-regex">Regular expressions</a></li>
+        <li><a href="#ref-case">Case conversion</a></li>
+        <li><a href="#ref-keys">Keyboard shortcuts</a></li>
+      </ol>
+    </li>
+    <li><a href="#settings">Settings and files</a></li>
+    <li><a href="#about">About Reflex Renamer</a></li>
+  </ol>
+  <p class="lang">日本語: <a href="../ja/index.html">Reflex Renamer ヘルプ</a></p>
+</nav>
+
+<main>
+<h1>Reflex Renamer Help</h1>
+<p class="lead">A batch renamer for files and folders that supports wildcards, regular expressions, tag information and scripts</p>
+
+<h2 id="overview">Overview</h2>
+<p>Reflex Renamer is a Windows application for renaming many files and folders at once. The list shows the new names as you type, and you can undo a rename after it has been run.</p>
+<ul>
+  <li><strong>Rename</strong>: add strings or numbers, remove characters, convert case or fullwidth/halfwidth characters, and replace text. You can pick an item from the typical menu, or specify the details with wildcards, regular expressions or letter translation.</li>
+  <li><strong>TagRename</strong>: use information stored in the files, such as ID3 tags of music files, EXIF data of photos, or properties of Office documents and PDFs, in the new names.</li>
+  <li><strong>Attributes</strong>: change the timestamps (created, modified and accessed dates) and attributes (read-only, hidden and so on) of files and folders in one operation.</li>
+  <li><strong>NumberedObject</strong>: create numbered empty files, empty folders or copies of a file in one operation.</li>
+</ul>
+<p>You can also process everything under the subfolders, rename while moving or copying to another folder, and sort files into folders created per date or per tag.</p>
+<p>Reflex Renamer runs on Windows 10 / 11 (64-bit). The user interface is available in Japanese, English, German, Spanish, French, Italian, Portuguese (Brazil) and Chinese (Simplified and Traditional).</p>
+
+<h2 id="install">Installing and uninstalling</h2>
+<h3>Installing</h3>
+<p>Run the installer (<code>ReflexRenamer-Setup-&lt;version&gt;.exe</code>). It does not need administrator rights and installs to <code>%LocalAppData%\Programs\Reflex Renamer</code>. .NET is included, so nothing else needs to be installed.</p>
+<p>When you install a new version over an existing one, the settings (<code>Reflex Renamer.ini</code>) and the undo log (<code>Rename.log</code>) are kept.</p>
+<h3>Uninstalling</h3>
+<p>Uninstall Reflex Renamer from Windows Settings › Apps. The folder context menu entry and the "Send to" menu entries registered in the options are removed at the same time. The settings and the log remain in the installation folder; delete the folder if you no longer need them.</p>
+
+<h2 id="window">The main window</h2>
+<table>
+  <tr><th>Area</th><th>Contents</th></tr>
+  <tr><td>Toolbar</td><td>Switches between "Specify File" and "Specify Folder", and a box for the folder to process. Type a folder in the box and press <kbd>Enter</kbd> to open it. The drop-down lists the folders opened since startup, newest first.</td></tr>
+  <tr><td>Tabs</td><td>Switches between Rename, TagRename, Attributes and NumberedObject.</td></tr>
+  <tr><td>Folder list (left)</td><td>The same folder tree as in Explorer. The selected folder is shown in the list on the right. Drag the right edge to change the width, or hide the pane from the View menu. Press <kbd>F5</kbd> to refresh.</td></tr>
+  <tr><td>Input form (center)</td><td>Settings and the run button for the selected function. Most items show a description when you hover over them.</td></tr>
+  <tr><td>File list (right)</td><td>The files and folders to be processed. For Rename, the result appears in the "New Name" column. The "Folder" column shows the path relative to the open folder (<code>.</code> for items directly in it).</td></tr>
+  <tr><td>Status bar</td><td>Status messages and the number of displayed and selected items.</td></tr>
+</table>
+<p>Choose the color scheme in <span class="menu">View › Color mode</span>: Follow system, Light or Dark (applied the next time the application starts). Change the font size of the list in <span class="menu">View › Font...</span>.</p>
+
+<h2 id="basics">Basic usage</h2>
+<ol>
+  <li><strong>Choose the targets</strong>: with "Specify Folder", the contents of the folder selected in the folder list (or typed in the folder box) are the targets. With "Specify File", only the files and folders dropped from Explorer are the targets. This is useful for renaming the results of an Explorer search.</li>
+  <li><strong>Choose a function</strong>: select Rename, TagRename, Attributes or NumberedObject with the tabs.</li>
+  <li><strong>Set it up</strong>: fill in the input form from top to bottom. For Rename and TagRename, the "New Name" column of the list is updated as you type. Rows whose name will change are shown in bold.</li>
+  <li><strong>Run</strong>: use the button at the bottom of the input form. If items are selected in the list, only those are processed; otherwise all displayed items are processed (a confirmation message is shown in this case).</li>
+</ol>
+<div class="note">You can also open a folder by dropping files or folders onto the window or onto the Reflex Renamer icon.</div>
+
+<h2 id="rename">Rename</h2>
+
+<h3 id="rename-target">Targets</h3>
+<ul>
+  <li><strong>Target</strong>: check whether files, folders or both are processed.</li>
+  <li><strong>Filters</strong>: limit the names shown in the list with wildcards. Separate several filters with <code>;</code> (for example <code>*.jpg;*.png</code>). A word without <code>.</code> is treated as an extension, so <code>jpg</code> is the same as <code>*.jpg</code>. An empty filter, <code>*</code> and <code>*.*</code> match everything.</li>
+  <li><strong>Recursive Sub Folders</strong>: include the contents of subfolders in the list. "Depth" sets how many levels down to go (0 means no limit).</li>
+</ul>
+
+<h3 id="rename-typical">Typical menu</h3>
+<p>When "Advanced Rename" is unchecked, you can pick a common operation from a tree.</p>
+<table>
+  <tr><th>Category</th><th>Examples</th></tr>
+  <tr><td>Insert Number or String</td><td>Add a string, number, date/time or folder name at the start, at the end or at a given position</td></tr>
+  <tr><td>Remove Number or String</td><td>Remove characters at a given position, " - Copy (n)", " - Shortcut", <code>[number]</code>, <code>(number)</code>, brackets with their contents, convert to 8.3 format</td></tr>
+  <tr><td>Translate Letters</td><td>Upper/lower case, capitalize words, fullwidth/halfwidth, hiragana/katakana, remove accents</td></tr>
+  <tr><td>Replace String</td><td>Replace a given string</td></tr>
+  <tr><td>Organize Number Value</td><td>Pad the digits of the Nth number in the name, increase or decrease it</td></tr>
+  <tr><td>Modify Extension</td><td>Make the extension upper or lower case, remove, add or replace it</td></tr>
+</table>
+<p>When you select an item, the input boxes it needs (string to add, position, start number, digits and so on) appear below. Click "Advanced Rename (selected item)" below the input boxes to expand the selected operation into an Advanced Rename search and replace and switch to that mode. Use it as a starting point for fine-tuning.</p>
+
+<h3 id="rename-advanced">Advanced Rename</h3>
+<p>Check "Advanced Rename" to choose a rename method and write the search and replace freely.</p>
+<table>
+  <tr><th>Rename method</th><th>Usage</th></tr>
+  <tr><td>Wild Card</td><td>Use <code>*</code> and <code>?</code> in the search, and refer to the matched parts as <code>\1</code>–<code>\9</code> in the replace. Only names that match as a whole stay in the list. → <a href="#ref-wildcard">Wildcards</a></td></tr>
+  <tr><td>Reg Exp</td><td>Search with a Perl-compatible regular expression and replace the matched part. Only matching names stay in the list. → <a href="#ref-regex">Regular expressions</a></td></tr>
+  <tr><td>Translation</td><td>List the characters to convert in the search and the resulting characters in the replace, in the same order; each character is replaced one by one (for example, search <code>a-z</code> and replace <code>A-Z</code> converts lowercase letters to uppercase). Ranges can be written with <code>-</code>.</td></tr>
+</table>
+<p>Besides the matched parts, the replace can contain <a href="#ref-tags">tags</a> for the name, extension, folder name, date/time, number and more. The buttons to the right of the search and replace boxes open a menu of available symbols and tags; the selected one is inserted at the cursor.</p>
+<ul>
+  <li><strong>Regular expression options</strong>: choose whether the search is case sensitive and whether only complete matches are shown.</li>
+  <li><strong>Presets</strong>: save frequently used search/replace combinations and recall them from a menu. Use "Organize Presets" to reorder, rename or delete them.</li>
+  <li><strong>Script</strong>: when checked, the replace is evaluated as a VBScript or JScript expression. → <a href="#tips-script">Scripts</a></li>
+</ul>
+
+<h3 id="rename-numbering">Numbering</h3>
+<p>A <code>?</code> in the replace inserts a sequential number at that position. The number of <code>?</code> characters sets the number of digits (<code>???</code> gives <code>000</code>, <code>001</code>, …).</p>
+<ul>
+  <li><strong>Start and Step</strong>: the first number and the increment. The default is to start at 0 and increase by 1.</li>
+  <li><strong>Reset by each folder</strong>: when subfolders are included, numbering restarts whenever the folder changes.</li>
+  <li><strong>Number type</strong>: the button to the right of the numbering box lets you choose Decimal digit, Hexadecimal digit or Alphabetically.</li>
+</ul>
+<p>Numbers are assigned in the order of the list. Click a column header to sort (numeric parts are compared by value), or use "Shuffle" in the column header context menu to sort randomly.</p>
+
+<h3 id="rename-operation">Operation to perform</h3>
+<p>The box to the left of the run button lets you choose an operation other than renaming.</p>
+<table>
+  <tr><th>Operation</th><th>Description</th></tr>
+  <tr><td>Rename</td><td>Changes the names.</td></tr>
+  <tr><td>Move&amp;Rename to Another Folder</td><td>Moves the items to the selected folder under their new names.</td></tr>
+  <tr><td>Copy&amp;Rename to Another Folder</td><td>Copies the items to the selected folder under their new names.</td></tr>
+  <tr><td>Create Shortcut&amp;Rename to Another Folder</td><td>Creates shortcuts with the new names in the selected folder.</td></tr>
+  <tr><td>Create HardLink&amp;Rename to Another Folder</td><td>Creates hard links with the new names in the selected folder (same drive only).</td></tr>
+  <tr><td>Move to Recycle Bin</td><td>Moves the items to the Recycle Bin. This cannot be reverted with the Undo button.</td></tr>
+</table>
+<p>For operations to another folder, pressing the run button opens a dialog to choose the destination folder. The ▼ part of the button lists recently used destinations (up to 5) for sending items there directly.</p>
+
+<h3 id="rename-run">Running and undoing</h3>
+<ul>
+  <li><strong>Name conflicts</strong>: if a file with the new name already exists, a dialog lets you choose Retry, Skip, Skip All, Overwrite, Overwrite All or Auto Numbering. In <span class="menu">Tools › Options... › Rename</span> you can set it to add a number automatically instead of asking each time.</li>
+  <li><strong>Failures</strong>: if a name cannot be changed (for example because the file is in use), you can choose Retry, Skip, Skip All or Cancel.</li>
+  <li><strong>Undo</strong>: the "Undo" button (<kbd>Ctrl</kbd>+<kbd>Z</kbd>) reverts the last operation as a whole. Operations are recorded in <code>Rename.log</code>, so you can undo them even after closing the application.</li>
+</ul>
+<p>The Options button menu lets you set the numbering, choose whether the timestamp tags use the modified date or the created date, and choose whether to hide protected operating system files from the list.</p>
+
+<h2 id="tagrename">TagRename</h2>
+<p>Names files using information embedded in them (tags).</p>
+<ol>
+  <li>Choose the tag type: Music &lt;ID3&gt;, Photo &lt;EXIF&gt;, Image &lt;IPTC&gt;, Document &lt;DOC&gt; or Web Page &lt;HTML&gt;.</li>
+  <li>Check the extensions to process.</li>
+  <li>Write the new name in "Format". Tags are written in angle brackets, such as <code>&lt;ID3.Artist&gt;</code>, and can be picked from the menu of the button to the right of the format box. The original extension is added to the new name automatically.</li>
+</ol>
+<table>
+  <tr><th>Type</th><th>Information read</th></tr>
+  <tr><td>Music</td><td>ID3v1 and ID3v2 (2.2–2.4) of MP3, WMA, APE, MPC and Ogg Vorbis. <code>&lt;ID3.*&gt;</code> prefers ID3v2; write <code>&lt;ID3v1.*&gt;</code> to use ID3v1 only.</td></tr>
+  <tr><td>Photo</td><td>EXIF of JPEG and TIFF (date taken, camera make and model, exposure, ISO speed and so on).</td></tr>
+  <tr><td>Image</td><td>IPTC (caption, author, keywords and so on).</td></tr>
+  <tr><td>Document</td><td>Document properties (title, author and so on) of Word, Excel and PowerPoint (legacy and Office 2007 or later formats) and PDF.</td></tr>
+  <tr><td>Web Page</td><td>The HTML <code>&lt;title&gt;</code>.</td></tr>
+</table>
+<p>Check "Use File Property Info" to use the items shown in Explorer's "Details" (including items added by Windows or other applications) as tags. "Edit..." sets which items and target extensions each preset uses.</p>
+<p>The date/time format of tags and the replacement for characters that cannot be used in names (<code>\ / : * ? " &lt; &gt; |</code>) can be changed in <span class="menu">Options › TagRename (DateTime Format &amp; Invalid Characters)</span>.</p>
+<p>Numbering, the operation to perform, Undo and scripts work the same way as in Rename.</p>
+
+<h2 id="attribute">Attributes</h2>
+<p>Changes the timestamps and attributes of files and folders in one operation. "Recursive Sub Folders" is on by default.</p>
+<table>
+  <tr><th>Timestamp method</th><th>Description</th></tr>
+  <tr><td>Specify DateTime</td><td>Sets the created, modified and accessed dates to the given values.</td></tr>
+  <tr><td>Shift</td><td>Moves the current dates earlier or later by the given number of days and time.</td></tr>
+  <tr><td>Random Generate</td><td>Sets random dates between the lower and upper limits.</td></tr>
+  <tr><td>Sequential Generate</td><td>Assigns dates at a fixed interval, forward or backward from a start date (in list order).</td></tr>
+  <tr><td>Make the Same</td><td>Sets the other dates to one of the created date, modified date, accessed date or photo date taken.</td></tr>
+</table>
+<p>Shift, Random Generate, Sequential Generate and Make the Same change only the dates checked in "Apply To". Check "Modify Folder Timestamp" to change the dates of the folders themselves as well.</p>
+<p>The attribute check boxes (Read-only, Archive, Hidden, System) have three states. Grayed items are not changed. Click "Start Modify" to run.</p>
+
+<h2 id="numbered">NumberedObject</h2>
+<p>Creates numbered files or folders in the open folder.</p>
+<ul>
+  <li><strong>Kind of Target Object</strong>: empty file (specify the size; <code>K</code>, <code>M</code> and <code>G</code> can be used), file copy, empty folder or folder copy. For copies, choose the source file or folder.</li>
+  <li><strong>Name</strong>: a sequential number is inserted where <code>?</code> is written. The number of <code>?</code> characters sets the number of digits (for example <code>photo???.jpg</code>).</li>
+  <li><strong>Amount, Start from and Step</strong>: how many to create and how they are numbered.</li>
+</ul>
+<p>The names to be created are shown in the list. Click "Start Create" to create them.</p>
+
+<h2 id="tips">Tips</h2>
+
+<h3 id="tips-edit">Editing new names directly</h3>
+<p>In Rename and TagRename, you can edit the "New Name" in the list by hand. Select an item and press <kbd>F2</kbd>, or click the new name. While editing, press <kbd>↑</kbd> or <kbd>↓</kbd> to move to the row above or below.</p>
+
+<h3 id="tips-distribute">Sorting into folders</h3>
+<p>If the replace (the format in TagRename) contains a relative path with <code>..</code> or <code>/</code>, folders are created and the items are moved into them. When numbering, check "Reset by each folder" to restart from 1 in each destination folder.</p>
+<p>Example: sort photos into folders per date taken, one level up (replace <code>../\Y-\m-\d/\0</code>)</p>
+<pre><code>Pictures\camera\IMG001.jpg  →  Pictures\2024-05-01\IMG001.jpg
+Pictures\camera\IMG002.jpg  →  Pictures\2024-05-01\IMG002.jpg
+Pictures\camera\IMG003.jpg  →  Pictures\2024-05-02\IMG003.jpg</code></pre>
+<p>Example: sort music files by artist and album (TagRename format <code>&lt;ID3.Artist&gt;/&lt;ID3.Album&gt;/\t</code>)</p>
+
+<h3 id="tips-group">Group view</h3>
+<p>Right-click a column header in the list and use "Show in groups" to group items by folder, date, type or extension. In group view, numbering restarts for each group.</p>
+<p>Example: replace <code>\Y-\m-\d ??</code> with items grouped by date</p>
+<pre><code>2024-05-01 00.jpg
+2024-05-01 01.jpg
+2024-05-02 00.jpg   ← restarts at 00 when the date changes
+2024-05-03 00.jpg
+2024-05-03 01.jpg</code></pre>
+
+<h3 id="tips-tagcolumn">Showing tags as columns</h3>
+<p>In TagRename, right-click a column header in the list; the second half of the menu lists the tags. The selected tag is added to the list as a column so you can compare its values across files. Select the same tag again to remove the column.</p>
+
+<h3 id="tips-script">Scripts</h3>
+<p>When "Script" is checked, the replace or format is evaluated as a VBScript or JScript expression, and the result becomes the new name. Choose the language in the Script button menu.</p>
+<ul>
+  <li>Tags are expanded to their values before evaluation and become part of the expression. To treat a value as a string, enclose it in double quotation marks. For example, when <code>\1</code> matches <code>123</code>, <code>"\1" &amp; "\1"</code> (<code>"\1" + "\1"</code> in JScript) gives <code>123123</code>, and <code>\1 + \1</code> gives <code>246</code>.</li>
+  <li>The number <code>?</code> is also expanded first. In scripts, <code>*</code> does not become a random number and can be used as an operator.</li>
+  <li>The Script button menu lists the bundled functions (fullwidth/halfwidth conversion, digit padding and so on) and the built-in functions of the language; the selected one is inserted at the cursor.</li>
+  <li>With "Edit Script", you can write your own functions in <code>Script.vbs</code> (<code>Script.js</code> for JScript). They are available from the next evaluation after saving. The bundled functions are in <code>Script.Preset.vbs</code> / <code>Script.Preset.js</code> and can serve as examples.</li>
+  <li>Items whose evaluation fails are not renamed.</li>
+</ul>
+<p>Example: use the value of cell A1 on the first sheet of an Excel file as the file name (replace <code>xls1stCell("\P\0") &amp; "\e"</code>, with the following function in <code>Script.vbs</code>)</p>
+<pre><code>Function xls1stCell(path)
+    Set excel = CreateObject("Excel.Application")
+    Set book = excel.Workbooks.Open(path)
+    xls1stCell = book.Sheets(1).Cells(1, 1).Value
+    book.Close False
+    excel.Quit
+End Function</code></pre>
+<div class="note">Microsoft is phasing out VBScript. If VBScript is no longer available in a future version of Windows, choose JScript.</div>
+
+<h3 id="tips-shell">Explorer integration</h3>
+<p>In <span class="menu">Tools › Options... › General</span>, you can register the following.</p>
+<ul>
+  <li><strong>Folder Context Menu</strong>: adds "Reflex Renamer" to the menu shown when you right-click a folder in Explorer, so you can start the application with that folder open.</li>
+  <li><strong>Add to "Send to" Menu</strong>: adds "Reflex Renamer (Rename)", "(TagRename)" and "(Attributes)", which pass the selected files to that page in "Specify File" mode.</li>
+</ul>
+<p>You can also add the current folder to the <span class="menu">Favorites</span> menu (up to 20) to open it quickly. When the contents of the displayed folder change, the list is updated automatically.</p>
+
+<h2 id="reference">Reference</h2>
+
+<h3 id="ref-tags">Replace tags</h3>
+<p>Tags that can be used in the replace (the format in TagRename). They are replaced with the values of each file.</p>
+<table>
+  <tr><th>Tag</th><th>Meaning</th></tr>
+  <tr><td><code>\0</code></td><td>The current name (including the extension)</td></tr>
+  <tr><td><code>\t</code></td><td>The file title (the name without the extension)</td></tr>
+  <tr><td><code>\e</code></td><td>The extension (without <code>.</code>)</td></tr>
+  <tr><td><code>\f</code></td><td>The name of the folder containing the file</td></tr>
+  <tr><td><code>\F</code></td><td>The name of its parent folder</td></tr>
+  <tr><td><code>\P</code></td><td>The full path of the folder containing the file (ends with <code>\</code>; useful in scripts)</td></tr>
+  <tr><td><code>\;</code></td><td>The file size (with digit grouping)</td></tr>
+  <tr><td><code>\:</code></td><td>The file size (without digit grouping)</td></tr>
+  <tr><td><code>\1</code>–<code>\9</code></td><td>The parts matched by the search (in symbol order for wildcards, in parenthesis order for regular expressions)</td></tr>
+  <tr><td><code>?</code></td><td>Sequential number. The number of <code>?</code> characters sets the digits</td></tr>
+  <tr><td><code>*</code></td><td>A random number</td></tr>
+  <tr><td><code>..</code> and <code>/</code></td><td>Move to the parent folder or a subfolder (<a href="#tips-distribute">sorting into folders</a>)</td></tr>
+  <tr><td><code>\\</code></td><td>A literal <code>\</code></td></tr>
+</table>
+
+<h3 id="ref-datetime">Date and time tags</h3>
+<p>Replaced with the file's modified date (can be changed to the created date in the options). Day and month names follow the Windows region settings. Put <code>#</code> after <code>\</code> to omit leading zeros (<code>\#m</code> gives <code>5</code>).</p>
+<table>
+  <tr><th>Tag</th><th>Meaning</th><th>Tag</th><th>Meaning</th></tr>
+  <tr><td><code>\Y</code></td><td>4-digit year</td><td><code>\y</code></td><td>Last 2 digits of the year</td></tr>
+  <tr><td><code>\m</code></td><td>Month (01–12)</td><td><code>\d</code></td><td>Day (01–31)</td></tr>
+  <tr><td><code>\H</code></td><td>Hour (24-hour, 00–23)</td><td><code>\I</code></td><td>Hour (12-hour, 01–12)</td></tr>
+  <tr><td><code>\M</code></td><td>Minute (00–59)</td><td><code>\S</code></td><td>Second (00–59)</td></tr>
+  <tr><td><code>\p</code></td><td>AM/PM</td><td><code>\j</code></td><td>Day of the year (001–366)</td></tr>
+  <tr><td><code>\a</code></td><td>Abbreviated day name</td><td><code>\A</code></td><td>Day name</td></tr>
+  <tr><td><code>\b</code></td><td>Abbreviated month name</td><td><code>\B</code></td><td>Month name</td></tr>
+</table>
+<p>Other C <code>strftime</code> format codes can also be written with <code>\</code> instead of <code>%</code> (for example <code>\x</code> for the short date format).</p>
+
+<h3 id="ref-wildcard">Wildcards</h3>
+<table>
+  <tr><th>Symbol</th><th>Meaning</th></tr>
+  <tr><td><code>*</code></td><td>Any string of zero or more characters</td></tr>
+  <tr><td><code>?</code></td><td>Any single character</td></tr>
+</table>
+<p>Matching is not case sensitive. The parts matched by the symbols can be referred to as <code>\1</code>, <code>\2</code>, … from left to right. Names without an extension (such as <code>README</code>) do not match <code>*.*</code>. A fullwidth character counts as one character.</p>
+<p>Example: search <code>IMG_*.jpg</code> and replace <code>Trip_\1.jpg</code> turns <code>IMG_0012.jpg</code> into <code>Trip_0012.jpg</code></p>
+
+<h3 id="ref-regex">Regular expressions</h3>
+<p>Perl 5 compatible regular expressions. The following can be used in the search.</p>
+<table>
+  <tr><th>Symbol</th><th>Meaning</th></tr>
+  <tr><td><code>.</code></td><td>Any single character</td></tr>
+  <tr><td><code>[abc]</code> <code>[^abc]</code></td><td>Any of the listed characters / any character not listed (ranges such as <code>[A-Z]</code> are allowed)</td></tr>
+  <tr><td><code>^</code> <code>$</code></td><td>Start / end of the name</td></tr>
+  <tr><td><code>\&lt;</code> <code>\&gt;</code></td><td>Start / end of a word</td></tr>
+  <tr><td><code>\b</code> <code>\B</code></td><td>Word boundary / inside a word</td></tr>
+  <tr><td><code>\A</code> <code>\Z</code></td><td>Start / end of the string</td></tr>
+  <tr><td><code>\d</code> <code>\D</code></td><td>Digit / non-digit</td></tr>
+  <tr><td><code>\w</code> <code>\W</code></td><td>Alphanumeric or <code>_</code> / anything else</td></tr>
+  <tr><td><code>\s</code> <code>\S</code></td><td>Whitespace / non-whitespace</td></tr>
+  <tr><td><code>\xXX</code> <code>\x{XXXX}</code> <code>\0OO</code></td><td>A character given in hexadecimal or octal</td></tr>
+  <tr><td><code>*</code> <code>+</code> <code>?</code></td><td>Repeat the preceding item 0 or more / 1 or more / 0 or 1 times</td></tr>
+  <tr><td><code>{m}</code> <code>{m,}</code> <code>{m,n}</code></td><td>Repeat the preceding item m times / at least m times / m to n times</td></tr>
+  <tr><td><code>*?</code> <code>+?</code> <code>??</code> etc.</td><td>Lazy match (as short as possible)</td></tr>
+  <tr><td><code>a|b</code></td><td>Either</td></tr>
+  <tr><td><code>(...)</code></td><td>Group. The matched part can be referred to as <code>\1</code>–<code>\9</code></td></tr>
+  <tr><td><code>(?:...)</code></td><td>Non-capturing group</td></tr>
+  <tr><td><code>(?=...)</code> <code>(?!...)</code></td><td>Positive / negative lookahead</td></tr>
+  <tr><td><code>(?&lt;=...)</code> <code>(?&lt;!...)</code></td><td>Positive / negative lookbehind</td></tr>
+  <tr><td><code>(?&gt;...)</code></td><td>Atomic group (no backtracking)</td></tr>
+  <tr><td><code>(?(condition)yes|no)</code></td><td>Conditional pattern</td></tr>
+</table>
+<p>By default, matching is not case sensitive (this can be changed in the options). Items that do not match are removed from the list.</p>
+<p>Example: search <code>^(.*) - (.*)\.mp3$</code> and replace <code>\2 - \1.mp3</code> swaps "Artist - Title" to "Title - Artist"</p>
+
+<h3 id="ref-case">Case conversion</h3>
+<p>In the replace, you can change the case of the characters that follow.</p>
+<table>
+  <tr><th>Symbol</th><th>Meaning</th></tr>
+  <tr><td><code>\u</code> <code>\l</code></td><td>Make the next character upper / lower case</td></tr>
+  <tr><td><code>\U</code> <code>\L</code></td><td>Make everything up to <code>\E</code> upper / lower case</td></tr>
+  <tr><td><code>\Q</code></td><td>Treat everything up to <code>\E</code> literally</td></tr>
+  <tr><td><code>\E</code></td><td>End the effect of <code>\U</code>, <code>\L</code> or <code>\Q</code></td></tr>
+</table>
+<p>Example: with wildcards, search <code>*.*</code> and replace <code>\1.\L\2</code> makes the extension lower case</p>
+
+<h3 id="ref-keys">Keyboard shortcuts</h3>
+<table>
+  <tr><th>Key</th><th>Action</th></tr>
+  <tr><td><kbd>F2</kbd></td><td>Edit the new name directly</td></tr>
+  <tr><td><kbd>F5</kbd></td><td>Refresh the folder list</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Undo</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>Select All</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>Invert Selection</td></tr>
+  <tr><td><kbd>Del</kbd></td><td>Remove the selected items from the list (the files are not deleted)</td></tr>
+  <tr><td><kbd>Alt</kbd>+<kbd>F4</kbd></td><td>Exit</td></tr>
+</table>
+<p>Double-click an item in the list to open it in the associated application. Right-click it to show the same menu as in Explorer.</p>
+
+<h2 id="settings">Settings and files</h2>
+<p>Reflex Renamer creates the following files in its own folder (the installation folder).</p>
+<table>
+  <tr><th>File</th><th>Contents</th></tr>
+  <tr><td><code>Reflex Renamer.ini</code></td><td>Settings: window position and size, input history, presets, favorites and so on. Saved on exit.</td></tr>
+  <tr><td><code>Rename.log</code></td><td>The record of operations used for undo.</td></tr>
+  <tr><td><code>Script.vbs</code> / <code>Script.js</code></td><td>Your own functions written with "Edit Script".</td></tr>
+</table>
+<p>Change the language in <span class="menu">Help › Language</span> (applied the next time the application starts). Initially it follows the Windows display language. To restore the default layout of the window and panes, use <span class="menu">Tools › Reset Window Layout</span>.</p>
+
+<h2 id="about">About Reflex Renamer</h2>
+<p>Reflex Renamer is software inspired by Flexible Renamer by Naru.</p>
+<p>The version is shown in <span class="menu">Help › About Reflex Renamer</span>.</p>
+</main>
+</div>
+</body>
+</html>

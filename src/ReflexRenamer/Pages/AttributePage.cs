@@ -387,7 +387,7 @@ public sealed class AttributePage : PageBase
         var targets = selected.Count > 0 ? selected : _items;
         if (targets.Count == 0)
         {
-            MessageBox.Show(this, Res.T("No Target File"), "Flexible Renamer");
+            MessageBox.Show(this, Res.T("No Target File"), AppResources.ProductName);
             return;
         }
         // サブフォルダ以下も対象なら、一覧のフォルダの中身を実行時に広げる

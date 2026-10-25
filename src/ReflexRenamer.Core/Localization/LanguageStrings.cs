@@ -5,7 +5,7 @@ using ReflexRenamer.Core.Ini;
 namespace ReflexRenamer.Core.Localization;
 
 /// <summary>
-/// 言語ファイル（<c>Flexible Renamer.&lt;言語&gt;.Strings.ini</c>）。
+/// 言語ファイル（<c>Reflex Renamer.&lt;言語&gt;.Strings.ini</c>。オリジナル版の <c>Flexible Renamer.&lt;言語&gt;.Strings.ini</c> と同じ形式）。
 /// キーは英語の原文で、<c>[Resource]</c> に UI 文字列、<c>[Preset]</c> にプリセット名と定型メニュー名の訳がある。
 /// 値の中の <c>%%Key%%</c> は、そのキーの訳に置き換える。
 /// </summary>

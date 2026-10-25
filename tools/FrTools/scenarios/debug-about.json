@@ -1,0 +1,15 @@
+// バージョン情報とヘルプメニュー（移植版だけ）。ホームページの項目がなく、クレジットが一文だけかを画像で確認する
+{
+  "fixture": "basic",
+  "steps": [
+    { "do": "click", "target": "type:MenuItem,name:ヘルプ(H)", "only": "clone" },
+    { "do": "wait", "ms": 600, "only": "clone" },
+    { "do": "capture", "name": "help-menu", "only": "clone" },
+    { "do": "key", "keys": ["ESCAPE"], "only": "clone" },
+    { "do": "key", "keys": ["ESCAPE"], "only": "clone" },
+    { "do": "menu", "path": ["ヘルプ(H)", "Reflex Renamer のバージョン情報(A)..."], "only": "clone" },
+    { "do": "wait", "ms": 800, "only": "clone" },
+    { "do": "capture", "target": "window:Reflex Renamer のバージョン情報", "name": "about", "only": "clone" },
+    { "do": "key", "keys": ["ENTER"], "only": "clone" }
+  ]
+}

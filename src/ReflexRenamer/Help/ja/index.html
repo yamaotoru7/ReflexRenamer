@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reflex Renamer ヘルプ</title>
+<link rel="stylesheet" href="../help.css">
+</head>
+<body>
+<div class="layout">
+<nav>
+  <p class="title">Reflex Renamer</p>
+  <ol>
+    <li><a href="#overview">概要</a></li>
+    <li><a href="#install">インストールとアンインストール</a></li>
+    <li><a href="#window">画面の構成</a></li>
+    <li><a href="#basics">基本的な使い方</a></li>
+    <li><a href="#rename">リネーム</a>
+      <ol>
+        <li><a href="#rename-target">対象</a></li>
+        <li><a href="#rename-typical">定型メニュー</a></li>
+        <li><a href="#rename-advanced">高度なリネーム</a></li>
+        <li><a href="#rename-numbering">連番</a></li>
+        <li><a href="#rename-operation">実行する動作</a></li>
+        <li><a href="#rename-run">実行と元に戻す</a></li>
+      </ol>
+    </li>
+    <li><a href="#tagrename">タグ・リネーム</a></li>
+    <li><a href="#attribute">属性</a></li>
+    <li><a href="#numbered">連番オブジェクト</a></li>
+    <li><a href="#tips">便利な使い方</a>
+      <ol>
+        <li><a href="#tips-edit">新しい名前の直接編集</a></li>
+        <li><a href="#tips-distribute">フォルダ振り分け</a></li>
+        <li><a href="#tips-group">グループ表示</a></li>
+        <li><a href="#tips-tagcolumn">タグの一覧表示</a></li>
+        <li><a href="#tips-script">スクリプト</a></li>
+        <li><a href="#tips-shell">エクスプローラーとの連携</a></li>
+      </ol>
+    </li>
+    <li><a href="#reference">リファレンス</a>
+      <ol>
+        <li><a href="#ref-tags">置換のタグ</a></li>
+        <li><a href="#ref-datetime">日時のタグ</a></li>
+        <li><a href="#ref-wildcard">ワイルドカード</a></li>
+        <li><a href="#ref-regex">正規表現</a></li>
+        <li><a href="#ref-case">大文字・小文字の変換</a></li>
+        <li><a href="#ref-keys">キー操作</a></li>
+      </ol>
+    </li>
+    <li><a href="#settings">設定とファイル</a></li>
+    <li><a href="#about">Reflex Renamer について</a></li>
+  </ol>
+  <p class="lang">English: <a href="../en/index.html">Reflex Renamer Help</a></p>
+</nav>
+
+<main>
+<h1>Reflex Renamer ヘルプ</h1>
+<p class="lead">ワイルドカード・正規表現・タグ情報・スクリプトを使える、ファイルとフォルダの一括リネームツール</p>
+
+<h2 id="overview">概要</h2>
+<p>Reflex Renamer は、たくさんのファイルやフォルダの名前をまとめて変えるための Windows アプリです。入力に合わせて新しい名前をすぐに一覧で確かめられ、実行した後でも元に戻せます。</p>
+<ul>
+  <li><strong>リネーム</strong>：文字列や連番の追加、文字の削除、大文字・小文字や全角・半角の変換、置換。定型メニューから選ぶだけでも、ワイルドカード・正規表現・文字変換で細かく指定することもできます。</li>
+  <li><strong>タグ・リネーム</strong>：音楽ファイルの ID3 タグ、写真の EXIF、Office 文書や PDF のプロパティなど、ファイルの中の情報を名前に使います。</li>
+  <li><strong>属性</strong>：ファイルやフォルダのタイムスタンプ（作成・更新・アクセス日時）と属性（読み取り専用、隠しなど）をまとめて変えます。</li>
+  <li><strong>連番オブジェクト</strong>：連番の付いた空のファイルやフォルダ、ファイルのコピーを一度に作ります。</li>
+</ul>
+<p>このほか、サブフォルダ以下もまとめて処理する、別のフォルダへ移動・コピーしながら名前を付ける、日付やタグごとにフォルダを作って振り分ける、といったこともできます。</p>
+<p>動作環境は Windows 10 / 11（64 ビット）です。画面は日本語・英語・ドイツ語・スペイン語・フランス語・イタリア語・ポルトガル語（ブラジル）・中国語（簡体字・繁体字）で表示できます。</p>
+
+<h2 id="install">インストールとアンインストール</h2>
+<h3>インストール</h3>
+<p>インストーラー（<code>ReflexRenamer-Setup-&lt;版&gt;.exe</code>）を実行します。管理者権限は要らず、<code>%LocalAppData%\Programs\Reflex Renamer</code> に入ります。.NET は同梱しているので、別にインストールするものはありません。</p>
+<p>新しい版を上書きでインストールしても、設定（<code>Reflex Renamer.ini</code>）と元に戻すためのログ（<code>Rename.log</code>）はそのまま残ります。</p>
+<h3>アンインストール</h3>
+<p>Windows の「設定」→「アプリ」から Reflex Renamer をアンインストールします。オプションで登録したフォルダの右クリックメニューと「送る」メニューの項目も、このとき取り除かれます。設定とログはインストール先のフォルダに残るので、要らなければフォルダごと削除してください。</p>
+
+<h2 id="window">画面の構成</h2>
+<table>
+  <tr><th>場所</th><th>内容</th></tr>
+  <tr><td>ツールバー</td><td>「ファイル指定」「フォルダ指定」の切り替えと、処理するフォルダを入力する欄。フォルダ欄に入力して <kbd>Enter</kbd> で移動します。ドロップダウンには、起動してから開いたフォルダが新しい順に並びます。</td></tr>
+  <tr><td>タブ</td><td>リネーム／タグ・リネーム／属性／連番オブジェクトの切り替え。</td></tr>
+  <tr><td>フォルダ一覧（左）</td><td>エクスプローラーと同じフォルダのツリー。選んだフォルダが右の一覧に出ます。右端をドラッグすると幅を変えられ、表示メニューから隠すこともできます。<kbd>F5</kbd> で最新の状態にします。</td></tr>
+  <tr><td>入力フォーム（中央）</td><td>選んでいる機能の設定欄と実行ボタン。項目の多くは、マウスを乗せると説明が出ます。</td></tr>
+  <tr><td>ファイル一覧（右）</td><td>処理の対象になるファイルとフォルダ。リネームでは「新しい名前」の列に結果が出ます。「フォルダ」の列は、開いているフォルダからの相対パスです（直下のものは <code>.</code>）。</td></tr>
+  <tr><td>ステータスバー</td><td>状態のメッセージと、表示・選択している項目の数。</td></tr>
+</table>
+<p>配色は <span class="menu">表示 › 配色</span> で、システムに従う／ライト／ダークから選べます（次に起動したときに反映されます）。一覧の文字の大きさは <span class="menu">表示 › フォント</span> で変えられます。</p>
+
+<h2 id="basics">基本的な使い方</h2>
+<ol>
+  <li><strong>対象を決める</strong>：「フォルダ指定」では、フォルダ一覧で選んだフォルダ（またはフォルダ欄に入力したフォルダ）の中身が対象になります。「ファイル指定」では、エクスプローラーからドロップしたファイルやフォルダだけが対象になります。エクスプローラーの検索結果をまとめてリネームしたいときに便利です。</li>
+  <li><strong>機能を選ぶ</strong>：タブでリネーム／タグ・リネーム／属性／連番オブジェクトを選びます。</li>
+  <li><strong>設定する</strong>：入力フォームの上から順に設定します。リネームとタグ・リネームでは、入力するたびに一覧の「新しい名前」が更新されます。名前が変わる行は太字になります。</li>
+  <li><strong>実行する</strong>：入力フォームの下のボタンで実行します。一覧で項目を選んでいれば選んだものだけを、選んでいなければ表示しているものすべてを処理します（このときは確認のメッセージが出ます）。</li>
+</ol>
+<div class="note">ファイルやフォルダをウィンドウや Reflex Renamer のアイコンにドロップしても、そのフォルダを開けます。</div>
+
+<h2 id="rename">リネーム</h2>
+
+<h3 id="rename-target">対象</h3>
+<ul>
+  <li><strong>ターゲット</strong>：ファイルとフォルダのどちらを対象にするかをチェックで選びます。</li>
+  <li><strong>フィルタ</strong>：一覧に出す名前をワイルドカードで絞ります。<code>;</code> で区切って複数書けます（例：<code>*.jpg;*.png</code>）。<code>.</code> を含まない語は拡張子とみなすので、<code>jpg</code> は <code>*.jpg</code> と同じです。空欄と <code>*</code>、<code>*.*</code> はすべてに一致します。</li>
+  <li><strong>サブフォルダ以下も対象</strong>：サブフォルダの中も一覧に入れます。「深さ」で何階層下までたどるかを決めます（0 は制限なし）。</li>
+</ul>
+
+<h3 id="rename-typical">定型メニュー</h3>
+<p>「高度なリネーム」のチェックを外しているときは、よく使う処理をツリーから選べます。</p>
+<table>
+  <tr><th>分類</th><th>例</th></tr>
+  <tr><td>連番や文字列の追加</td><td>先頭・末尾・指定位置への文字列や連番、日時、フォルダ名の追加</td></tr>
+  <tr><td>数字や文字列の削除</td><td>指定位置の文字の削除、「 - コピー (数字)」「 - ショートカット」、<code>[数字]</code> <code>(数字)</code>、かっことその中身の削除、8.3 形式にする</td></tr>
+  <tr><td>文字種の変換</td><td>大文字・小文字、語頭を大文字、全角・半角、ひらがな・カタカナ、アクセント記号を外す</td></tr>
+  <tr><td>文字列の置換</td><td>指定した文字列の置き換え</td></tr>
+  <tr><td>数値の整理</td><td>名前の中の N 番目の数字の桁をそろえる、増やす・減らす</td></tr>
+  <tr><td>拡張子の変更</td><td>拡張子を大文字・小文字にする、削除・追加・置き換え</td></tr>
+</table>
+<p>項目を選ぶと、必要な入力欄（追加する文字列、位置、開始番号、桁数など）が下に出ます。入力欄の下の「高度なリネーム (選択されたメニュー項目)」をクリックすると、選んでいる処理を高度なリネームの検索・置換に展開して切り替えます。細かく手直ししたいときの出発点に使えます。</p>
+
+<h3 id="rename-advanced">高度なリネーム</h3>
+<p>「高度なリネーム」にチェックを付けると、リネーム方法を選んで検索と置換を自由に書けます。</p>
+<table>
+  <tr><th>リネーム方法</th><th>使い方</th></tr>
+  <tr><td>ワイルドカード</td><td>検索に <code>*</code> と <code>?</code> を使い、マッチした部分を置換で <code>\1</code>〜<code>\9</code> として参照します。名前全体と一致したものだけが一覧に残ります。→ <a href="#ref-wildcard">ワイルドカード</a></td></tr>
+  <tr><td>正規表現</td><td>Perl 互換の正規表現で検索し、マッチした部分を置換で置き換えます。マッチしたものだけが一覧に残ります。→ <a href="#ref-regex">正規表現</a></td></tr>
+  <tr><td>文字変換</td><td>検索に変換前の文字、置換に変換後の文字を同じ順で並べ、1 文字ずつ置き換えます（例：検索 <code>a-z</code>、置換 <code>A-Z</code> で英小文字を大文字に）。範囲は <code>-</code> で書けます。</td></tr>
+</table>
+<p>置換には、マッチした部分のほかに、名前・拡張子・フォルダ名・日時・連番などの<a href="#ref-tags">タグ</a>を書けます。検索欄・置換欄の右のボタンを押すと、使える記号やタグがメニューで出て、選ぶとカーソルの位置に入ります。</p>
+<ul>
+  <li><strong>正規表現のオプション</strong>：大文字と小文字を区別するか、名前全体に一致したものだけを出すかを選べます。</li>
+  <li><strong>プリセット</strong>：よく使う検索・置換の組み合わせを保存して、メニューから呼び出せます。「プリセットの整理」で並べ替え・名前の変更・削除ができます。</li>
+  <li><strong>スクリプト</strong>：チェックを付けると、置換を VBScript または JScript の式として評価します。→ <a href="#tips-script">スクリプト</a></li>
+</ul>
+
+<h3 id="rename-numbering">連番</h3>
+<p>置換に <code>?</code> を書くと、その位置に連番が入ります。<code>?</code> の個数が桁数になります（<code>???</code> なら <code>000</code>, <code>001</code>, …）。</p>
+<ul>
+  <li><strong>開始・ステップ</strong>：最初の番号と、いくつずつ増やすか。既定は 0 から 1 ずつです。</li>
+  <li><strong>フォルダごとにリセット</strong>：サブフォルダ以下も対象にしたとき、フォルダが変わるたびに番号を振り直します。</li>
+  <li><strong>番号の種類</strong>：連番欄の右のボタンで、10 進数・16 進数・アルファベット順から選べます。</li>
+</ul>
+<p>番号は一覧の並び順に振られます。列の見出しをクリックすると並べ替えられ（数字の部分は数の大きさで比べます）、見出しの右クリックメニューの「シャッフル」でランダムに並べ替えることもできます。</p>
+
+<h3 id="rename-operation">実行する動作</h3>
+<p>実行ボタンの左の欄で、名前を変える以外の動作も選べます。</p>
+<table>
+  <tr><th>動作</th><th>内容</th></tr>
+  <tr><td>リネーム</td><td>名前を変えます。</td></tr>
+  <tr><td>別フォルダに移動&amp;リネーム</td><td>選んだフォルダへ、新しい名前で移動します。</td></tr>
+  <tr><td>別フォルダにコピー&amp;リネーム</td><td>選んだフォルダへ、新しい名前でコピーします。</td></tr>
+  <tr><td>別フォルダにショートカット作成&amp;リネーム</td><td>選んだフォルダに、新しい名前のショートカットを作ります。</td></tr>
+  <tr><td>別フォルダにハードリンク作成&amp;リネーム</td><td>選んだフォルダに、新しい名前のハードリンクを作ります（同じドライブのみ）。</td></tr>
+  <tr><td>ごみ箱へ移動</td><td>対象をごみ箱に移します。元に戻すボタンでは戻せません。</td></tr>
+</table>
+<p>別フォルダへの動作では、実行ボタンを押すと送り先のフォルダを選ぶ画面が出ます。ボタンの ▼ からは、最近送ったフォルダ（最大 5 件）を選んですぐに送れます。</p>
+
+<h3 id="rename-run">実行と元に戻す</h3>
+<ul>
+  <li><strong>名前が重なったとき</strong>：新しい名前のファイルが既にあると、再試行・スキップ・すべてスキップ・上書き・すべて上書き・連番を付ける、から選ぶ画面が出ます。<span class="menu">ツール › オプション › リネーム</span> で、毎回聞かずに自動で連番を付けるようにもできます。</li>
+  <li><strong>失敗したとき</strong>：使用中などで名前を変えられなかったときは、再試行・スキップ・すべてスキップ・キャンセルを選べます。</li>
+  <li><strong>元に戻す</strong>：「元に戻す」ボタン（<kbd>Ctrl</kbd>+<kbd>Z</kbd>）で、直前の操作をまとめて取り消します。操作の記録は <code>Rename.log</code> に残るので、アプリを終了した後でも戻せます。</li>
+</ul>
+<p>オプションボタンのメニューでは、連番の設定、タイムスタンプのタグに更新日時と作成日時のどちらを使うか、保護された OS のファイルを一覧に出さないか、を選べます。</p>
+
+<h2 id="tagrename">タグ・リネーム</h2>
+<p>ファイルに埋め込まれた情報（タグ）を使って名前を付けます。</p>
+<ol>
+  <li>タグの種類を選びます：ミュージック〈ID3〉、写真〈EXIF〉、イメージ〈IPTC〉、ドキュメント〈DOC〉、Web ページ〈HTML〉。</li>
+  <li>対象にする拡張子をチェックします。</li>
+  <li>「書式」に新しい名前を書きます。タグは <code>&lt;ID3.Artist&gt;</code> のように山かっこで書き、書式欄の右のボタンからメニューで選べます。新しい名前には元の拡張子が自動で付きます。</li>
+</ol>
+<table>
+  <tr><th>種類</th><th>読み取る情報</th></tr>
+  <tr><td>ミュージック</td><td>MP3 の ID3v1・ID3v2（2.2〜2.4）、WMA、APE、MPC、Ogg Vorbis。<code>&lt;ID3.*&gt;</code> は ID3v2 を優先し、ID3v1 だけを使いたいときは <code>&lt;ID3v1.*&gt;</code> と書きます。</td></tr>
+  <tr><td>写真</td><td>JPEG・TIFF の EXIF（撮影日時、カメラのメーカー・機種、露出、ISO 感度など）。</td></tr>
+  <tr><td>イメージ</td><td>IPTC（キャプション、作成者、キーワードなど）。</td></tr>
+  <tr><td>ドキュメント</td><td>Word・Excel・PowerPoint（旧形式と Office 2007 以降の形式）と PDF の文書プロパティ（タイトル、作成者など）。</td></tr>
+  <tr><td>Web ページ</td><td>HTML の <code>&lt;title&gt;</code>。</td></tr>
+</table>
+<p>「ファイルプロパティ情報を使う」にチェックを付けると、エクスプローラーの「詳細」に出る項目（Windows やほかのアプリが追加した項目を含む）をタグとして使えます。「編集...」で、プリセットごとに使う項目と対象の拡張子を設定できます。</p>
+<p>タグの日時の書式と、名前に使えない文字（<code>\ / : * ? " &lt; &gt; |</code>）の置き換え先は、<span class="menu">オプション › タグ・リネーム (日付の書式と無効な文字)</span> で変えられます。</p>
+<p>連番・実行する動作・元に戻す・スクリプトは、リネームと同じように使えます。</p>
+
+<h2 id="attribute">属性</h2>
+<p>ファイルやフォルダのタイムスタンプと属性をまとめて変えます。「サブフォルダ以下も対象」は既定でオンです。</p>
+<table>
+  <tr><th>タイムスタンプの変え方</th><th>内容</th></tr>
+  <tr><td>日時指定</td><td>作成日時・更新日時・アクセス日時を、それぞれ指定した日時にします。</td></tr>
+  <tr><td>シフト</td><td>今の日時から、指定した日数・時間だけ前または後にずらします。</td></tr>
+  <tr><td>ランダム生成</td><td>下限と上限のあいだのランダムな日時にします。</td></tr>
+  <tr><td>連続生成</td><td>開始日時から一定の間隔で、前または後へ順に日時を振ります（一覧の並び順）。</td></tr>
+  <tr><td>揃える</td><td>作成日時・更新日時・アクセス日時・写真の撮影日時のどれかに、ほかの日時を揃えます。</td></tr>
+</table>
+<p>シフト・ランダム生成・連続生成・揃えるは、「適用先」でチェックした日時だけを変えます。「フォルダのタイムスタンプも変更する」を付けると、フォルダ自体の日時も変えます。</p>
+<p>属性（読み取り専用・アーカイブ・隠し・システム）のチェックは 3 状態です。グレーの項目は変更しません。「設定開始」で実行します。</p>
+
+<h2 id="numbered">連番オブジェクト</h2>
+<p>開いているフォルダに、連番の付いたファイルやフォルダを作ります。</p>
+<ul>
+  <li><strong>生成オブジェクトの種類</strong>：空ファイル（サイズを指定。<code>K</code> <code>M</code> <code>G</code> を使えます）、ファイルコピー、空フォルダ、フォルダコピー。コピーでは元にするファイルやフォルダを選びます。</li>
+  <li><strong>名前</strong>：<code>?</code> を書いた位置に連番が入ります。<code>?</code> の個数が桁数です（例：<code>photo???.jpg</code>）。</li>
+  <li><strong>個数・開始番号・ステップ</strong>：いくつ作るかと、番号の振り方。</li>
+</ul>
+<p>作られる名前は一覧で確かめられます。「生成開始」で作ります。</p>
+
+<h2 id="tips">便利な使い方</h2>
+
+<h3 id="tips-edit">新しい名前の直接編集</h3>
+<p>リネームとタグ・リネームでは、一覧の「新しい名前」を手で書き換えられます。項目を選んで <kbd>F2</kbd> を押すか、新しい名前の部分をクリックします。編集中に <kbd>↑</kbd> <kbd>↓</kbd> を押すと、上や下の行の編集に移れます。</p>
+
+<h3 id="tips-distribute">フォルダ振り分け</h3>
+<p>置換（タグ・リネームでは書式）に <code>..</code> や <code>/</code> を含む相対パスを書くと、フォルダを作ってそこへ移動できます。連番を付けるときは「フォルダごとにリセット」を付けると、振り分けたフォルダごとに 1 から数え直します。</p>
+<p>例：写真をひとつ上のフォルダの、撮影日ごとのフォルダに振り分ける（置換 <code>../\Y-\m-\d/\0</code>）</p>
+<pre><code>Pictures\camera\IMG001.jpg  →  Pictures\2024-05-01\IMG001.jpg
+Pictures\camera\IMG002.jpg  →  Pictures\2024-05-01\IMG002.jpg
+Pictures\camera\IMG003.jpg  →  Pictures\2024-05-02\IMG003.jpg</code></pre>
+<p>例：音楽ファイルをアーティストとアルバムごとに振り分ける（タグ・リネームの書式 <code>&lt;ID3.Artist&gt;/&lt;ID3.Album&gt;/\t</code>）</p>
+
+<h3 id="tips-group">グループ表示</h3>
+<p>一覧の列見出しを右クリックすると、「グループで表示」でフォルダ・日付・種類・拡張子ごとにまとめられます。グループ表示にすると、連番はグループごとに振り直されます。</p>
+<p>例：置換 <code>\Y-\m-\d ??</code> で、日付でグループにした場合</p>
+<pre><code>2024-05-01 00.jpg
+2024-05-01 01.jpg
+2024-05-02 00.jpg   ← 日付が変わると 00 から
+2024-05-03 00.jpg
+2024-05-03 01.jpg</code></pre>
+
+<h3 id="tips-tagcolumn">タグの一覧表示</h3>
+<p>タグ・リネームで一覧の列見出しを右クリックすると、メニューの後半にタグが並びます。選んだタグが列として一覧に加わり、ファイルごとの値を見比べられます。同じタグをもう一度選ぶと列が消えます。</p>
+
+<h3 id="tips-script">スクリプト</h3>
+<p>「スクリプト」にチェックを付けると、置換や書式に書いた内容を VBScript または JScript の式として評価し、その結果を新しい名前にします。言語はスクリプトボタンのメニューで選びます。</p>
+<ul>
+  <li>タグは評価の前に値へ展開され、式の一部になります。文字列として扱いたいときはダブルクォーテーションで囲みます。たとえば <code>\1</code> が <code>123</code> にマッチしたとき、<code>"\1" &amp; "\1"</code>（JScript では <code>"\1" + "\1"</code>）は <code>123123</code>、<code>\1 + \1</code> は <code>246</code> になります。</li>
+  <li>連番 <code>?</code> も先に展開されます。スクリプトのときは <code>*</code> はランダムな数字にならず、そのまま演算子として使えます。</li>
+  <li>スクリプトボタンのメニューに、付属の関数（全角・半角の変換、桁そろえなど）と言語の組み込み関数が並び、選ぶとカーソルの位置に入ります。</li>
+  <li>「スクリプトの編集」で、自分の関数を <code>Script.vbs</code>（JScript では <code>Script.js</code>）に書けます。保存すると次の評価から使えます。付属の関数は <code>Script.Preset.vbs</code> / <code>Script.Preset.js</code> にあり、書き方の参考になります。</li>
+  <li>評価でエラーになった項目は、名前を変えません。</li>
+</ul>
+<p>例：Excel ファイルの最初のシートの A1 セルの値をファイル名にする（置換 <code>xls1stCell("\P\0") &amp; "\e"</code>、<code>Script.vbs</code> に次の関数を書く）</p>
+<pre><code>Function xls1stCell(path)
+    Set excel = CreateObject("Excel.Application")
+    Set book = excel.Workbooks.Open(path)
+    xls1stCell = book.Sheets(1).Cells(1, 1).Value
+    book.Close False
+    excel.Quit
+End Function</code></pre>
+<div class="note">VBScript は Microsoft が段階的に廃止を進めています。将来の Windows で VBScript が使えなくなったときは、JScript を選んでください。</div>
+
+<h3 id="tips-shell">エクスプローラーとの連携</h3>
+<p><span class="menu">ツール › オプション › 全般</span> で、次の項目を登録できます。</p>
+<ul>
+  <li><strong>フォルダのコンテキストメニュー</strong>：エクスプローラーでフォルダを右クリックしたメニューに「Reflex Renamer」が加わり、そのフォルダを開いて起動できます。</li>
+  <li><strong>「送る」メニューに追加</strong>：「Reflex Renamer (リネーム)」「(タグ・リネーム)」「(属性)」が加わり、選んだファイルを「ファイル指定」でそのページに渡せます。</li>
+</ul>
+<p>このほか、<span class="menu">お気に入り</span> メニューに今のフォルダを登録しておくと（最大 20 件）、すぐに移動できます。表示しているフォルダの中身が変わると、一覧は自動で更新されます。</p>
+
+<h2 id="reference">リファレンス</h2>
+
+<h3 id="ref-tags">置換のタグ</h3>
+<p>置換（タグ・リネームでは書式）に書けるタグです。ファイルごとの値に置き換わります。</p>
+<table>
+  <tr><th>タグ</th><th>意味</th></tr>
+  <tr><td><code>\0</code></td><td>今の名前（拡張子を含む）</td></tr>
+  <tr><td><code>\t</code></td><td>ファイルタイトル（拡張子を除いた名前）</td></tr>
+  <tr><td><code>\e</code></td><td>拡張子（<code>.</code> を除く）</td></tr>
+  <tr><td><code>\f</code></td><td>ファイルがあるフォルダの名前</td></tr>
+  <tr><td><code>\F</code></td><td>その親フォルダの名前</td></tr>
+  <tr><td><code>\P</code></td><td>ファイルがあるフォルダのフルパス（末尾に <code>\</code> が付きます。スクリプトで便利です）</td></tr>
+  <tr><td><code>\;</code></td><td>ファイルサイズ（桁区切りあり）</td></tr>
+  <tr><td><code>\:</code></td><td>ファイルサイズ（桁区切りなし）</td></tr>
+  <tr><td><code>\1</code>〜<code>\9</code></td><td>検索でマッチした部分（ワイルドカードは記号の順、正規表現はかっこの順）</td></tr>
+  <tr><td><code>?</code></td><td>連番。<code>?</code> の個数が桁数</td></tr>
+  <tr><td><code>*</code></td><td>ランダムな数字</td></tr>
+  <tr><td><code>..</code> と <code>/</code></td><td>親フォルダ・サブフォルダへの移動（<a href="#tips-distribute">フォルダ振り分け</a>）</td></tr>
+  <tr><td><code>\\</code></td><td><code>\</code> そのもの</td></tr>
+</table>
+
+<h3 id="ref-datetime">日時のタグ</h3>
+<p>ファイルの更新日時（オプションで作成日時に変えられます）に置き換わります。曜日名や月名は Windows の地域の設定に従います。<code>\</code> の後ろに <code>#</code> を付けると先頭の 0 を省きます（<code>\#m</code> で <code>5</code>）。</p>
+<table>
+  <tr><th>タグ</th><th>意味</th><th>タグ</th><th>意味</th></tr>
+  <tr><td><code>\Y</code></td><td>西暦 4 桁</td><td><code>\y</code></td><td>西暦の下 2 桁</td></tr>
+  <tr><td><code>\m</code></td><td>月（01〜12）</td><td><code>\d</code></td><td>日（01〜31）</td></tr>
+  <tr><td><code>\H</code></td><td>時（24 時間、00〜23）</td><td><code>\I</code></td><td>時（12 時間、01〜12）</td></tr>
+  <tr><td><code>\M</code></td><td>分（00〜59）</td><td><code>\S</code></td><td>秒（00〜59）</td></tr>
+  <tr><td><code>\p</code></td><td>午前／午後</td><td><code>\j</code></td><td>年の通算日（001〜366）</td></tr>
+  <tr><td><code>\a</code></td><td>曜日の短い名前</td><td><code>\A</code></td><td>曜日の名前</td></tr>
+  <tr><td><code>\b</code></td><td>月の短い名前</td><td><code>\B</code></td><td>月の名前</td></tr>
+</table>
+<p>このほか、C 言語の <code>strftime</code> の書式を <code>%</code> の代わりに <code>\</code> で書けます（<code>\x</code> は短い日付の形式など）。</p>
+
+<h3 id="ref-wildcard">ワイルドカード</h3>
+<table>
+  <tr><th>記号</th><th>意味</th></tr>
+  <tr><td><code>*</code></td><td>0 文字以上の任意の文字列</td></tr>
+  <tr><td><code>?</code></td><td>任意の 1 文字</td></tr>
+</table>
+<p>大文字と小文字は区別しません。記号にマッチした部分は、左から順に <code>\1</code>、<code>\2</code>…で参照できます。拡張子のない名前（<code>README</code> など）は <code>*.*</code> に一致しません。全角文字も 1 文字として数えます。</p>
+<p>例：検索 <code>IMG_*.jpg</code>、置換 <code>旅行_\1.jpg</code> で <code>IMG_0012.jpg</code> → <code>旅行_0012.jpg</code></p>
+
+<h3 id="ref-regex">正規表現</h3>
+<p>Perl 5 互換の正規表現です。検索では次の記号が使えます。</p>
+<table>
+  <tr><th>記号</th><th>意味</th></tr>
+  <tr><td><code>.</code></td><td>任意の 1 文字</td></tr>
+  <tr><td><code>[abc]</code> <code>[^abc]</code></td><td>並べた文字のどれか／どれでもない文字（<code>[A-Z]</code> のように範囲も書けます）</td></tr>
+  <tr><td><code>^</code> <code>$</code></td><td>名前の先頭／末尾</td></tr>
+  <tr><td><code>\&lt;</code> <code>\&gt;</code></td><td>語の先頭／末尾</td></tr>
+  <tr><td><code>\b</code> <code>\B</code></td><td>語の境界／語の中</td></tr>
+  <tr><td><code>\A</code> <code>\Z</code></td><td>文字列の先頭／末尾</td></tr>
+  <tr><td><code>\d</code> <code>\D</code></td><td>数字／数字以外</td></tr>
+  <tr><td><code>\w</code> <code>\W</code></td><td>英数字と <code>_</code>／それ以外</td></tr>
+  <tr><td><code>\s</code> <code>\S</code></td><td>空白／空白以外</td></tr>
+  <tr><td><code>\xXX</code> <code>\x{XXXX}</code> <code>\0OO</code></td><td>16 進数・8 進数で表した文字</td></tr>
+  <tr><td><code>*</code> <code>+</code> <code>?</code></td><td>直前の 0 回以上／1 回以上／0 回か 1 回の繰り返し</td></tr>
+  <tr><td><code>{m}</code> <code>{m,}</code> <code>{m,n}</code></td><td>直前の m 回／m 回以上／m 回以上 n 回以下の繰り返し</td></tr>
+  <tr><td><code>*?</code> <code>+?</code> <code>??</code> など</td><td>最小マッチ（できるだけ短く）</td></tr>
+  <tr><td><code>a|b</code></td><td>どちらか</td></tr>
+  <tr><td><code>(...)</code></td><td>グループ。マッチした部分を <code>\1</code>〜<code>\9</code> で参照できます</td></tr>
+  <tr><td><code>(?:...)</code></td><td>参照しないグループ</td></tr>
+  <tr><td><code>(?=...)</code> <code>(?!...)</code></td><td>肯定・否定の先読み</td></tr>
+  <tr><td><code>(?&lt;=...)</code> <code>(?&lt;!...)</code></td><td>肯定・否定の後読み</td></tr>
+  <tr><td><code>(?&gt;...)</code></td><td>バックトラックしないグループ</td></tr>
+  <tr><td><code>(?(条件)真|偽)</code></td><td>条件によって分かれるパターン</td></tr>
+</table>
+<p>既定では大文字と小文字を区別しません（オプションで変えられます）。マッチしなかった項目は一覧から外れます。</p>
+<p>例：検索 <code>^(.*) - (.*)\.mp3$</code>、置換 <code>\2 - \1.mp3</code> で「アーティスト - 曲名」を「曲名 - アーティスト」に入れ替え</p>
+
+<h3 id="ref-case">大文字・小文字の変換</h3>
+<p>置換の中で、続く文字の大文字・小文字を変えられます。</p>
+<table>
+  <tr><th>記号</th><th>意味</th></tr>
+  <tr><td><code>\u</code> <code>\l</code></td><td>次の 1 文字を大文字／小文字に</td></tr>
+  <tr><td><code>\U</code> <code>\L</code></td><td><code>\E</code> までを大文字／小文字に</td></tr>
+  <tr><td><code>\Q</code></td><td><code>\E</code> までを文字どおりに扱う</td></tr>
+  <tr><td><code>\E</code></td><td><code>\U</code> <code>\L</code> <code>\Q</code> の効果を終える</td></tr>
+</table>
+<p>例：ワイルドカードで検索 <code>*.*</code>、置換 <code>\1.\L\2</code> で拡張子を小文字に</p>
+
+<h3 id="ref-keys">キー操作</h3>
+<table>
+  <tr><th>キー</th><th>動作</th></tr>
+  <tr><td><kbd>F2</kbd></td><td>新しい名前を直接編集</td></tr>
+  <tr><td><kbd>F5</kbd></td><td>フォルダ一覧を最新の状態にする</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>元に戻す</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd></td><td>すべて選択</td></tr>
+  <tr><td><kbd>Ctrl</kbd>+<kbd>I</kbd></td><td>選択を反転</td></tr>
+  <tr><td><kbd>Del</kbd></td><td>選んだ項目を一覧から外す（ファイルは消えません）</td></tr>
+  <tr><td><kbd>Alt</kbd>+<kbd>F4</kbd></td><td>終了</td></tr>
+</table>
+<p>一覧の項目をダブルクリックすると関連付けられたアプリで開き、右クリックするとエクスプローラーと同じメニューが出ます。</p>
+
+<h2 id="settings">設定とファイル</h2>
+<p>Reflex Renamer は、自分のフォルダ（インストール先）に次のファイルを作ります。</p>
+<table>
+  <tr><th>ファイル</th><th>内容</th></tr>
+  <tr><td><code>Reflex Renamer.ini</code></td><td>設定。ウィンドウの位置と大きさ、入力欄の履歴、プリセット、お気に入りなど。終了するときに保存します。</td></tr>
+  <tr><td><code>Rename.log</code></td><td>元に戻すための操作の記録。</td></tr>
+  <tr><td><code>Script.vbs</code> / <code>Script.js</code></td><td>「スクリプトの編集」で書いた自分の関数。</td></tr>
+</table>
+<p>言語は <span class="menu">ヘルプ › 言語</span> で変えられます（次に起動したときに反映されます）。最初は Windows の表示言語に合わせます。ウィンドウやペインの配置を最初の状態に戻すには、<span class="menu">ツール › ウィンドウレイアウトのリセット</span> を使います。</p>
+
+<h2 id="about">Reflex Renamer について</h2>
+<p>Reflex Renamer は、Naru 氏の Flexible Renamer にインスパイアされたソフトウェアです。</p>
+<p>版は <span class="menu">ヘルプ › Reflex Renamer のバージョン情報</span> で確かめられます。</p>
+</main>
+</div>
+</body>
+</html>

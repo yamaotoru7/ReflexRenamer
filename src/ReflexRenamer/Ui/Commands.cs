@@ -25,7 +25,10 @@ public static class Commands
     public const int ResetLayout = 32961;
     public const int Options = 32984;
     public const int Help = 57670;
-    public const int Online = 32914;
+
+    /// <summary>オリジナル版にあって移植版では除くメニュー項目（ホームページを開く、メールで質問）。</summary>
+    public static readonly int[] Removed = [32914, 32887];
+
     public const int Language = 32963;
     public const int About = 57664;
 

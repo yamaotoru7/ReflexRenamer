@@ -1,9 +1,10 @@
-; Flexible Renamer（移植版）のインストーラー。tools/build-installer.ps1 から ISCC で作る。
+; Reflex Renamer のインストーラー。tools/build-installer.ps1 から ISCC で作る。
 ;
-; - アプリは設定（Flexible Renamer.ini）とログ（Rename.log）を exe と同じフォルダに書く（オリジナル版と同じ）。
+; - アプリは設定（Reflex Renamer.ini）とログ（Rename.log）を exe と同じフォルダに書く。
 ;   そのため管理者権限なしで、ユーザーのフォルダ（%LocalAppData%\Programs）に入れる。
 ; - .NET は同梱する（self-contained の発行物）。利用者側で .NET のインストールは要らない。
 ; - 上書きインストールやアンインストールでは、ini とログを消さない（インストーラーが入れたファイルではないため）。
+; - アンインストールでは、オプションで登録したフォルダの右クリックメニューと「送る」の項目を取り除く。
 
 #ifndef AppVersion
   #define AppVersion "0.1.0"
@@ -48,6 +49,14 @@ Source: "{#PublishDir}\*"; DestDir: "{app}"; Excludes: "*.pdb,Reflex Renamer.ini
 [Icons]
 Name: "{autoprograms}\{#AppName}"; Filename: "{app}\{#AppExe}"
 Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
+
+[Registry]
+; オプション（全般）で登録するフォルダの右クリックメニュー。インストールでは作らず、アンインストールで消すだけ
+Root: HKCU; Subkey: "Software\Classes\Folder\shell\Reflex Renamer"; Flags: dontcreatekey uninsdeletekey
+
+[UninstallDelete]
+; オプション（全般）で登録する「送る」の項目（Reflex Renamer (リネーム) など）
+Type: files; Name: "{usersendto}\Reflex Renamer (*).lnk"
 
 [Run]
 Filename: "{app}\{#AppExe}"; Description: "{cm:LaunchProgram,{#AppName}}"; Flags: nowait postinstall skipifsilent

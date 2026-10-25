@@ -80,10 +80,10 @@ public sealed class AppResources
         return translated;
     }
 
-    /// <summary>ini の [Flexible Renamer] ColorMode。System（既定）／Light／Dark。</summary>
+    /// <summary>ini の [General] ColorMode。System（既定）／Light／Dark。</summary>
     public const string ColorModeKey = "ColorMode";
 
-    public SystemColorMode ColorMode => Settings.Get("Flexible Renamer", ColorModeKey) switch
+    public SystemColorMode ColorMode => Settings.Get(AppSettings.General, ColorModeKey) switch
     {
         "Light" => SystemColorMode.Classic,
         "Dark" => SystemColorMode.Dark,
@@ -92,7 +92,7 @@ public sealed class AppResources
 
     /// <summary>配色の設定を保存する（反映は次回の起動から。SetColorMode はフォームを作る前にしか効かない）。</summary>
     public void SaveColorMode(SystemColorMode mode) =>
-        Settings.Set("Flexible Renamer", ColorModeKey, mode switch
+        Settings.Set(AppSettings.General, ColorModeKey, mode switch
         {
             SystemColorMode.Classic => "Light",
             SystemColorMode.Dark => "Dark",
@@ -104,15 +104,15 @@ public sealed class AppResources
         string baseDir = AppContext.BaseDirectory;
         using var json = Assembly.GetExecutingAssembly().GetManifestResourceStream("resources.json")
             ?? throw new InvalidOperationException("resources.json が埋め込まれていない");
-        var resources = ResourceSet.Load(json);
+        var resources = ResourceSet.Load(json).WithoutCommands(Commands.Removed);
         var settings = AppSettings.Load(Path.Combine(baseDir, AppSettings.FileName));
-        return new AppResources(resources, LanguageStrings.Load(FindStringsFile(baseDir, settings.Get("Flexible Renamer", "Language"))), baseDir, settings);
+        return new AppResources(resources, LanguageStrings.Load(FindStringsFile(baseDir, settings.Get(AppSettings.General, "Language"))), baseDir, settings);
     }
 
     /// <summary>実行ディレクトリにある言語ファイルの一覧（コードと表示名）。</summary>
     public IEnumerable<(string Code, string Name)> AvailableLanguages()
     {
-        foreach (var path in Directory.GetFiles(BaseDirectory, "Flexible Renamer.*.Strings.ini").Order())
+        foreach (var path in Directory.GetFiles(BaseDirectory, "Reflex Renamer.*.Strings.ini").Order())
         {
             string code = Path.GetFileName(path).Split('.')[1];
             string name;
@@ -138,12 +138,12 @@ public sealed class AppResources
             {
                 continue;
             }
-            string path = Path.Combine(baseDir, $"Flexible Renamer.{code}.Strings.ini");
+            string path = Path.Combine(baseDir, $"Reflex Renamer.{code}.Strings.ini");
             if (File.Exists(path))
             {
                 return path;
             }
         }
-        throw new FileNotFoundException("言語ファイルが見つからない", Path.Combine(baseDir, "Flexible Renamer.EN.Strings.ini"));
+        throw new FileNotFoundException("言語ファイルが見つからない", Path.Combine(baseDir, "Reflex Renamer.EN.Strings.ini"));
     }
 }

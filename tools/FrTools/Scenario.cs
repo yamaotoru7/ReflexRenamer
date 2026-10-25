@@ -375,7 +375,7 @@ internal static class Scenario
                 var combo = Target().AsComboBox();
                 var items = ComboListItems(s, combo).Select(i => i.Name ?? "").ToList();
                 combo.Collapse();
-                File.WriteAllText(Path.Combine(outDir, Name(step) + ".items.txt"), string.Join('\n', items) + "\n");
+                File.WriteAllText(Path.Combine(outDir, Name(step) + ".items.txt"), string.Join('\n', WithoutRemoved(items)) + "\n");
                 s.Settle();
                 break;
             }
@@ -459,7 +459,7 @@ internal static class Scenario
                     }
                     var items = NativePopup.Read(menu).Where(i => !i.Separator)
                         .Select(i => i.Text.Replace("&", "") + (i.Checked ? " [チェック]" : "") + (i.Enabled ? "" : " [無効]"));
-                    File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', items) + "\n");
+                    File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', WithoutRemoved(items)) + "\n");
                     Keyboard.Type(VirtualKeyShort.ESCAPE);
                     s.Settle();
                     break;
@@ -467,7 +467,7 @@ internal static class Scenario
                 var lines = PopupMenus(s)
                     .SelectMany(m => m.FindAllDescendants(cf => cf.ByControlType(ControlType.MenuItem)))
                     .Select(m => DescribeMenuItem(m));
-                File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', lines) + "\n");
+                File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', WithoutRemoved(lines)) + "\n");
                 Keyboard.Type(VirtualKeyShort.ESCAPE);
                 Keyboard.Type(VirtualKeyShort.ESCAPE);
                 s.Settle();
@@ -535,7 +535,7 @@ internal static class Scenario
                 var lines = PopupMenus(s)
                     .SelectMany(m => m.FindAllDescendants(cf => cf.ByControlType(ControlType.MenuItem)))
                     .Select(m => DescribeMenuItem(m));
-                File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', lines) + "\n");
+                File.WriteAllText(Path.Combine(outDir, Name(step) + ".popup.txt"), string.Join('\n', WithoutRemoved(lines)) + "\n");
                 Keyboard.Type(VirtualKeyShort.ESCAPE);
                 Keyboard.Type(VirtualKeyShort.ESCAPE);
                 s.Settle();
@@ -679,6 +679,12 @@ internal static class Scenario
             return null;
         }
     }
+
+    /// <summary>移植版で意図して除いたメニュー項目（オリジナル版の作者への導線）。比べる前にオリジナル版の記録から外す。</summary>
+    private static readonly string[] RemovedItems = ["メールで質問", "ホーム ページを開く"];
+
+    private static IEnumerable<string> WithoutRemoved(IEnumerable<string> items) =>
+        items.Where(i => !RemovedItems.Any(r => i.StartsWith(r, StringComparison.Ordinal)));
 
     private static string DescribeMenuItem(AutomationElement m)
     {

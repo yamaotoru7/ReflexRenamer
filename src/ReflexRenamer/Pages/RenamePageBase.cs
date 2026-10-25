@@ -35,7 +35,6 @@ public abstract class RenamePageBase : PageBase
     protected const int CmdTimestampCreated = 32886;
     protected const int CmdHideProtected = 32906;
     protected const int CmdEditScript = 32967;
-    protected const int CmdAskByMail = 32887;
 
     private readonly ScriptWorkspace _scripts;
     private ScriptLanguage _scriptLanguage;
@@ -213,17 +212,6 @@ public abstract class RenamePageBase : PageBase
         combo.Focus();
     }
 
-    protected static void AskByMail()
-    {
-        try
-        {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("mailto:naru@yeah.ne.jp?subject=[Flexible Renamer]") { UseShellExecute = true });
-        }
-        catch (Exception e) when (e is System.ComponentModel.Win32Exception or InvalidOperationException)
-        {
-        }
-    }
-
     private void ShowNumberingMenu()
     {
         Popup.Load(MenuNumbering, 0, item =>
@@ -321,7 +309,7 @@ public abstract class RenamePageBase : PageBase
         }
         catch (Exception e) when (e is System.ComponentModel.Win32Exception or InvalidOperationException or IOException or UnauthorizedAccessException)
         {
-            MessageBox.Show(this, e.Message, "Flexible Renamer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(this, e.Message, AppResources.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 
@@ -585,7 +573,7 @@ public abstract class RenamePageBase : PageBase
             destination = picker.SelectedPath;
         }
         // 選択がなければ、表示されている全部を処理してよいか確認する（オリジナル版と同じ）
-        if (selected.Count == 0 && MessageBox.Show(this, Res.T("Process All File/Folder"), "Flexible Renamer", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
+        if (selected.Count == 0 && MessageBox.Show(this, Res.T("Process All File/Folder"), AppResources.ProductName, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
         {
             return;
         }
@@ -613,7 +601,7 @@ public abstract class RenamePageBase : PageBase
         }
         catch (InvalidOperationException e)
         {
-            MessageBox.Show(this, e.Message, "Flexible Renamer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(this, e.Message, AppResources.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         // ごみ箱へ移動は元に戻せない（オリジナル版でもボタンは無効のまま）
         Get<Button>(IdUndo).Enabled = operation != RenameOperation.RecycleBin;
@@ -627,7 +615,7 @@ public abstract class RenamePageBase : PageBase
         var entry = RenameLog.Read(LogPath);
         if (entry is null || !entry.Completed)
         {
-            MessageBox.Show(this, Res.T("%s\nIllegal Log\nLast operation was probably abnormal terminated.").Replace("%s", LogPath, StringComparison.Ordinal), "Flexible Renamer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(this, Res.T("%s\nIllegal Log\nLast operation was probably abnormal terminated.").Replace("%s", LogPath, StringComparison.Ordinal), AppResources.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
         string question = Res.T("Undo this operation?\nDate: %s\nFolder: %s\nSearch for: %s\nReplace with: %s");
@@ -636,14 +624,14 @@ public abstract class RenamePageBase : PageBase
             int i = question.IndexOf("%s", StringComparison.Ordinal);
             question = question[..i] + value + question[(i + 2)..];
         }
-        if (MessageBox.Show(this, question, "Flexible Renamer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+        if (MessageBox.Show(this, question, AppResources.ProductName, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
         {
             return;
         }
         int failed = RenameExecutor.Undo(entry);
         File.Delete(LogPath);
         Get<Button>(IdUndo).Enabled = false;
-        MessageBox.Show(this, Res.T(failed == 0 ? "Undo Completed." : "Failured to Undo"), "Flexible Renamer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        MessageBox.Show(this, Res.T(failed == 0 ? "Undo Completed." : "Failured to Undo"), AppResources.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         Main.RefreshList();
     }
 

@@ -190,7 +190,7 @@ public sealed class NumberedObjectPage : PageBase
         var options = Options();
         if (options.Amount <= 0)
         {
-            MessageBox.Show(this, Res.T("Input Amount"), "Flexible Renamer");
+            MessageBox.Show(this, Res.T("Input Amount"), AppResources.ProductName);
             return;
         }
         using var progress = new ProgressDialog(Res, Res.T("Creating Objects..."));
@@ -198,7 +198,7 @@ public sealed class NumberedObjectPage : PageBase
         progress.Run(this, () => failed = NumberedObjectGenerator.Create(Main.CurrentFolder, options, progress.Report));
         if (failed > 0)
         {
-            MessageBox.Show(this, Res.T("Failured to File Copy!\n%s").Replace("%s", failed.ToString(CultureInfo.InvariantCulture), StringComparison.Ordinal), "Flexible Renamer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(this, Res.T("Failured to File Copy!\n%s").Replace("%s", failed.ToString(CultureInfo.InvariantCulture), StringComparison.Ordinal), AppResources.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         Main.RefreshList();
         // オリジナル版のダイアログバーはフォーカスを持たないので、実行後は一覧に戻す（Enter で再実行されない）

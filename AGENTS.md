@@ -4,7 +4,7 @@ FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってク�
 
 - `FlexRenamer/` にあるのはオリジナル版（Flexible Renamer v8.4、作者 Naru、2011年の Win32 MFC 製一括リネームツール。Strings.ini の Version は 8.0.0）の配布物一式で、これがリファレンス実装であり仕様の代わりになる。
 - `FlexRenamer/` 配下は変更しない。オリジナル版を動かすときは、必ず作業コピー（`.work/sandbox/original/`）を使う。実行ディレクトリに `Flexible Renamer.ini` と `Rename.log` を書き込むため。
-- `FlexRenamer/` は Git 管理外。新しいチェックアウトでは [docs/reference-setup.md](docs/reference-setup.md) に従って原本を別途配置する。採用した参照コピーのファイル一覧と SHA-256 は `docs/reference-files.json`。
+- `FlexRenamer/` は Git 管理外。新しいチェックアウトでは [docs/reference-setup.md](docs/reference-setup.md) に従って原本を別途配置する（アプリのビルドには要らない。テストと比較ツールが使う）。採用した参照コピーのファイル一覧と SHA-256 は `docs/reference-files.json`。
 
 ## 技術スタック
 
@@ -24,6 +24,8 @@ FlexRenamer\Flexible Renamer.exe を現在のツールキットを使ってク�
 - `MainForm`：メニュー、ツールバー1段（ファイル指定／フォルダ指定とフォルダ欄）、ページ切り替えタブ（`PageTabStrip`）、3ペイン（`ShellFolderTree`、入力フォーム、`FileListView`。`DockPane` は右端のドラッグで幅を変えるだけ）、ステータスバー。設定の保存・復元、フォルダ監視、ドロップ、お気に入り、言語、フォント。ダークモードは `Program` の `SetColorMode`（表示 > 配色、ini の ColorMode）、色は SystemColors から取る。言語ファイルにない文言は `AppResources.ExtraStrings` で訳す。
 - `Pages/`：入力フォームの4ページ。`PageBase`（並べ替え・グループ・シャッフル）→ `RenamePageBase`（連番、実行する動作、実行と元に戻す、直接編集、オプション／スクリプトのメニュー）→ `RenamePage`（DIALOG 143 と定型メニュー `TypicalPanel`）／`TagRenamePage`（DIALOG 170）。`AttributePage`（141）、`NumberedObjectPage`（142）は `PageBase` 直下。
 - `Dialogs/`：`TemplateForm` を継承したダイアログ（連番 166、重複 168、エラー 130、進行状況 133、プリセット整理 139、タグ・リネーム設定 172、オプション 237+238）。
+- `Data/`：exe の横に置くデータファイル（言語ファイル `Reflex Renamer.<言語>.Strings.ini`、`Preset.ini`、`TagDef.ini`、`Script.Preset.*`）。オリジナル版から取り込んで製品名などを直したもの。UTF-16 なので編集はスクリプトで（`.gitattributes` で `-text`）。
+- `Help/`：ヘルプ（HTML、`ja/index.html` と `en/index.html`、共通の `help.css`）。出力では `help\` に置き、ヘルプ メニューで既定のブラウザーで開く。機能を変えたら両方の言語を直す。
 - `Ui/`：`DialogBuilder`（テンプレートからの組み立て。DLU の基本値はフォントの実測）、`Anchors`、`PopupMenu`（Win32 メニュー）、`NativeUpDown`、`MruCombo`、`ShellInfo`、`ShellContextMenu`、`Assets`（オリジナルのアイコンと、移植版のアプリアイコン `app.ico`。再生成は `tools/make-app-icon.ps1`）、`FluentGlyphs`（Segoe Fluent Icons のグリフ）、`FlatToolStripRenderer`。
 - Core 側：`Rename/`（`FileCollector` → `RenameEngine`（3段階の置換）→ `RenameExecutor`、`RenameLog`）、`Presets/`（Preset.ini、定型処理の展開、ユーザーのプリセット）、`Tags/`（各形式の読み取りと `TagFormatter`）、`Attributes/`、`NumberedObjects/`、`Settings/`（ini）、`Localization/`、`Scripting/`。
 

@@ -1,6 +1,7 @@
 using ReflexRenamer.Core.Presets;
 using ReflexRenamer.Core.Rename;
 using ReflexRenamer.Core.Tags;
+using ReflexRenamer.Core.Settings;
 using ReflexRenamer.Dialogs;
 using ReflexRenamer.Ui;
 
@@ -547,7 +548,7 @@ public sealed class TagRenamePage : RenamePageBase
         SaveCommonSettings("TagRename");
         s.Set("TagRename", "UseProperty", Get<CheckBox>(IdUseProperty).Checked);
         s.Set("TagRename", _propertyMode ? "PropertyMode" : "Mode", Get<ListBox>(IdKinds).SelectedIndex);
-        s.Set("Flexible Renamer", "OSVersion_PropertyTag", _propertyDefinitions.Version);
+        s.Set(AppSettings.General, "OSVersion_PropertyTag", _propertyDefinitions.Version);
         s.SetList(PropertyPresetSection, "Preset", PropertyTagDefinitions.FormatPresets(_propertyPresets));
         foreach (var (section, format) in _formatByKind)
         {

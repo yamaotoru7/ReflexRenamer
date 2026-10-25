@@ -11,6 +11,8 @@
 - 4 ページの切り替えは **タブ**にする。ツールバーは「ファイル指定／フォルダ指定 ＋ フォルダ欄」の 1 段にまとめる。
 - ペインの **並べ替え・浮かせる機能（MFC のドッキング）はやめる**。残すのは幅の変更と「フォルダ一覧を隠す」。
 - アイコンは、ツールバーとページ見出しを Segoe Fluent Icons のグリフに差し替える。定型メニューのツリーの絵（311〜316、310）はそのまま。
+- オリジナル版の作者・配布元への導線（ヘルプ > ホームページを開く、入力サポートメニューの「メールで質問」、バージョン情報の URL とメール）は除く（`Commands.Removed` を `ResourceSet.WithoutCommands` でメニューから外す）。クレジットはバージョン情報とヘルプの「Inspired by Flexible Renamer by Naru」の一文だけ。
+- ヘルプは CHM ではなく HTML（`src/ReflexRenamer/Help/{ja,en}/index.html`、出力の `help\`）。日本語の UI では日本語版、ほかの言語では英語版を既定のブラウザーで開く。
 - compare（FrTools）の合否は、一覧の中身（`*.list.json`）とファイルの結果（`files`）の一致だけにする。画面（画像・UI ツリーの座標）の差は参考扱い。
 - 一覧の「フォルダ」列は、フォルダ欄のフォルダからの **相対パス**にする（直下は `.`。ファイル指定のときと配下でないものはフルパス。`FolderDisplay.Relative`）。オリジナル版はフルパス。compare はフォルダ列を両方とも同じ規則で相対パスにそろえてから比べる。
 
@@ -22,7 +24,7 @@
 - テンプレートの座標（DLU）は変えない。DLU → ピクセルの基本値は、実際のフォントの平均文字幅と高さから求める（Win32 の `GetDialogBaseUnits` と同じ考え方）。
 - 既定フォントは `SystemFonts.MessageBoxFont`（日本語 Windows では Yu Gothic UI 9pt）。ユーザーが「表示 > フォント」で変えた値は今までどおり ini の `Font`／`FontFace` に保存する。
 - 高 DPI は `PerMonitorV2`。フォームは `AutoScaleMode.Dpi`。
-- データファイル（`Flexible Renamer.*.Strings.ini`、`Preset.ini`、`TagDef.ini`、`*.chm`）の名前は変えない（オリジナル版の配布物をそのまま使っている）。設定ファイルは `Reflex Renamer.ini`、ログは `Rename.log` のまま。ini のセクション名・キー名も変えない。
+- データファイルはオリジナル版の配布物から `src/ReflexRenamer/Data/` に取り込み、製品として直したものを使う（2026-10-25）。言語ファイルは `Reflex Renamer.<言語>.Strings.ini`（キーは英語の原文のまま、訳文の「Flexible Renamer」を「Reflex Renamer」に。ホームページ・メールの行は削除）、`Preset.ini`・`TagDef.ini`・`Script.Preset.*` は内容そのまま。設定ファイルは `Reflex Renamer.ini`、ログは `Rename.log`。ini のセクション名・キー名はオリジナル版と同じにするが、固有名詞だった `[Flexible Renamer]`（アプリ全体の設定）だけは `[General]` にする（`AppSettings.General`。古いセクションは読み込み時に移す）。
 - 文字列はこれまでどおり `AppResources.T()` で言語ファイルから引く。新しく足す文言は、言語ファイルにキーがなければ日本語 Windows でそのまま出てよいが、英語の原文をキーにして `T()` を通す。
 - コードのコメントは日本語。ファイルは UTF-8、改行は CRLF（既存ファイルに合わせる）。
 - `FlexRenamer/` 配下は変更しない。

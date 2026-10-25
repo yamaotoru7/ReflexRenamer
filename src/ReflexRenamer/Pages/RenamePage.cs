@@ -126,11 +126,6 @@ public sealed class RenamePage : RenamePageBase
         var combo = Get<ComboBox>(comboId);
         Popup.Load(menuId, submenu, item =>
         {
-            if (item.Id == CmdAskByMail)
-            {
-                AskByMail();
-                return;
-            }
             var (label, insert) = PopupMenu.Split(Res.T(item.Text));
             if (item.Id is CmdExample or CmdReplaceExample)
             {

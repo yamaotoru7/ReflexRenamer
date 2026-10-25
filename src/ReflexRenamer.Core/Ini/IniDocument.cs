@@ -73,6 +73,13 @@ public sealed class IniDocument
         return section;
     }
 
+    /// <summary>セクションを取り除く。あれば true。</summary>
+    public bool Remove(string name)
+    {
+        var section = this[name];
+        return section is not null && _sections.Remove(section);
+    }
+
     /// <summary>オリジナル版と同じ形式（BOM 付き UTF-16 LE、CRLF、セクションの間に空行）で保存する。</summary>
     public void Save(string path)
     {

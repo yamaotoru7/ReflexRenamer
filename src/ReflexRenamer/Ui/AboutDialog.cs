@@ -1,6 +1,6 @@
 namespace ReflexRenamer.Ui;
 
-/// <summary>バージョン情報（DIALOG 100）。</summary>
+/// <summary>バージョン情報（DIALOG 100）。製品名と版、Flexible Renamer にインスパイアされたという一文だけを出す。</summary>
 public sealed class AboutDialog : Form
 {
     public AboutDialog(AppResources res)
@@ -12,13 +12,16 @@ public sealed class AboutDialog : Form
         MinimizeBox = false;
         ShowInTaskbar = false;
         StartPosition = FormStartPosition.CenterParent;
-        ClientSize = new Size(DialogBuilder.X(template.Width), DialogBuilder.Y(template.Height));
+        // オリジナル版の下の行（Web サイト）は使わないので、その分だけ低くする
+        ClientSize = new Size(DialogBuilder.X(template.Width), DialogBuilder.Y(36));
 
         var map = res.Builder.Build(100, template, this);
         map.Get<Label>(1025).Text = $"{AppResources.ProductName} {AppResources.DisplayVersion}";
-        map.Get<Label>(1027).Text = "Based on Flexible Renamer 8.4 (C) 2000-2011 Naru";
-        map.Get<Label>(1028).Text = "";
-        map.Get<Label>(1043).Text = res.T("http://hp.vector.co.jp/authors/VA014830/english/FlexRena/");
+        var credit = map.Get<Label>(1027);
+        credit.Text = "Inspired by Flexible Renamer by Naru";
+        credit.Width = map.Get<Label>(1043).Width;
+        map.Get<Label>(1028).Visible = false;
+        map.Get<Label>(1043).Visible = false;
         if (map.TryGet(-1, out var icon) && icon is PictureBox box)
         {
             box.Image = Assets.AppIcon(32)?.ToBitmap();

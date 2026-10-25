@@ -16,11 +16,29 @@ public sealed class AppSettingsTests : IDisposable
     public void ReadsOriginalIni()
     {
         var s = AppSettings.Load(ReferenceFiles.Get("Flexible Renamer.ini"));
-        Assert.Equal(2, s.GetInt("Flexible Renamer", "Page", 0));
-        Assert.Equal("Tahoma", s.Get("Flexible Renamer", "FontFace"));
+        // オリジナル版の [Flexible Renamer] は [General] として読む
+        Assert.Equal(2, s.GetInt(AppSettings.General, "Page", 0));
+        Assert.Equal("Tahoma", s.Get(AppSettings.General, "FontFace"));
+        Assert.Null(s.Get("Flexible Renamer", "Page"));
         Assert.Equal(@"\Y\m\d\H\M\S", s.Get("Rename", "Typical_Timestamp"));
         Assert.Equal("*", s.GetMru("RenameFilter")[0]);
         Assert.Equal(22, s.GetList("Preset", "Preset").Count);
+    }
+
+    [Fact]
+    public void MovesLegacySectionToGeneral()
+    {
+        string path = Path.Combine(_dir, AppSettings.FileName);
+        File.WriteAllText(path, "[General]\r\nPage=1\r\n[Flexible Renamer]\r\nPage=3\r\nLanguage=EN\r\n", Encoding.Unicode);
+
+        var s = AppSettings.Load(path);
+        s.Save();
+
+        // 同じキーは [General] を優先し、[Flexible Renamer] は消える
+        var again = AppSettings.Load(path);
+        Assert.Equal(1, again.GetInt(AppSettings.General, "Page", 0));
+        Assert.Equal("EN", again.Get(AppSettings.General, "Language"));
+        Assert.DoesNotContain("[Flexible Renamer]", File.ReadAllText(path, Encoding.Unicode));
     }
 
     [Fact]
@@ -28,7 +46,7 @@ public sealed class AppSettingsTests : IDisposable
     {
         string path = Path.Combine(_dir, AppSettings.FileName);
         var s = AppSettings.Load(path);
-        s.Set("Flexible Renamer", "Page", 3);
+        s.Set(AppSettings.General, "Page", 3);
         s.Set("Rename", "Typical_Add", "値");
         s.PushMru("RenameFilter", "*.jpg");
         s.PushMru("RenameFilter", "*.txt");
@@ -40,7 +58,7 @@ public sealed class AppSettingsTests : IDisposable
         Assert.Contains("\r\n", File.ReadAllText(path, Encoding.Unicode));
 
         var again = AppSettings.Load(path);
-        Assert.Equal(3, again.GetInt("Flexible Renamer", "Page", 0));
+        Assert.Equal(3, again.GetInt(AppSettings.General, "Page", 0));
         Assert.Equal("値", again.Get("Rename", "Typical_Add"));
         Assert.Equal(["*.jpg", "*.txt"], again.GetMru("RenameFilter"));
     }

@@ -43,7 +43,7 @@ public sealed class MainForm : Form
         _res = res;
         var settings = res.Settings;
         // 起動時のフォルダ：引数 > 前回のフォルダ > カレント
-        string? remembered = settings.Get("Flexible Renamer", "CurrentFolder");
+        string? remembered = settings.Get(AppSettings.General, "CurrentFolder");
         _folder = initialFolder is not null && Directory.Exists(initialFolder) ? Path.GetFullPath(initialFolder)
             : remembered is not null && Directory.Exists(remembered) ? remembered
             : Environment.CurrentDirectory;
@@ -184,7 +184,7 @@ public sealed class MainForm : Form
             {
                 page.LoadSettings();
             }
-            int pageCommand = initialPage ?? Commands.PageRename + Math.Clamp(settings.GetInt("Flexible Renamer", "Page", 1) - 1, 0, 3);
+            int pageCommand = initialPage ?? Commands.PageRename + Math.Clamp(settings.GetInt(AppSettings.General, "Page", 1) - 1, 0, 3);
             ShowPage(_pages.ContainsKey(pageCommand) ? pageCommand : Commands.PageRename);
             ChangeFolder(_folder, fromTree: false);
         };
@@ -291,11 +291,11 @@ public sealed class MainForm : Form
         settings.Set("MainFrame", "ShowShellFolderBar", _bars.Find(BarState.FolderTreeId) is not { Hidden: true });
         var screen = SystemInformation.VirtualScreen;
         _bars.Save(settings, _dock.ClientSize.Height, screen.Width, screen.Height);
-        settings.Set("Flexible Renamer", "CurrentFolder", _folder);
+        settings.Set(AppSettings.General, "CurrentFolder", _folder);
         int pageIndex = _pages.FirstOrDefault(p => p.Value == _page).Key is var cmd && cmd != 0 ? cmd - Commands.PageRename + 1 : 1;
-        settings.Set("Flexible Renamer", "Page", pageIndex);
-        settings.Set("Flexible Renamer", "Specify", _pageButtons[Commands.SpecifyFolder].Checked ? 1 : 0);
-        settings.Set("Flexible Renamer", "FontFace", Font.Name);
+        settings.Set(AppSettings.General, "Page", pageIndex);
+        settings.Set(AppSettings.General, "Specify", _pageButtons[Commands.SpecifyFolder].Checked ? 1 : 0);
+        settings.Set(AppSettings.General, "FontFace", Font.Name);
         foreach (var page in _pages.Values)
         {
             page.SaveSettings();
@@ -427,9 +427,9 @@ public sealed class MainForm : Form
             SetFontRecursive(c, font);
         }
         var settings = _res.Settings;
-        settings.Set("Flexible Renamer", "FontFace", font.Name);
+        settings.Set(AppSettings.General, "FontFace", font.Name);
         int heightPx = -(int)Math.Round(font.SizeInPoints * 96 / 72);
-        settings.Set("Flexible Renamer", "Font", $"{heightPx},0,0,0,{(font.Bold ? 700 : 400)},{(font.Italic ? 1 : 0)},0,0,0,0,0,0,34");
+        settings.Set(AppSettings.General, "Font", $"{heightPx},0,0,0,{(font.Bold ? 700 : 400)},{(font.Italic ? 1 : 0)},0,0,0,0,0,0,34");
     }
 
     private static void SetFontRecursive(Control control, Font font)
@@ -444,8 +444,8 @@ public sealed class MainForm : Form
     /// <summary>設定の Font（LOGFONT の並び）と FontFace からフォントを作る。</summary>
     private Font? SavedFont()
     {
-        string? face = _res.Settings.Get("Flexible Renamer", "FontFace");
-        var parts = (_res.Settings.Get("Flexible Renamer", "Font") ?? "").Split(',');
+        string? face = _res.Settings.Get(AppSettings.General, "FontFace");
+        var parts = (_res.Settings.Get(AppSettings.General, "Font") ?? "").Split(',');
         if (face is null || parts.Length < 6 || !int.TryParse(parts[0], out int height) || height == 0)
         {
             return null;
@@ -530,7 +530,7 @@ public sealed class MainForm : Form
             var item = new ToolStripMenuItem(name) { Checked = string.Equals(code, current, StringComparison.OrdinalIgnoreCase) };
             item.Click += (_, _) =>
             {
-                _res.Settings.Set("Flexible Renamer", "Language", code);
+                _res.Settings.Set(AppSettings.General, "Language", code);
                 MessageBox.Show(this, _res.T("Changing the language is applied at the next starts."), AppResources.ProductName);
             };
             menu.DropDownItems.Add(item);
@@ -539,25 +539,12 @@ public sealed class MainForm : Form
 
     private void OpenHelp()
     {
-        string chm = Path.Combine(_res.BaseDirectory, $"Flexible Renamer.{_res.Strings.ShortName}.chm");
-        if (!File.Exists(chm))
-        {
-            chm = Path.Combine(_res.BaseDirectory, "Flexible Renamer.EN.chm");
-        }
+        // ヘルプは日本語と英語の HTML。ほかの言語では英語版を開く
+        string lang = string.Equals(_res.Strings.ShortName, "JA", StringComparison.OrdinalIgnoreCase) ? "ja" : "en";
+        string page = Path.Combine(_res.BaseDirectory, "help", lang, "index.html");
         try
         {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("hh.exe", $"\"{chm}\"") { UseShellExecute = true });
-        }
-        catch (Exception e) when (e is System.ComponentModel.Win32Exception or InvalidOperationException)
-        {
-        }
-    }
-
-    private void OpenOnline()
-    {
-        try
-        {
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(_res.T("http://hp.vector.co.jp/authors/VA014830/english/FlexRena/")) { UseShellExecute = true });
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(page) { UseShellExecute = true });
         }
         catch (Exception e) when (e is System.ComponentModel.Win32Exception or InvalidOperationException)
         {
@@ -759,9 +746,6 @@ public sealed class MainForm : Form
                         options.Apply();
                     }
                 }
-                break;
-            case Commands.Online:
-                OpenOnline();
                 break;
             default:
                 _page?.ExecuteCommand(command);
