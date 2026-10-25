@@ -103,6 +103,9 @@ public abstract class PageBase : UserControl
         Rearrange();
     }
 
+    /// <summary>一覧の「フォルダ」列：開いているフォルダからの相対パス（直下は「.」）。ファイル指定のときと外のフォルダはフルパス。</summary>
+    protected string FolderText(FileItem item) => Main.FileMode ? item.DirectoryPath : FolderDisplay.Relative(Main.CurrentFolder, item.DirectoryPath);
+
     /// <summary>グループのキー（グループ表示とグループごとの連番に使う）。グループ表示でなければ null。</summary>
     protected string? GroupKeyOf(FileItem item) => Group switch
     {

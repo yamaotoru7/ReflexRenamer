@@ -293,7 +293,7 @@ public sealed class AttributePage : PageBase
         {
             var lvi = new ListViewItem(item.Name, list.IconKey(item)) { Tag = item };
             added.Add((lvi, item));
-            lvi.SubItems.Add(item.DirectoryPath);
+            lvi.SubItems.Add(FolderText(item));
             // フォルダも「0 B」、アクセス日時は日付だけ（実測）
             lvi.SubItems.Add(FileListView.FormatSize(item.Size));
             lvi.SubItems.Add(ShellInfo.TypeName(item.FullPath, item.IsDirectory));

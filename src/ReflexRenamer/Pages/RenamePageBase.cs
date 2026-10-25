@@ -477,7 +477,7 @@ public abstract class RenamePageBase : PageBase
             {
                 lvi.SubItems.Add(value(item));
             }
-            lvi.SubItems.Add(item.DirectoryPath);
+            lvi.SubItems.Add(FolderText(item));
             lvi.SubItems.Add(FileListView.FormatSize(item.Size));  // フォルダも「0 B」（オリジナル版と同じ）
             lvi.SubItems.Add(ShellInfo.TypeName(item.FullPath, item.IsDirectory));
             lvi.SubItems.Add(FileListView.FormatTime(item.Modified));

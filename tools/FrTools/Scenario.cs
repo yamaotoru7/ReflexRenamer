@@ -336,7 +336,7 @@ internal static class Scenario
                 break;
 
             case "readList":
-                File.WriteAllText(Path.Combine(outDir, Name(step) + ".list.json"), ReadList(Target()));
+                File.WriteAllText(Path.Combine(outDir, Name(step) + ".list.json"), ReadList(Target(), CurrentFolder(s)));
                 break;
 
             case "readValue":
@@ -785,7 +785,7 @@ internal static class Scenario
         "項目: " + string.Join(" / ", PopupMenus(s).SelectMany(m => m.FindAllDescendants(cf => cf.ByControlType(ControlType.MenuItem))).Select(m => SafeName(m) ?? "(名前なし)"));
 
     /// <summary>リストビューの全行を、列見出しをキーにした JSON で返す。</summary>
-    public static string ReadList(AutomationElement list)
+    public static string ReadList(AutomationElement list, string? baseFolder = null)
     {
         var headers = list.FindAllDescendants(cf => cf.ByControlType(ControlType.HeaderItem)).Select(h => h.Name).ToList();
         var rows = new List<Dictionary<string, string>>();
@@ -797,6 +797,10 @@ internal static class Scenario
             {
                 string key = i < headers.Count ? headers[i] : $"col{i}";
                 row[key] = cells[i].Name ?? "";
+                if (key == "フォルダ" && baseFolder is not null)
+                {
+                    row[key] = RelativeFolder(baseFolder, row[key]);
+                }
             }
             if (cells.Length == 0)
             {
@@ -805,6 +809,35 @@ internal static class Scenario
             rows.Add(row);
         }
         return JsonSerializer.Serialize(rows, new JsonSerializerOptions { WriteIndented = true, Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+    }
+
+    /// <summary>フォルダ欄（1003）の値。読めなければ null。</summary>
+    private static string? CurrentFolder(AppSession s)
+    {
+        try
+        {
+            var box = new Selector("id:1003,type:ComboBox").Find(s, TimeSpan.FromSeconds(2));
+            var edit = box.FindFirstChild(cf => cf.ByControlType(ControlType.Edit)) ?? box;
+            return edit.Patterns.Value.PatternOrDefault?.Value.ValueOrDefault;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// 移植版の一覧は「フォルダ」列をフォルダ欄からの相対パスで出す（FolderDisplay.Relative）。
+    /// 両方の値を同じ規則でそろえて比べる（フルパスで出ているものだけ変換する）。
+    /// </summary>
+    private static string RelativeFolder(string baseFolder, string folder)
+    {
+        if (!Path.IsPathRooted(folder) || !Path.IsPathRooted(baseFolder))
+        {
+            return folder;
+        }
+        string relative = Path.GetRelativePath(baseFolder, folder);
+        return Path.IsPathRooted(relative) || relative == ".." || relative.StartsWith("..\\", StringComparison.Ordinal) ? folder : relative;
     }
 
     /// <summary>フォルダの中身。名前（フォルダは末尾に /）、更新日時、作成日時、属性をタブ区切りで並べる（属性やタイムスタンプの実行結果の照合に使う）。</summary>
