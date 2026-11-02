@@ -45,6 +45,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 ; 発行物をそのまま入れる。設定とログは実行時に作られるものなので入れない
 Source: "{#PublishDir}\*"; DestDir: "{app}"; Excludes: "*.pdb,Reflex Renamer.ini,Rename.log"; Flags: ignoreversion recursesubdirs createallsubdirs
+; ライセンス（MIT。配布物に同梱する条件のため）
+Source: "..\LICENSE"; DestDir: "{app}"; DestName: "LICENSE.txt"; Flags: ignoreversion
 
 [Icons]
 Name: "{autoprograms}\{#AppName}"; Filename: "{app}\{#AppExe}"

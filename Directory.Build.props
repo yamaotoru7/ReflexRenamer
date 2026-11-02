@@ -6,4 +6,14 @@
   <ItemGroup>
     <RuntimeHostConfigurationOption Include="System.Globalization.UseNls" Value="true" />
   </ItemGroup>
+
+  <!--
+    配布するビルド（Release）に、ビルドした PC のパス（D:\... やユーザー名）が入らないようにする。
+    ソースの場所を /_/ に置き換え、ビルドを決定的にする。デバッグ用の Debug ビルドはそのまま。
+  -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <PathMap>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))=/_/</PathMap>
+  </PropertyGroup>
 </Project>
